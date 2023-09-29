@@ -43,10 +43,10 @@ const PageLayout: FC<Props> = (props: Props) => {
       }`}
     >
       <PageHead
-        title="Name"
-        description="Description"
+        title="Calder"
+        description="Calder Moore bombaclat ya"
         url="https://addurl.xyz/"
-        twitter="twitterhandle"
+        twitter="CalderMoore_"
       />
       <ViewContext.Provider value={value}>
         {/* header */}

@@ -1107,21 +1107,6 @@
   resolved "https://registry.npmjs.org/@rushstack/eslint-patch/-/eslint-patch-1.2.0.tgz"
   integrity sha512-sXo/qW2/pAcmT43VoRKOJbDOfV3cYpq3szSVfIThQXNt+E4DfKj361vaAt3c88U5tPUxzEswam7GW48PJqtKAg==
 
-"@seregpie/k-means-plus-plus@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@seregpie/k-means-plus-plus/-/k-means-plus-plus-1.0.1.tgz#b97a41944311b5e7eb72f817572a901f493c08c4"
-  integrity sha512-Zmk4O414+oexLhMx7yLLZTEZif3w3fBwN7iQetE2KKf0/5ZfD4DwFx37PwNmJgeqND46WMoceWRLsaTTVJar2A==
-  dependencies:
-    "@seregpie/k-means" "^1.0.2"
-    just-my-luck "^1.0.0"
-
-"@seregpie/k-means@^1.0.2":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@seregpie/k-means/-/k-means-1.0.2.tgz#c51f5d3d482fc771a74dda1ced88228845ac1562"
-  integrity sha512-qIkaRbFu4eteR88pORrOXbqVyZofToONpW2R3eQDz3wZevjAp19/WapjIBUf+Zm+dzsZM4bA5321POgHdubuAA==
-  dependencies:
-    just-my-luck "^1.0.0"
-
 "@socket.io/component-emitter@~3.1.0":
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/@socket.io/component-emitter/-/component-emitter-3.1.0.tgz#96116f2a912e0c02817345b3c10751069920d553"
@@ -1979,11 +1964,6 @@
   dependencies:
     "@types/node" "*"
 
-"@types/downloadjs@^1.4.3":
-  version "1.4.3"
-  resolved "https://registry.yarnpkg.com/@types/downloadjs/-/downloadjs-1.4.3.tgz#01c0414a9756afa2bd438b1e2ec6c50de7df316d"
-  integrity sha512-MjJepFle/tLtT2/jmDNth6ZnwWzEhm40L+olE5HKR70ISUCfgT55eqreeHldAzFLY2HDUGsn8zgyto8KygN0CA==
-
 "@types/json5@^0.0.29":
   version "0.0.29"
   resolved "https://registry.npmjs.org/@types/json5/-/json5-0.0.29.tgz"
@@ -2000,13 +1980,6 @@
   version "4.14.189"
   resolved "https://registry.npmjs.org/@types/lodash/-/lodash-4.14.189.tgz"
   integrity sha512-kb9/98N6X8gyME9Cf7YaqIMvYGnBSWqEci6tiettE6iJWH1XdJz/PO8LB0GtLCG7x8dU3KWhZT+lA1a35127tA==
-
-"@types/merge-images@^1.2.1":
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/@types/merge-images/-/merge-images-1.2.1.tgz#fb051a842db66c3933d1f9cd5d8aba6891b6de2e"
-  integrity sha512-wXXXOXYvoHpa4QwQBDNOPH7QbGECTvQshThgytYhruIbwbF4/11EouhSnYtUgf0n52bGYdt2BQdZV2K6C2SrnA==
-  dependencies:
-    "@types/node" "*"
 
 "@types/node@*":
   version "18.11.10"
@@ -2779,11 +2752,6 @@ base-x@^4.0.0:
   resolved "https://registry.yarnpkg.com/base-x/-/base-x-4.0.0.tgz#d0e3b7753450c73f8ad2389b5c018a4af7b2224a"
   integrity sha512-FuwxlW4H5kh37X/oW59pwTzzTKRzfrrQwhmyspRM7swOEZcHtDZSCt45U6oKgtuFE+WYPblePMVIPR4RZrh/hw==
 
-base64-arraybuffer@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/base64-arraybuffer/-/base64-arraybuffer-1.0.2.tgz#1c37589a7c4b0746e34bd1feb951da2df01c1bdc"
-  integrity sha512-I3yl4r9QB5ZRY3XuJVEPfc2XhZO6YweFPI+UovAzn+8/hb3oJ6lnysaFcjVpkCPfVWFUDvoZ8kmVDP7WyRtYtQ==
-
 base64-js@^1.3.1, base64-js@^1.5.1:
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/base64-js/-/base64-js-1.5.1.tgz#1b1b440160a5bf7ad40b650f095963481903930a"
@@ -3349,13 +3317,6 @@ crypto-js@^4.1.1:
   resolved "https://registry.yarnpkg.com/crypto-js/-/crypto-js-4.1.1.tgz#9e485bcf03521041bd85844786b83fb7619736cf"
   integrity sha512-o2JlM7ydqd3Qk9CA0L4NL6mTzU2sdx96a+oOfPu8Mkl/PK51vSyoi8/rQ8NknZtk44vq15lmhAj9CIAGwgeWKw==
 
-css-line-break@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/css-line-break/-/css-line-break-2.1.0.tgz#bfef660dfa6f5397ea54116bb3cb4873edbc4fa0"
-  integrity sha512-FHcKFCZcAha3LwfVBhCQbW2nCNbkZXn7KVUJcsT5/P8YmfsVja0FMPJr0B903j/E69HUphKiV9iQArX8SDYA4w==
-  dependencies:
-    utrie "^1.0.2"
-
 cssesc@^3.0.0:
   version "3.0.0"
   resolved "https://registry.npmjs.org/cssesc/-/cssesc-3.0.0.tgz"
@@ -3400,25 +3361,6 @@ dateformat@^3.0.3:
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/dateformat/-/dateformat-3.0.3.tgz#a6e37499a4d9a9cf85ef5872044d62901c9889ae"
   integrity sha512-jyCETtSl3VMZMWeRo7iY1FL19ges1t55hMo5yaam4Jrsm5EPL89UQkoQRyiI+Yf4k8r2ZpdngkV8hr1lIdjb3Q==
-
-dear-image.detect-background-color@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/dear-image.detect-background-color/-/dear-image.detect-background-color-1.0.1.tgz#51d4005b40fa51d9cb72b4937e6e574244cccc30"
-  integrity sha512-VvOvKCYY4TLq7JF9SQNUHEMqLKWySkPVclY3CaFWPtm0rHgkh9uO/tAjDTPlcy98R8rT3dNUIr77O8sa5O7pKA==
-  dependencies:
-    dear-image.detect-color-scheme "^1.0.1"
-
-dear-image.detect-color-scheme@^1.0.1:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/dear-image.detect-color-scheme/-/dear-image.detect-color-scheme-1.0.2.tgz#b649e409a3d49447efb62d61ea2010554e4fdb9f"
-  integrity sha512-Wevq6QXFAFZn8oVPxfJq+lSmWr7eLmb5AlH6b7ZvXW25CnKIGQpLV4XhP0pJOB/L1pYH8iKJeBRYZyXsoQJEFg==
-  dependencies:
-    "@seregpie/k-means-plus-plus" "^1.0.1"
-
-dear-image@^1.4.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/dear-image/-/dear-image-1.4.0.tgz#1a087bf05b2a7ca226e215c0d7710fcbaca944ee"
-  integrity sha512-x7GeOULQUNdx8qqIOnzuNFlsVkn0SEyOiRNqAbJnwHAcyJ9R/08HaRyv2TO4wedG/8FJ1epq91v9Kx5z0Q6uVg==
 
 debug@^2.6.9:
   version "2.6.9"
@@ -3572,11 +3514,6 @@ dom-walk@^0.1.0:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/dom-walk/-/dom-walk-0.1.2.tgz#0c548bef048f4d1f2a97249002236060daa3fd84"
   integrity sha512-6QvTW9mrGeIegrFXdtQi9pk7O/nSK6lSdXW2eqUspN5LWD7UTji2Fqw5V2YLjBpHEoU9Xl/eUWNpDeZvoyOv2w==
-
-downloadjs@^1.4.7:
-  version "1.4.7"
-  resolved "https://registry.yarnpkg.com/downloadjs/-/downloadjs-1.4.7.tgz#f69f96f940e0d0553dac291139865a3cd0101e3c"
-  integrity sha512-LN1gO7+u9xjU5oEScGFKvXhYf7Y/empUIIEAGBs1LzUq/rg5duiDrkuH5A2lQGd5jfMOb9X9usDa2oVXwJ0U/Q==
 
 drbg.js@^1.0.1:
   version "1.0.1"
@@ -4076,11 +4013,6 @@ external-editor@^3.0.3:
     iconv-lite "^0.4.24"
     tmp "^0.0.33"
 
-extract-colors@^1.1.23:
-  version "1.1.23"
-  resolved "https://registry.yarnpkg.com/extract-colors/-/extract-colors-1.1.23.tgz#06a0af10e5b2b8a185ae5d878c5f003c6133500e"
-  integrity sha512-fns3J+bJdgZnKjtbUec4yrvVe1c5EVFVeDWbeh0TYXFL8lqOXlnxcbdJ627F4Qiaz9Hc0YHFMiAJLfcw8PaieQ==
-
 eyes@^0.1.8:
   version "0.1.8"
   resolved "https://registry.yarnpkg.com/eyes/-/eyes-0.1.8.tgz#62cf120234c683785d902348a800ef3e0cc20bc0"
@@ -4453,19 +4385,6 @@ hmac-drbg@^1.0.1:
     hash.js "^1.0.3"
     minimalistic-assert "^1.0.0"
     minimalistic-crypto-utils "^1.0.1"
-
-html-to-image@^1.10.8:
-  version "1.10.8"
-  resolved "https://registry.yarnpkg.com/html-to-image/-/html-to-image-1.10.8.tgz#a7875154f972868897dbda2b837c195245e23682"
-  integrity sha512-t+JyFJwKDCp4ZwBp4iC/wqw0meQDDc77Qs8OFl5P7RGlIP3LQMvwpD7VXxqQfC7/TfC+GKYlFP6WDYfXTmXHfw==
-
-html2canvas@^1.4.1:
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/html2canvas/-/html2canvas-1.4.1.tgz#7cef1888311b5011d507794a066041b14669a543"
-  integrity sha512-fPU6BHNpsyIhr8yyMpTLLxAbkaK8ArIBcmZIRiBLiDhjeqvXolaEmDGmELFuX9I4xDcaKKcJl+TKZLqruBbmWA==
-  dependencies:
-    css-line-break "^2.1.0"
-    text-segmentation "^1.0.3"
 
 http-errors@^1.7.2:
   version "1.8.1"
@@ -4905,11 +4824,6 @@ jsqr@^1.2.0:
     array-includes "^3.1.5"
     object.assign "^4.1.3"
 
-just-my-luck@^1.0.0:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/just-my-luck/-/just-my-luck-1.0.1.tgz#785ba66fc44f23878292675f15e4e56a51937128"
-  integrity sha512-3QhzqwgH6ub3EkqU73OGg1zfNkWnWnw5ZGDqqoLv/rUIW/2Z23AQV6A9mcFgBdMvkhW16T5xdMYi0KEu1PnjNg==
-
 keccak@^3.0.0, keccak@^3.0.2, keccak@^3.0.3:
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/keccak/-/keccak-3.0.3.tgz#4bc35ad917be1ef54ff246f904c2bbbf9ac61276"
@@ -5053,11 +4967,6 @@ md5.js@^1.3.4:
     hash-base "^3.0.0"
     inherits "^2.0.1"
     safe-buffer "^5.1.2"
-
-merge-images@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/merge-images/-/merge-images-2.0.0.tgz#4d68d6d90ad8c33a91aced0b5d8660983bf4db3a"
-  integrity sha512-bpI4j54n/Zl6ZTgxaR3xWou/lqI53RAAt8peXijW37BKqoON83LQ7XCZqtFiwzBfEXIws1isYyR06584yffAyA==
 
 merge-options@^3.0.4:
   version "3.0.4"
@@ -6490,13 +6399,6 @@ text-encoding-utf-8@^1.0.2:
   resolved "https://registry.yarnpkg.com/text-encoding-utf-8/-/text-encoding-utf-8-1.0.2.tgz#585b62197b0ae437e3c7b5d0af27ac1021e10d13"
   integrity sha512-8bw4MY9WjdsD2aMtO0OzOCY3pXGYNx2d2FfHRVUKkiCPDWjKuOlhLVASS+pD7VkLTVjW268LYJHwsnPFlBpbAg==
 
-text-segmentation@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/text-segmentation/-/text-segmentation-1.0.3.tgz#52a388159efffe746b24a63ba311b6ac9f2d7943"
-  integrity sha512-iOiPUo/BGnZ6+54OsWxZidGCsdU8YbE4PSpdPinp7DeMtUJNJBoJ/ouUSTJjHkh1KntHaltHl/gDs2FC4i5+Nw==
-  dependencies:
-    utrie "^1.0.2"
-
 text-table@^0.2.0:
   version "0.2.0"
   resolved "https://registry.npmjs.org/text-table/-/text-table-0.2.0.tgz"
@@ -6730,13 +6632,6 @@ util@^0.12.0:
     is-generator-function "^1.0.7"
     is-typed-array "^1.1.3"
     which-typed-array "^1.1.2"
-
-utrie@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/utrie/-/utrie-1.0.2.tgz#d42fe44de9bc0119c25de7f564a6ed1b2c87a645"
-  integrity sha512-1MLa5ouZiOmQzUbjbu9VmjLzn1QLXBhwpUa7kdLUQK+KQ5KA9I1vk5U4YHe/X2Ch7PYnJfWuWT+VbuxbGwljhw==
-  dependencies:
-    base64-arraybuffer "^1.0.2"
 
 uuid@^8.3.2:
   version "8.3.2"
