@@ -3,8 +3,16 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: Karl;
-  src: url('../public/fonts/Karl-Regular.otf') format('truetype');
+  font-family: Barlow;
+  src: url('../public/fonts/barlow/BarlowSemiCondensed-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: Teko;
+  src: url('../public/fonts/teko/Teko-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: Teko-Thin;
+  src: url('../public/fonts/teko/Teko-Light.ttf') format('truetype');
 }
 
 a {
@@ -18,9 +26,17 @@ a {
 
 @layer base {
   html {
-    @apply scroll-smooth bg-particles bg-cover bg-fixed bg-dark-red text-light-red font-primary;
+    @apply scroll-smooth bg-particles bg-cover bg-fixed bg-dark-red text-custom-white font-primary;
   }
-
+  h1 {
+    @apply font-teko
+  }
+  h2 {
+    @apply font-teko
+  }
+  h3 {
+    @apply font-teko-thin
+  }
 }
 
 html {
@@ -38,5 +54,5 @@ html {
 }
 
 .link {
-  @apply transition-all duration-200 hover:opacity-50;
+  @apply py-0.5 transition-all duration-200 hover:opacity-50 opacity-80 md:opacity-100 text-light-red;
 }

@@ -10,17 +10,18 @@ module.exports = {
         "white-gradient": `linear-gradient(360.58deg, #FFFFFF 43.76%, rgba(255, 255, 255, 0) 106.82%)`,
       },
       fontFamily: {
-        primary: ["Karl"],
-        karl: ["Karl"],
+        primary: ["Barlow"],
+        teko: ["Teko"],
+        "teko-thin": ["Teko-Thin"],
       },
       colors: {
         //calder
         "light-red": "#EB6976",
         "dark-red": "#120505",
         "shine-rgba": "rgba(233, 104, 116, 0.60)",
+        "custom-white": "#FDF0F1",
         //template
         "custom-black": "#121212",
-        "custom-white": "#F3F1EA",
         "custom-yellow": "#FFBA21",
         "custom-green": "#56BC78",
         "custom-orange": "#FF5722",
