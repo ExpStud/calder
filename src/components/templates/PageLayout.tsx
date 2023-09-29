@@ -54,10 +54,12 @@ const PageLayout: FC<Props> = (props: Props) => {
 
         {/* body */}
         <motion.main
-          className={`flex flex-col h-full w-full overflow-x-clip`}
+          className={`relative flex flex-col h-full w-full overflow-x-clip`}
           {...enterAnimation}
         >
           {children}
+          <div className="absolute w-[900px] h-[900px] scale-75 xl:scale-90 4xl:scale-150 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-full bg-shine-rgba blur-[400px]" />
+          {/* <div className="absolute w-[900px] xl:w-[50vw] h-1/2 xl:h-[50vw] md:-top-[40%] md:left-1/2 transform md:-translate-x-1/2 rounded-full bg-shine-rgba blur-[450px]" /> */}
         </motion.main>
 
         {/* footer */}

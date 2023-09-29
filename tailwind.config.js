@@ -6,7 +6,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        main: "url('/images/background.png')",
+        particles: "url('/images/particles.png')",
         "white-gradient": `linear-gradient(360.58deg, #FFFFFF 43.76%, rgba(255, 255, 255, 0) 106.82%)`,
       },
       fontFamily: {
@@ -14,6 +14,9 @@ module.exports = {
         karl: ["Karl"],
       },
       colors: {
+        //calder
+        "dark-red": "#120505",
+        "shine-rgba": "rgba(233, 104, 116, 0.60)",
         //template
         "custom-black": "#121212",
         "custom-white": "#F3F1EA",
