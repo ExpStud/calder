@@ -15,6 +15,7 @@ module.exports = {
       },
       colors: {
         //calder
+        "light-red": "#EB6976",
         "dark-red": "#120505",
         "shine-rgba": "rgba(233, 104, 116, 0.60)",
         //template

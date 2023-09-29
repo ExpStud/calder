@@ -18,8 +18,9 @@ a {
 
 @layer base {
   html {
-    @apply scroll-smooth bg-particles bg-cover bg-fixed bg-dark-red text-custom-white font-primary;
+    @apply scroll-smooth bg-particles bg-cover bg-fixed bg-dark-red text-light-red font-primary;
   }
+
 }
 
 html {
@@ -34,4 +35,8 @@ html {
   100% {
     background-position: 200% 0%;
   }
+}
+
+.link {
+  @apply transition-all duration-200 hover:opacity-50;
 }
