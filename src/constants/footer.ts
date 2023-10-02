@@ -4,9 +4,11 @@ export const footer: Footer[] = [
   {
     category: "About",
     links: [
+      { name: "Overview", href: "/about/overview" },
       { name: "Subtance", href: "/about/substance" },
       { name: "Searchers", href: "/about/searchers" },
       { name: "Roadmap", href: "/about/roadmap" },
+      { name: "Team", href: "/about/team" },
     ],
   },
   {

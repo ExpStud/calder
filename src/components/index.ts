@@ -30,6 +30,7 @@ const Modal = dynamic(() => import("./molecules/Modal"));
 const IconBar = dynamic(() => import("./molecules/IconBar"));
 const SplashScreen = dynamic(() => import("./molecules/SplashScreen"));
 const HeaderContent = dynamic(() => import("./molecules/HeaderContent"));
+const FooterLinks = dynamic(() => import("./molecules/FooterLinks"));
 //organisms
 const Header = dynamic(() => import("./organisms/Header"));
 const Footer = dynamic(() => import("./organisms/Footer"));
@@ -74,5 +75,6 @@ export {
   ImageShimmer,
   ImageModal,
   HeaderContent,
-  AboutView
+  AboutView,
+  FooterLinks
 }
