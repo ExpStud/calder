@@ -56,3 +56,27 @@ html {
 .link {
   @apply py-0.5 transition-all duration-200 hover:opacity-50 opacity-80 md:opacity-100 text-light-red;
 }
+
+.custom-button {
+  @apply !bg-button cursor-pointer !flex !items-center !justify-start !uppercase !text-light-red !w-[200px] !h-[36px]
+  hover:!bg-button-hover hover:!bg-opacity-100 !duration-200 active:!bg-button-active disabled:!opacity-60 disabled:!cursor-not-allowed !rounded-none
+  text-xl text-center font-teko leading-none tracking-wider;
+}
+.custom-button p {
+  @apply pt-1.5;
+}
+
+/* Wallet Adapter */
+
+.wallet-adapter-modal-wrapper { 
+  @apply !rounded-sm !bg-opacity-90 !uppercase;
+}
+.wallet-adapter-modal-wrapper h1{ 
+  @apply !text-white;
+}
+.wallet-adapter-button { 
+  @apply hover:!bg-opacity-100;
+}
+.wallet-adapter-modal-button-close{
+  @apply !bg-transparent
+}

@@ -29,8 +29,8 @@ const Footer: FC = () => {
         <FooterLinks item={footer[2]} index={2} />
         <FooterLinks item={footer[3]} index={3} />
       </div>
-      <div className="w-full">
-        <div className="flex flex-col md:w-1/3 ">
+      <div className="w-full pb-2">
+        <div className="flex flex-col md:w-1/3 lg:w-[38%]">
           <Divider
             showLeftTip={false}
             showRightTip={false}

@@ -7,6 +7,9 @@ module.exports = {
     extend: {
       backgroundImage: {
         particles: "url('/images/particles.png')",
+        button: "url('/images/button-outline.svg')",
+        "button-active": "url('/images/button-outline-active.svg')",
+        "button-hover": "url('/images/button-outline-hover.svg')",
         "white-gradient": `linear-gradient(360.58deg, #FFFFFF 43.76%, rgba(255, 255, 255, 0) 106.82%)`,
       },
       fontFamily: {
@@ -18,6 +21,7 @@ module.exports = {
         //calder
         "light-red": "#EB6976",
         "dark-red": "#120505",
+        "dark-red-1": "#562527",
         "shine-rgba": "rgba(233, 104, 116, 0.60)",
         "custom-white": "#FDF0F1",
         //template
@@ -30,6 +34,12 @@ module.exports = {
       screens: {
         "3xl": "2160px",
         "4xl": "3000px",
+      },
+      width: {
+        "200px": "200px",
+      },
+      height: {
+        "38px": "38px",
       },
     },
   },

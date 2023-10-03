@@ -9,6 +9,7 @@ const ExchangeIcon = dynamic(() => import("./@icons/ExchangeIcon"));
 const MenuIcon = dynamic(() => import("./@icons/MenuIcon"));
 const CloseIcon = dynamic(() => import("./@icons/CloseIcon"));
 const DownloadIcon = dynamic(() => import("./@icons/DownloadIcon"));
+const ConnectWalletIcon = dynamic(() => import("./@icons/ConnectWalletIcon"));
 //atoms
 const DropdownButton = dynamic(() => import("./atoms/DropdownButton"));
 const DropdownItem = dynamic(() => import("./atoms/DropdownItem"));
@@ -21,6 +22,7 @@ const LoadCircle = dynamic(() => import("./atoms/LoadCircle"));
 const TabBarItem = dynamic(() => import("./atoms/TabBarItem"));
 const ImageShimmer = dynamic(() => import("./atoms/ImageShimmer"));
 const Logo = dynamic(() => import("./atoms/Logo"));
+const ConnectWallet = dynamic(() => import("./atoms/ConnectWallet"));
 //molecules
 const PageHead = dynamic(() => import("./molecules/PageHead"));
 const Dropdown = dynamic(() => import("./molecules/Dropdown"));
@@ -76,5 +78,7 @@ export {
   ImageModal,
   HeaderContent,
   AboutView,
-  FooterLinks
+  FooterLinks,
+  ConnectWallet,
+  ConnectWalletIcon
 }

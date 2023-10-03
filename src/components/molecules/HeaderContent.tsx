@@ -1,5 +1,5 @@
 import { FC, useState } from "react";
-import { CloseIcon, Logo, Menu, MenuIcon } from "@components";
+import { CloseIcon, ConnectWallet, Logo, Menu, MenuIcon } from "@components";
 import { AnimatePresence } from "framer-motion";
 
 const HeaderContent: FC = () => {
@@ -7,7 +7,8 @@ const HeaderContent: FC = () => {
   return (
     <div className="w-screen flex items-center justify-between px-4 md:px-6 py-4 z-20">
       <Logo />
-      <AnimatePresence mode="wait">
+      <ConnectWallet />
+      {/*  <AnimatePresence mode="wait">
         {!openMenu ? (
           <div
             key="menu-icon"
@@ -26,7 +27,7 @@ const HeaderContent: FC = () => {
         )}
       </AnimatePresence>
 
-      <Menu toggleMenu={setOpenMenu} open={openMenu} />
+      <Menu toggleMenu={setOpenMenu} open={openMenu} /> */}
     </div>
   );
 };
