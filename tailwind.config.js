@@ -7,9 +7,11 @@ module.exports = {
     extend: {
       backgroundImage: {
         particles: "url('/images/particles.png')",
-        button: "url('/images/button-outline.svg')",
-        "button-active": "url('/images/button-outline-active.svg')",
-        "button-hover": "url('/images/button-outline-hover.svg')",
+        button: "url('/images/buttons/button-outline.svg')",
+        "button-active": "url('/images/buttons/button-outline-active.svg')",
+        "button-hover": "url('/images/buttons/button-outline-hover.svg')",
+        "navigation-highlight":
+          "url('/images/buttons/navigation-highlight.svg')",
         "white-gradient": `linear-gradient(360.58deg, #FFFFFF 43.76%, rgba(255, 255, 255, 0) 106.82%)`,
       },
       fontFamily: {
