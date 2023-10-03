@@ -58,21 +58,26 @@ html {
 }
 
 /* with bg image */
-/* .custom-button {
+/* .wallet-button {
   @apply !bg-button cursor-pointer !flex !items-center !justify-start !uppercase !text-light-red !w-[200px] !h-[36px]
   hover:!bg-button-hover hover:!bg-opacity-100 !duration-200 active:!bg-button-active disabled:!opacity-60 disabled:!cursor-not-allowed !rounded-none
   text-xl text-center font-teko leading-none tracking-wider;
 } */
 
+.button-template {
+  @apply uppercase border border-light-red border-opacity-20 bg-light-red bg-opacity-20 rounded-none;
+}
+.button-transitions {
+  @apply transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed
+  hover:bg-opacity-30 active:bg-opacity-10;
+}
 /* without bg image */
-.custom-button {
-  @apply cursor-pointer !flex !items-center !justify-start !uppercase !text-light-red !w-[200px] !h-[36px] border border-light-red border-opacity-20
-  bg-light-red bg-opacity-20 !duration-200 disabled:!opacity-60 disabled:!cursor-not-allowed !rounded-none
-  hover:bg-opacity-30 active:bg-opacity-10
+.connect-button {
+  @apply button-template button-transitions flex items-center justify-start text-light-red w-[200px] h-[36px] 
   text-xl text-center font-teko leading-none tracking-wider;
 }
 
-.custom-button p {
+.connect-button p {
   @apply pt-1.5;
 }
 
@@ -92,6 +97,31 @@ html {
   position: absolute;
 }
 
+.navigation {
+  @apply w-[400px] xl:w-[500px] 2xl:w-[600px] h-[54px] flex justify-between items-center
+  pr-4;
+  filter: drop-shadow(0px 0px 0px rgba(40, 11, 11, 0.60)) drop-shadow(0px 14px 30px rgba(40, 11, 11, 0.59)) drop-shadow(0px 55px 55px rgba(40, 11, 11, 0.51)) drop-shadow(0px 124px 74px rgba(40, 11, 11, 0.30)) drop-shadow(0px 220px 88px rgba(40, 11, 11, 0.09)) drop-shadow(0px 343px 96px rgba(40, 11, 11, 0.01)); 
+  backdrop-filter: blur(5px);
+}
+
+.navigation-symbol {
+  @apply w-[75px] h-full centered-row border-r-[1px] border-light-red border-opacity-40;
+  background-color: rgba(30, 4, 7, 0.5);
+  box-shadow: 0px 0px 15px 0px rgba(235, 105, 118, 0.15) inset;
+  color: #FBE1E3;
+  text-shadow: 0px 0px 0.36000001430511475px #EB6976, 0px 0px 0.7200000286102295px #EB6976, 0px 0px 2.5199999809265137px #EB6976, 0px 0px 5.039999961853027px #EB6976, 0px 0px 8.640000343322754px #EB6976, 0px 0px 15.119999885559082px #EB6976;
+  /* font-family: VTC Spike Trial; */
+  font-family: Teko;
+  font-size: 35px;
+  padding-top: 4px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.23px;
+  text-transform: uppercase;
+}
+
+
 /* Wallet Adapter */
 
 .wallet-adapter-modal-wrapper { 
@@ -105,4 +135,13 @@ html {
 }
 .wallet-adapter-modal-button-close{
   @apply !bg-transparent;
+}
+
+/*  Layout  */
+
+.centered-row {
+  @apply flex items-center justify-center;
+}
+.centered-col {
+  @apply flex flex-col items-center justify-center;
 }

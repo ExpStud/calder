@@ -15,7 +15,7 @@ const ConnectWallet: FC = () => {
   };
 
   return (
-    <button className="custom-button" onClick={() => handleClick()}>
+    <button className="connect-button" onClick={() => handleClick()}>
       <div className="connect-icon">
         <ConnectWalletIcon />
       </div>
