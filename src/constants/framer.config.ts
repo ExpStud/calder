@@ -189,3 +189,21 @@ export const imageDropAnimation = (
   eyit: { x: -40 },
   transition: { duration: 0.45, ease: "easeInOut", delay: delay ?? 0 },
 });
+
+export const navigationVariants = {
+  hidden: { opacity: 0, y: -10 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { staggerChildren: 0.15, ease: "easeInOut" },
+  },
+};
+
+export const navigationItemVariants = {
+  hidden: { opacity: 0, x: 0 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.5, ease: "easeInOut" },
+  },
+};

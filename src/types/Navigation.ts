@@ -4,4 +4,5 @@ export interface Navigation {
   name: string;
   label: string;
   disabled?: boolean;
+  href: string;
 }

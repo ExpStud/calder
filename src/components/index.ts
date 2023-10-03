@@ -33,12 +33,14 @@ const IconBar = dynamic(() => import("./molecules/IconBar"));
 const SplashScreen = dynamic(() => import("./molecules/SplashScreen"));
 const HeaderContent = dynamic(() => import("./organisms/HeaderContent"));
 const FooterLinks = dynamic(() => import("./molecules/FooterLinks"));
-const Navigation = dynamic(() => import("./molecules/Navigation"));
+const NavigationDropdown = dynamic(() => import("./molecules/NavigationDropdown"));
+const NavigationContent = dynamic(() => import("./molecules/NavigationContent"));
 //organisms
 const Header = dynamic(() => import("./organisms/Header"));
 const Footer = dynamic(() => import("./organisms/Footer"));
 const ImageModal = dynamic(() => import("./organisms/ImageModal"));
 const Menu = dynamic(() => import("./organisms/Menu"));
+const Navigation = dynamic(() => import("./organisms/Navigation"));
 //templates
 const PageLayout = dynamic(() => import("./templates/PageLayout"));
 const LandingView = dynamic(() => import("./templates/LandingView"));
@@ -82,5 +84,7 @@ export {
   FooterLinks,
   ConnectWallet,
   ConnectWalletIcon,
-  Navigation
+  Navigation,
+  NavigationDropdown,
+  NavigationContent
 }
