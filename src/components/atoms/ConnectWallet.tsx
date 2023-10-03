@@ -2,6 +2,7 @@ import { useWallet } from "@solana/wallet-adapter-react";
 import { useWalletModal } from "@solana/wallet-adapter-react-ui";
 import { FC } from "react";
 import { ConnectWalletIcon } from "@components";
+import Image from "next/image";
 
 const ConnectWallet: FC = () => {
   const { publicKey, connected, disconnect } = useWallet();
@@ -14,7 +15,7 @@ const ConnectWallet: FC = () => {
 
   return (
     <button className="custom-button" onClick={() => handleClick()}>
-      <div className="flex items-center justify-center border-r-[1px] h-full px-3 border-light-red border-opacity-[.2] mr-2">
+      <div className="connect-icon">
         <ConnectWalletIcon />
       </div>
       <p>
