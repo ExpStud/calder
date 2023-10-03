@@ -1,14 +1,14 @@
 import { dropdownAnimations, dropdownItemsAnimations } from "@constants";
 import { DropdownButton, DropdownItem } from "@components";
-import { Rulebreakers } from "@types";
+import { Collection } from "@types";
 import { FC, HTMLAttributes, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useOutsideAlerter } from "@hooks";
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
-  handleClick: (item: Rulebreakers) => void;
+  handleClick: (item: Collection) => void;
   label: string;
-  collections: Rulebreakers[];
+  collections: Collection[];
   disabled?: boolean;
 }
 
@@ -26,7 +26,7 @@ const Dropdown: FC<Props> = (props: Props) => {
   const ref = useRef(null);
   useOutsideAlerter(ref, () => setDidHover(false));
 
-  const onSelect = (item: Rulebreakers) => {
+  const onSelect = (item: Collection) => {
     handleClick(item);
     setDidHover(false);
   };
@@ -57,7 +57,7 @@ const Dropdown: FC<Props> = (props: Props) => {
           >
             <motion.ul className="rounded-sm shadow max-h-[250px] w-screen md:w-96 overflow-y-auto z-10 font-secondary bg-mid-gray left-1/2 transform -translate-x-1/2">
               {collections &&
-                collections.map((item: Rulebreakers) => (
+                collections.map((item: Collection) => (
                   <DropdownItem
                     item={item}
                     handleClick={onSelect}

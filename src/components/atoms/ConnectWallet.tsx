@@ -2,7 +2,8 @@ import { useWallet } from "@solana/wallet-adapter-react";
 import { useWalletModal } from "@solana/wallet-adapter-react-ui";
 import { FC } from "react";
 import { ConnectWalletIcon } from "@components";
-import Image from "next/image";
+import { AnimatePresence, motion } from "framer-motion";
+import { fastExitAnimation } from "src/constants";
 
 const ConnectWallet: FC = () => {
   const { publicKey, connected, disconnect } = useWallet();
@@ -18,13 +19,19 @@ const ConnectWallet: FC = () => {
       <div className="connect-icon">
         <ConnectWalletIcon />
       </div>
-      <p>
-        {publicKey
-          ? publicKey.toBase58().slice(0, 4) +
-            ".." +
-            publicKey.toBase58().slice(-4)
-          : "Connect Wallet"}
-      </p>
+      <AnimatePresence mode="wait">
+        {publicKey ? (
+          <motion.p key="wallet" {...fastExitAnimation}>
+            {publicKey.toBase58().slice(0, 4) +
+              ".." +
+              publicKey.toBase58().slice(-4)}
+          </motion.p>
+        ) : (
+          <motion.p key="connect" {...fastExitAnimation}>
+            Connect Wallet
+          </motion.p>
+        )}
+      </AnimatePresence>
     </button>
   );
 };
