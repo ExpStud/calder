@@ -20,20 +20,25 @@ module.exports = {
         "teko-thin": ["Teko-Thin"],
       },
       colors: {
-        //calder
-        "light-red": "#EB6976",
-        "dark-red": "#120505",
-        "dark-red-1": "#562527",
-        "red-010": "#391415", //light red opacity 10
-        "red-020": "#4f1e20", //light red opacity 20
-        "shine-rgba": "rgba(233, 104, 116, 0.60)",
-        "custom-white": "#FDF0F1",
         //template
         "custom-black": "#121212",
         "custom-yellow": "#FFBA21",
         "custom-green": "#56BC78",
         "custom-orange": "#FF5722",
         "custom-red": "#DF1D00",
+        //calder
+        "custom-white": "#FDF0F1",
+        "light-red": "#EB6976",
+        "dark-red": "#120505",
+        "dark-red-1": "#562527",
+        "red-010": "#391415", //light red opacity 10
+        "red-020": "#4f1e20", //light red opacity 20
+        "shine-rgba": "rgba(233, 104, 116, 0.60)",
+        audio: "#423A3B",
+        "audio-hover": "#4B4949",
+        "audio-active": "#392C2D",
+        "audio-border": "#5F6A6A",
+        "audio-dark-bg": "#28292A",
       },
       screens: {
         "3xl": "2160px",

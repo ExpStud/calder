@@ -186,7 +186,7 @@ export const imageDropAnimation = (
 ) => ({
   initial: { y: -40, opacity: 0.25 },
   animate: { y: animate ? -20 : 0, opacity: 1 },
-  eyit: { x: -40 },
+  exit: { x: -40 },
   transition: { duration: 0.45, ease: "easeInOut", delay: delay ?? 0 },
 });
 
@@ -205,5 +205,18 @@ export const navigationItemVariants = {
     opacity: 1,
     x: 0,
     transition: { duration: 0.5, ease: "easeInOut" },
+  },
+  exit: { opacity: 0, x: 0 }, 
+};
+
+
+export const audioDropdownAnimation = {
+  initial: { opacity: 0, y: -40},
+  animate: { opacity: 1, y: 0 },
+  exit: { opacity: 0, y: 0, transition: {duration: 0.25} },
+  transition: { 
+    opacity: { duration: 0.85}, 
+    y: { duration: 0.25 }, 
+    ease: "easeIn",
   },
 };

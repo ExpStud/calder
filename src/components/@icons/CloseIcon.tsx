@@ -8,18 +8,27 @@ const CloseIcon: FC<Props> = (props: Props) => {
   const { size = 50, className } = props;
   return (
     <svg
-      width={size}
-      height={size}
-      viewBox="0 0 24 24"
-      fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={`transition-all duration-300 stroke-gray-300 hover:stroke-white stroke-light-gray ${className}`}
+      width="19"
+      height="19"
+      viewBox="0 0 19 19"
+      className="transition-all duration-200 fill-light-red opacity-60 hover:opacity-100"
     >
-      <path
-        d="M18 6L6 18M6 6L18 18"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
+      <rect
+        x="1.41418"
+        y="0.485291"
+        width="24"
+        height="2"
+        transform="rotate(45 1.41418 0.485291)"
+        fill="#EB6976"
+      />
+      <rect
+        x="0.097229"
+        y="16.9706"
+        width="24"
+        height="2"
+        transform="rotate(-45 0.097229 16.9706)"
+        fill="#EB6976"
       />
     </svg>
   );

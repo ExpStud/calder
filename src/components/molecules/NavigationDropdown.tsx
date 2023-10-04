@@ -52,6 +52,7 @@ const NavigationDropdown: FC<NavigationDropdownProps> = (
       <motion.div
         className={`navigation-container px-4 bg-red-010 flex items-center justify-between h-full overflow-hidden border border-light-red border-opacity-20`}
         variants={navigationItemVariants}
+        key="bottom"
       >
         <Image
           src="/images/iso.png"
@@ -60,7 +61,7 @@ const NavigationDropdown: FC<NavigationDropdownProps> = (
           height={103}
           className="overflow-hidden -mt-20"
         />
-        <div className="flex items-center gap-0 ">
+        <div className="flex items-center gap-1 ">
           <TwitterIcon />
           <DiscordIcon />
         </div>

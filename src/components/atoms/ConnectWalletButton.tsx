@@ -5,7 +5,7 @@ import { ConnectWalletIcon } from "@components";
 import { AnimatePresence, motion } from "framer-motion";
 import { fastExitAnimation } from "src/constants";
 
-const ConnectWallet: FC = () => {
+const ConnectWalletButton: FC = () => {
   const { publicKey, connected, disconnect } = useWallet();
   const { setVisible } = useWalletModal();
 
@@ -35,4 +35,4 @@ const ConnectWallet: FC = () => {
     </button>
   );
 };
-export default ConnectWallet;
+export default ConnectWalletButton;

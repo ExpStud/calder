@@ -60,16 +60,16 @@ html {
 /* Buttons, Connect Wallet Button */
 
 .button-template {
-  @apply uppercase border border-light-red border-opacity-20 bg-light-red bg-opacity-20 rounded-none;
+  @apply uppercase border rounded-none flex items-center justify-start h-[40px] w-[210px] text-xl text-center font-teko leading-none tracking-wider;
 }
+
 .button-transitions {
   @apply transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed
   hover:bg-opacity-30 active:bg-opacity-10;
 }
 
 .connect-button {
-  @apply button-template button-transitions flex items-center justify-start text-light-red w-[200px] h-[36px] 
-  text-xl text-center font-teko leading-none tracking-wider;
+  @apply button-template border-light-red border-opacity-20 button-transitions bg-light-red bg-opacity-20 text-light-red ;
 }
 
 .connect-button p {
@@ -92,16 +92,54 @@ html {
   position: absolute;
 }
 
+/* Audio Control */
+.audio-button {
+  @apply button-template transition-all duration-200 bg-audio hover:bg-audio-hover active:bg-audio-active !border !border-audio-border !border-opacity-100;
+}
+.audio-icon {
+  @apply relative flex items-center justify-center border-r-[1px] h-full px-3 border-audio-border mr-2; 
+ }
+.audio-icon-inactive {
+  @apply audio-icon;
+}
+ .audio-icon-inactive:after {
+  content: '';
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 9px 9px 0px 0;
+  border-color: rgba(185, 255, 255, 0.50) transparent transparent transparent;
+  left: 0;
+  top: 0;
+  margin: 4px;
+  position: absolute;
+ }
+ .audio-icon-active {
+  @apply audio-icon;
+}
+ .audio-icon-active:after{
+  content: '';
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 9px 9px 0px 0;
+  border-color: rgba(185, 255, 255, 0.50) transparent transparent transparent;
+  left: 0;
+  top: 0;
+  margin: 4px;
+  position: absolute;
+  filter: drop-shadow(0px 0px 0.7200000286102295px #B9FFFF) drop-shadow(0px 0px 1.440000057220459px #B9FFFF) drop-shadow(0px 0px 5.039999961853027px #B9FFFF) drop-shadow(0px 0px 10.079999923706055px #B9FFFF) drop-shadow(0px 0px 17.280000686645508px #B9FFFF) drop-shadow(0px 0px 30.239999771118164px #B9FFFF);
+ }
+
 /* Dropdown Navigation */
 
 .navigation {
-  @apply relative navigation-container flex justify-between items-center pr-4;
+  @apply relative navigation-container flex justify-between items-center pr-4 border-light-red border-opacity-20;
   
 }
 
 .navigation-container {
-  @apply w-[500px] 2xl:w-[600px] h-[54px];
-  /* filter: drop-shadow(0px 0px 0px rgba(40, 11, 11, 0.60)) drop-shadow(0px 14px 30px rgba(40, 11, 11, 0.59)) drop-shadow(0px 55px 55px rgba(40, 11, 11, 0.51)) drop-shadow(0px 124px 74px rgba(40, 11, 11, 0.30)) drop-shadow(0px 220px 88px rgba(40, 11, 11, 0.09)) drop-shadow(0px 343px 96px rgba(40, 11, 11, 0.01));  */
+  @apply w-[500px] xl:w-[600px] h-[54px];
 }
 
 .navigation-symbol {
@@ -127,7 +165,6 @@ html {
 .navigation-dropdown-item {
   @apply navigation-container cursor-pointer uppercase border-l border-r border-light-red border-opacity-20 bg-red-020 flex items-center gap-6 h-full
   transition-all duration-300 hover:bg-navigation-highlight;
-  /* box-shadow: 0px 1px 0px 0px rgba(235, 105, 118, 0.10), 0px -1px 0px 0px rgba(235, 105, 118, 0.10); */
 }
 
 

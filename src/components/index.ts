@@ -10,6 +10,7 @@ const MenuIcon = dynamic(() => import("./@icons/MenuIcon"));
 const CloseIcon = dynamic(() => import("./@icons/CloseIcon"));
 const DownloadIcon = dynamic(() => import("./@icons/DownloadIcon"));
 const ConnectWalletIcon = dynamic(() => import("./@icons/ConnectWalletIcon"));
+const AudioControlIcon = dynamic(() => import("./@icons/AudioControlIcon"));
 //atoms
 const DropdownButton = dynamic(() => import("./atoms/DropdownButton"));
 const DropdownItem = dynamic(() => import("./atoms/DropdownItem"));
@@ -22,7 +23,8 @@ const LoadCircle = dynamic(() => import("./atoms/LoadCircle"));
 const TabBarItem = dynamic(() => import("./atoms/TabBarItem"));
 const ImageShimmer = dynamic(() => import("./atoms/ImageShimmer"));
 const Logo = dynamic(() => import("./atoms/Logo"));
-const ConnectWallet = dynamic(() => import("./atoms/ConnectWallet"));
+const ConnectWalletButton = dynamic(() => import("./atoms/ConnectWalletButton"));
+const AudioControlButton = dynamic(() => import("./atoms/AudioControlButton"));
 //molecules
 const PageHead = dynamic(() => import("./molecules/PageHead"));
 const Dropdown = dynamic(() => import("./molecules/Dropdown"));
@@ -35,12 +37,14 @@ const HeaderContent = dynamic(() => import("./organisms/HeaderContent"));
 const FooterLinks = dynamic(() => import("./molecules/FooterLinks"));
 const NavigationDropdown = dynamic(() => import("./molecules/NavigationDropdown"));
 const NavigationContent = dynamic(() => import("./molecules/NavigationContent"));
+const AudioControlDropdown = dynamic(() => import("./molecules/AudioControlDropdown"));
 //organisms
 const Header = dynamic(() => import("./organisms/Header"));
 const Footer = dynamic(() => import("./organisms/Footer"));
 const ImageModal = dynamic(() => import("./organisms/ImageModal"));
 const Menu = dynamic(() => import("./organisms/Menu"));
 const Navigation = dynamic(() => import("./organisms/Navigation"));
+const AudioControl = dynamic(() => import("./organisms/AudioControl"));
 //templates
 const PageLayout = dynamic(() => import("./templates/PageLayout"));
 const LandingView = dynamic(() => import("./templates/LandingView"));
@@ -82,9 +86,13 @@ export {
   HeaderContent,
   AboutView,
   FooterLinks,
-  ConnectWallet,
+  ConnectWalletButton,
   ConnectWalletIcon,
   Navigation,
   NavigationDropdown,
-  NavigationContent
+  NavigationContent,
+  AudioControl,
+  AudioControlButton,
+  AudioControlIcon,
+  AudioControlDropdown
 }
