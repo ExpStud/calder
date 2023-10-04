@@ -3,8 +3,9 @@ import { motion } from "framer-motion";
 import { Navigation } from "@types";
 import { useRouter } from "next/router";
 import { navigationVariants, navigationItemVariants } from "@constants";
-import { NavigationContent } from "@components";
+import { DiscordIcon, NavigationContent, TwitterIcon } from "@components";
 import { useOutsideAlerter } from "@hooks";
+import Image from "next/image";
 
 interface NavigationDropdownProps {
   items: Navigation[];
@@ -27,28 +28,43 @@ const NavigationDropdown: FC<NavigationDropdownProps> = (
 
   return (
     <motion.div
-      className="absolute "
+      className="absolute"
       variants={navigationVariants}
       initial="hidden"
       animate="visible"
       ref={ref}
-      // onMouseLeave={() => close()}
     >
-      {items.map((item: Navigation, index) => {
-        if (selectedItem && selectedItem.id === index) return <></>;
-        return (
-          <motion.div
-            key={index}
-            className={`navigation-dropdown-item ${
-              index + 1 === items.length ? "border-b" : ""
-            }`}
-            variants={navigationItemVariants}
-            onClick={() => handleClick(item)}
-          >
-            <NavigationContent navigation={item} />
-          </motion.div>
-        );
-      })}
+      <div className="navigation-dropdown">
+        {items.map((item: Navigation, index) => {
+          if (selectedItem && selectedItem.id === index) return <></>;
+          return (
+            <motion.div
+              key={index}
+              className={`navigation-dropdown-item`}
+              variants={navigationItemVariants}
+              onClick={() => handleClick(item)}
+            >
+              <NavigationContent navigation={item} />
+            </motion.div>
+          );
+        })}
+      </div>
+      <motion.div
+        className={`navigation-container px-4 bg-red-010 flex items-center justify-between h-full overflow-hidden border border-light-red border-opacity-20`}
+        variants={navigationItemVariants}
+      >
+        <Image
+          src="/images/iso.png"
+          alt="ISO"
+          width={247}
+          height={103}
+          className="overflow-hidden -mt-20"
+        />
+        <div className="flex items-center gap-0 ">
+          <TwitterIcon />
+          <DiscordIcon />
+        </div>
+      </motion.div>
     </motion.div>
   );
 };

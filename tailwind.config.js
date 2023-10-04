@@ -24,6 +24,8 @@ module.exports = {
         "light-red": "#EB6976",
         "dark-red": "#120505",
         "dark-red-1": "#562527",
+        "red-010": "#391415", //light red opacity 10
+        "red-020": "#4f1e20", //light red opacity 20
         "shine-rgba": "rgba(233, 104, 116, 0.60)",
         "custom-white": "#FDF0F1",
         //template

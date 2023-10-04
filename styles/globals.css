@@ -57,12 +57,7 @@ html {
   @apply py-0.5 transition-all duration-200 hover:opacity-50 opacity-80 md:opacity-100 text-light-red;
 }
 
-/* with bg image */
-/* .wallet-button {
-  @apply !bg-button cursor-pointer !flex !items-center !justify-start !uppercase !text-light-red !w-[200px] !h-[36px]
-  hover:!bg-button-hover hover:!bg-opacity-100 !duration-200 active:!bg-button-active disabled:!opacity-60 disabled:!cursor-not-allowed !rounded-none
-  text-xl text-center font-teko leading-none tracking-wider;
-} */
+/* Buttons, Connect Wallet Button */
 
 .button-template {
   @apply uppercase border border-light-red border-opacity-20 bg-light-red bg-opacity-20 rounded-none;
@@ -71,7 +66,7 @@ html {
   @apply transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed
   hover:bg-opacity-30 active:bg-opacity-10;
 }
-/* without bg image */
+
 .connect-button {
   @apply button-template button-transitions flex items-center justify-start text-light-red w-[200px] h-[36px] 
   text-xl text-center font-teko leading-none tracking-wider;
@@ -97,14 +92,16 @@ html {
   position: absolute;
 }
 
+/* Dropdown Navigation */
+
 .navigation {
-  @apply relative navigaiton-container flex justify-between items-center pr-4;
+  @apply relative navigation-container flex justify-between items-center pr-4;
   
 }
 
-.navigaiton-container {
+.navigation-container {
   @apply w-[500px] 2xl:w-[600px] h-[54px];
-  filter: drop-shadow(0px 0px 0px rgba(40, 11, 11, 0.60)) drop-shadow(0px 14px 30px rgba(40, 11, 11, 0.59)) drop-shadow(0px 55px 55px rgba(40, 11, 11, 0.51)) drop-shadow(0px 124px 74px rgba(40, 11, 11, 0.30)) drop-shadow(0px 220px 88px rgba(40, 11, 11, 0.09)) drop-shadow(0px 343px 96px rgba(40, 11, 11, 0.01)); 
+  /* filter: drop-shadow(0px 0px 0px rgba(40, 11, 11, 0.60)) drop-shadow(0px 14px 30px rgba(40, 11, 11, 0.59)) drop-shadow(0px 55px 55px rgba(40, 11, 11, 0.51)) drop-shadow(0px 124px 74px rgba(40, 11, 11, 0.30)) drop-shadow(0px 220px 88px rgba(40, 11, 11, 0.09)) drop-shadow(0px 343px 96px rgba(40, 11, 11, 0.01));  */
 }
 
 .navigation-symbol {
@@ -123,11 +120,20 @@ html {
   letter-spacing: 0.23px;
   text-transform: uppercase;
 }
-
+.navigation-dropdown {
+  filter: drop-shadow(0px 0px 0px rgba(40, 11, 11, 0.60)) drop-shadow(0px 14px 30px rgba(40, 11, 11, 0.59));
+  backdrop-filter: blur(5px);
+}
 .navigation-dropdown-item {
-  @apply navigaiton-container cursor-pointer uppercase border-l border-r border-light-red border-opacity-20 bg-light-red bg-opacity-20 flex items-center gap-6 h-full
+  @apply navigation-container cursor-pointer uppercase border-l border-r border-light-red border-opacity-20 bg-red-020 flex items-center gap-6 h-full
   transition-all duration-300 hover:bg-navigation-highlight;
   /* box-shadow: 0px 1px 0px 0px rgba(235, 105, 118, 0.10), 0px -1px 0px 0px rgba(235, 105, 118, 0.10); */
+}
+
+
+
+.icon-transitions {
+  @apply transition-all duration-300  hover:bg-light-red hover:bg-opacity-10 p-2.5;
 }
 
 

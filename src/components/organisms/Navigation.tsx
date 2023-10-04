@@ -26,7 +26,7 @@ const Navigation: FC = () => {
 
   return (
     <div className="relative">
-      <div className="navigation button-template">
+      <div className="navigation button-template !bg-red-020 !bg-opacity-70">
         {/* corner pieces */}
         <Image
           src="/images/buttons/top-left-corner.svg"

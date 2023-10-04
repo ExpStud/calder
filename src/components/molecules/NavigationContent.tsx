@@ -8,7 +8,7 @@ interface Props {
 const NavigationContent: FC<Props> = (props: Props) => {
   const { navigation, showSymbol = false } = props;
   return (
-    <div className="flex items-center gap-6 h-full">
+    <div className="flex items-center gap-6 h-full ">
       <p className={`w-[75px] ${showSymbol ? "navigation-symbol" : ""}`}>
         {showSymbol && navigation.symbol}
       </p>
