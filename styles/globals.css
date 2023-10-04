@@ -131,6 +131,13 @@ html {
   filter: drop-shadow(0px 0px 0.7200000286102295px #B9FFFF) drop-shadow(0px 0px 1.440000057220459px #B9FFFF) drop-shadow(0px 0px 5.039999961853027px #B9FFFF) drop-shadow(0px 0px 10.079999923706055px #B9FFFF) drop-shadow(0px 0px 17.280000686645508px #B9FFFF) drop-shadow(0px 0px 30.239999771118164px #B9FFFF);
  }
 
+ .audio-controller {
+  @apply flex items-center justify-between h-[40px] divide-x divide-audio-border border-t border-audio-border;
+ }
+ .audio-controller button{
+  @apply centered-row px-4 h-full transition-all duration-300 hover:bg-audio-button-hover active:bg-audio-dark-bg;
+ }
+
 /* Dropdown Navigation */
 
 .navigation {
@@ -166,8 +173,6 @@ html {
   @apply navigation-container cursor-pointer uppercase border-l border-r border-light-red border-opacity-20 bg-red-020 flex items-center gap-6 h-full
   transition-all duration-300 hover:bg-navigation-highlight;
 }
-
-
 
 .icon-transitions {
   @apply transition-all duration-300  hover:bg-light-red hover:bg-opacity-10 p-2.5;

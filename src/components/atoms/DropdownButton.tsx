@@ -4,17 +4,17 @@ import { ButtonHTMLAttributes, FC } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
-  isActive: boolean;
+  isPlaying: boolean;
   label: string;
 }
 
 const DropdownButton: FC<Props> = (props: Props) => {
-  const { isActive, label, ...componentProps } = props;
+  const { isPlaying, label, ...componentProps } = props;
 
   return (
     <motion.button
       className={`relative flex flex-col md:whitespace-nowrap text-6xl lg:text-7xl rounded-xl items-center transition-colors duration-500 opacity-60  ${
-        isActive ? "text-white" : "text-white"
+        isPlaying ? "text-white" : "text-white"
       }
       ${
         componentProps.disabled
@@ -28,7 +28,7 @@ const DropdownButton: FC<Props> = (props: Props) => {
         {label}
       </p>
       <motion.div
-        animate={isActive ? "end" : "start"}
+        animate={isPlaying ? "end" : "start"}
         variants={arrowVariants}
         className="pt-3"
       >

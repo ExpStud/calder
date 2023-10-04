@@ -39,6 +39,7 @@ module.exports = {
         "audio-active": "#392C2D",
         "audio-border": "#5F6A6A",
         "audio-dark-bg": "#28292A",
+        "audio-button-hover": "#363233",
       },
       screens: {
         "3xl": "2160px",

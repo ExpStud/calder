@@ -45,7 +45,7 @@ const Dropdown: FC<Props> = (props: Props) => {
       className={`relative ${className}`}
       ref={ref}
     >
-      <DropdownButton isActive={didHover} label={label} disabled={disabled} />
+      <DropdownButton isPlaying={didHover} label={label} disabled={disabled} />
       <AnimatePresence mode="wait">
         {didHover && (
           <motion.div

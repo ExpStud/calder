@@ -1,87 +1,108 @@
-import { FC, useRef } from "react";
-
-import { useOutsideAlerter } from "@hooks";
+import { Dispatch, FC, SetStateAction, useRef } from "react";
 import {
   audioDropdownAnimation,
-  navigationItemVariants,
-  navigationVariants,
+  enterAnimation,
+  fastExitAnimation,
 } from "@constants";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
+import Image from "next/image";
 
 interface Props {
-  close: () => void;
+  isPlaying: boolean;
+  setIsPlaying: Dispatch<SetStateAction<boolean>>;
 }
 const AudioControlDropdown: FC<Props> = (props: Props) => {
-  const { close } = props;
+  const { isPlaying, setIsPlaying } = props;
 
   const ref = useRef<HTMLDivElement>(null);
-  useOutsideAlerter(ref, () => close());
 
   return (
     <motion.div
       key="acd"
       {...audioDropdownAnimation}
-      // variants={navigationVariants}
-      // initial="hidden"
-      // animate="visible"
       ref={ref}
       className="absolute bg-audio border-b border-l border-r border-audio-border w-[210px] z-20"
     >
+      {/* song display */}
       <motion.div
-        variants={navigationItemVariants}
-        className="h-[120px] bg-audio-dark-bg"
-      ></motion.div>
-      <motion.div variants={navigationItemVariants} className="">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="198"
-          height="41"
-          viewBox="0 0 198 41"
-          fill="none"
-        >
-          {/* center pause/ button */}
-          <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M98 12H94V28H98V12ZM105 12H101V28H105V12Z"
-            fill="#B9FFFF"
-          />
-          {/* back button */}
-          <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M24 13H21V27H24V20L34 27V13L24 20V13Z"
-            fill="#B9FFFF"
-          />
-          {/* next button */}
-          <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M174 13H177V27H174V20L164 27V13L174 20V13Z"
-            fill="#B9FFFF"
-          />
-          {/* top border */}
-          <rect width="198" height="1" fill="#B9FFFF" fill-opacity="0.12" />
-          {/* left bprder */}
-          <rect
-            x="55"
-            y="1"
-            width="1"
-            height="40"
-            fill="#B9FFFF"
-            fill-opacity="0.12"
-          />
-          {/* right border */}
-          <rect
-            x="142"
-            y="1"
-            width="1"
-            height="40"
-            fill="#B9FFFF"
-            fill-opacity="0.12"
-          />
-        </svg>
+        {...enterAnimation}
+        className="h-[120px] bg-audio-dark-bg centered-row"
+      >
+        <Image
+          src="/images/audio-screen.svg"
+          width={190}
+          height={115}
+          alt="Audio"
+          className="pt-1.5"
+        />
       </motion.div>
+      {/* actions */}
+      <div className="audio-controller ">
+        {/* back button */}
+        <button className="w-1/4">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="14"
+            height="14"
+            viewBox="21 13 10 14"
+          >
+            <path
+              fillRule="evenodd"
+              clipRule="evenodd"
+              d="M24 13H21V27H24V20L34 27V13L24 20V13Z"
+              fill="#B9FFFF"
+            />
+          </svg>
+        </button>
+        {/* pause/play */}
+        <button className="w-1/2">
+          <AnimatePresence mode="wait">
+            {isPlaying ? (
+              <motion.svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="10"
+                height="16"
+                viewBox="94 12 11 16"
+                {...fastExitAnimation}
+              >
+                <path
+                  fillRule="evenodd"
+                  clipRule="evenodd"
+                  d="M98 12H94V28H98V12ZM105 12H101V28H105V12Z"
+                  fill="#B9FFFF"
+                />
+              </motion.svg>
+            ) : (
+              <motion.svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="20"
+                viewBox="0 0 14 14"
+                className="scale-125"
+                {...fastExitAnimation}
+              >
+                <path d="M2 3v8l9-4-9-4z" fill="#B9FFFF" />
+              </motion.svg>
+            )}
+          </AnimatePresence>
+        </button>
+        {/* next button */}
+        <button className="w-1/4">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="14"
+            height="14"
+            viewBox="164 13 13 14"
+          >
+            <path
+              fillRule="evenodd"
+              clipRule="evenodd"
+              d="M174 13H177V27H174V20L164 27V13L174 20V13Z"
+              fill="#B9FFFF"
+            />
+          </svg>
+        </button>
+      </div>
     </motion.div>
   );
 };

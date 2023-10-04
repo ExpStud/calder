@@ -2,30 +2,25 @@ import { Dispatch, FC, HTMLAttributes, SetStateAction } from "react";
 import { ArrowIcon, AudioControlIcon } from "@components";
 
 interface Props extends HTMLAttributes<HTMLButtonElement> {
-  isActive: boolean;
+  isPlaying: boolean;
   open: boolean;
   setOpen: Dispatch<SetStateAction<boolean>>;
 }
 
 const AudioControlButton: FC<Props> = (props: Props) => {
-  const { isActive, open, setOpen } = props;
-  console.log("open ", open);
-  const handleClick = () => {
-    if (!open) setOpen(true);
-  };
-
+  const { isPlaying, open, setOpen } = props;
   return (
     <button
       className="audio-button !justify-between z-10"
-      onClick={() => handleClick()}
+      onClick={() => setOpen(!open)}
     >
       <div className="flex h-full items-center">
         <div
           className={` ${
-            isActive ? "audio-icon-active" : "audio-icon-inactive"
+            isPlaying ? "audio-icon-active" : "audio-icon-inactive"
           }`}
         >
-          <AudioControlIcon isActive={isActive} />
+          <AudioControlIcon isPlaying={isPlaying} />
         </div>
         <p className="font-teko pt-1">Audio Control</p>
       </div>

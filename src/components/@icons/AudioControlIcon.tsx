@@ -1,10 +1,10 @@
 import React, { FC, SVGProps } from "react";
 
 interface Props extends SVGProps<SVGSVGElement> {
-  isActive: boolean;
+  isPlaying: boolean;
 }
 const ConnectWalletIcon: FC<Props> = (props: Props) => {
-  const { className, isActive = false } = props;
+  const { className, isPlaying = false } = props;
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -23,14 +23,14 @@ const ConnectWalletIcon: FC<Props> = (props: Props) => {
       <rect y="14" width="4" height="1" fill="#B9FFFF" />
       <rect x="6" y="14" width="4" height="1" fill="#B9FFFF" />
       <rect x="12" y="14" width="4" height="1" fill="#B9FFFF" />
-      {isActive && <rect y="12" width="4" height="1" fill="#B9FFFF" />}
-      {isActive && <rect x="6" y="12" width="4" height="1" fill="#B9FFFF" />}
-      {isActive && <rect x="12" y="12" width="4" height="1" fill="#B9FFFF" />}
-      {isActive && <rect y="10" width="4" height="1" fill="#B9FFFF" />}
-      {isActive && <rect x="6" y="10" width="4" height="1" fill="#B9FFFF" />}
-      {isActive && <rect x="6" y="8" width="4" height="1" fill="#B9FFFF" />}
-      {isActive && <rect x="6" y="6" width="4" height="1" fill="#B9FFFF" />}
-      {isActive && <rect x="6" y="4" width="4" height="1" fill="#B9FFFF" />}
+      {isPlaying && <rect y="12" width="4" height="1" fill="#B9FFFF" />}
+      {isPlaying && <rect x="6" y="12" width="4" height="1" fill="#B9FFFF" />}
+      {isPlaying && <rect x="12" y="12" width="4" height="1" fill="#B9FFFF" />}
+      {isPlaying && <rect y="10" width="4" height="1" fill="#B9FFFF" />}
+      {isPlaying && <rect x="6" y="10" width="4" height="1" fill="#B9FFFF" />}
+      {isPlaying && <rect x="6" y="8" width="4" height="1" fill="#B9FFFF" />}
+      {isPlaying && <rect x="6" y="6" width="4" height="1" fill="#B9FFFF" />}
+      {isPlaying && <rect x="6" y="4" width="4" height="1" fill="#B9FFFF" />}
     </svg>
   );
 };
