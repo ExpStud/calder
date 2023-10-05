@@ -1,4 +1,6 @@
 import dynamic from "next/dynamic";
+//animations
+const TextSlidingAnimation = dynamic(() => import("./@animations/TextSlidingAnimation"));
 
 //icons
 const ArrowIcon = dynamic(() => import("./@icons/ArrowIcon"));
@@ -38,6 +40,8 @@ const FooterLinks = dynamic(() => import("./molecules/FooterLinks"));
 const NavigationDropdown = dynamic(() => import("./molecules/NavigationDropdown"));
 const NavigationContent = dynamic(() => import("./molecules/NavigationContent"));
 const AudioControlDropdown = dynamic(() => import("./molecules/AudioControlDropdown"));
+const AudioControlDisplay = dynamic(() => import("./molecules/AudioControlDisplay"));
+const AudioControlActions = dynamic(() => import("./molecules/AudioControlActions"));
 //organisms
 const Header = dynamic(() => import("./organisms/Header"));
 const Footer = dynamic(() => import("./organisms/Footer"));
@@ -94,5 +98,8 @@ export {
   AudioControl,
   AudioControlButton,
   AudioControlIcon,
-  AudioControlDropdown
+  AudioControlDropdown,
+  AudioControlActions,
+  AudioControlDisplay,
+  TextSlidingAnimation
 }

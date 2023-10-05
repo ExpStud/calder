@@ -60,7 +60,7 @@ html {
 /* Buttons, Connect Wallet Button */
 
 .button-template {
-  @apply uppercase border rounded-none flex items-center justify-start h-[40px] w-[210px] text-xl text-center font-teko leading-none tracking-wider;
+  @apply uppercase border flex items-center justify-start h-[40px] w-[210px] text-xl text-center font-teko leading-none tracking-wider;
 }
 
 .button-transitions {
@@ -135,14 +135,13 @@ html {
   @apply flex items-center justify-between h-[40px] divide-x divide-audio-border border-t border-audio-border;
  }
  .audio-controller button{
-  @apply centered-row px-4 h-full transition-all duration-300 hover:bg-audio-button-hover active:bg-audio-dark-bg;
+  @apply centered-row px-4 h-full transition-all duration-200 hover:bg-audio-button-hover active:bg-audio-dark-bg;
  }
 
 /* Dropdown Navigation */
 
 .navigation {
   @apply relative navigation-container flex justify-between items-center pr-4 border-light-red border-opacity-20;
-  
 }
 
 .navigation-container {
