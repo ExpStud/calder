@@ -169,10 +169,11 @@ html {
   backdrop-filter: blur(5px);
 }
 .navigation-dropdown-item {
-  @apply navigation-container cursor-pointer uppercase border-l border-r border-light-red border-opacity-20 bg-red-020 flex items-center gap-6 h-full
-  transition-all duration-300 hover:bg-navigation-highlight;
+  @apply navigation-container cursor-pointer uppercase border-l border-r border-light-red border-opacity-20 bg-red-020 flex items-center gap-6 h-full;
 }
-
+.navigation-dropdown-item-transition {
+  @apply transition-all duration-300 hover:bg-navigation-highlight;
+}
 .icon-transitions {
   @apply transition-all duration-300  hover:bg-light-red hover:bg-opacity-10 p-2.5;
 }

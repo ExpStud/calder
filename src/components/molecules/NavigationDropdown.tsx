@@ -38,11 +38,20 @@ const NavigationDropdown: FC<NavigationDropdownProps> = (
     >
       <div className="navigation-dropdown">
         {items.map((item: Navigation, index) => {
-          if (selectedItem && selectedItem.id === index) return <></>;
+          if (
+            selectedItem &&
+            selectedItem.id === 0 &&
+            selectedItem.id === index
+          )
+            return <></>;
           return (
             <motion.div
               key={index}
-              className={`navigation-dropdown-item`}
+              className={`navigation-dropdown-item ${
+                item.disabled
+                  ? "!cursor-not-allowed"
+                  : "navigation-dropdown-item-transition"
+              }`}
               variants={navigationItemVariants}
               onClick={() => handleClick(item)}
             >

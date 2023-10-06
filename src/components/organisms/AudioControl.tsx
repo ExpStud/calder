@@ -29,18 +29,14 @@ const AudioControl: FC<Props> = (props: Props) => {
 
   const playNextSong = () => {
     if (!audioRef.current) return;
-    // pauseSong();
     setCurrentSong((prevState) => songs[(prevState.id + 1) % songs.length]);
-    // playSong();
   };
 
   const playPreviousSong = () => {
     if (!audioRef.current) return;
-    // pauseSong();
     setCurrentSong((prevState) =>
       prevState.id === 0 ? songs[songs.length - 1] : songs[prevState.id - 1]
     );
-    // playSong();
   };
 
   const checkIsPlaying = () => {
@@ -73,11 +69,11 @@ const AudioControl: FC<Props> = (props: Props) => {
 
   //
   useEffect(() => {
-    if (audioRef.current) {
+    if (audioRef.current && isPlaying) {
       audioRef.current.src = `/songs/${currentSong.name}.mp3`;
       playSong();
     }
-  }, [currentSong]);
+  }, [currentSong, isPlaying]);
 
   return (
     <div className={`relative ${className}`} {...componentProps} ref={ref}>
