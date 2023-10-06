@@ -197,6 +197,7 @@ export const navigationVariants = {
     y: 0,
     transition: { staggerChildren: 0.15, ease: "easeInOut" },
   },
+  exit: { opacity: 0, y: 0, transition: {duration: 10.25} },
 };
 
 export const navigationItemVariants = {
@@ -206,7 +207,7 @@ export const navigationItemVariants = {
     x: 0,
     transition: { duration: 0.5, ease: "easeInOut" },
   },
-  exit: { opacity: 0, x: 0 }, 
+  exit: { opacity: 0, x: 0, transition: {duration: 0.25}  }, 
 };
 
 

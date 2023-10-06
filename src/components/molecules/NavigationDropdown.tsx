@@ -32,7 +32,9 @@ const NavigationDropdown: FC<NavigationDropdownProps> = (
       variants={navigationVariants}
       initial="hidden"
       animate="visible"
+      exit="exit"
       ref={ref}
+      key="nav-dropdown"
     >
       <div className="navigation-dropdown">
         {items.map((item: Navigation, index) => {

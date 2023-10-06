@@ -69,13 +69,15 @@ const Navigation: FC = () => {
           )}
         </AnimatePresence>
       </div>
-      {open && (
-        <NavigationDropdown
-          items={navigation}
-          selectedItem={selectedNavigation}
-          close={() => setOpen(false)}
-        />
-      )}
+      <AnimatePresence mode="wait">
+        {open && (
+          <NavigationDropdown
+            items={navigation}
+            selectedItem={selectedNavigation}
+            close={() => setOpen(false)}
+          />
+        )}
+      </AnimatePresence>
     </div>
   );
 };
