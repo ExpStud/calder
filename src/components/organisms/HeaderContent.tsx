@@ -3,10 +3,10 @@ import { ConnectWalletButton, Navigation, AudioControl } from "@components";
 
 const HeaderContent: FC = () => {
   return (
-    <div className="w-screen flex items-start justify-between gap-6 px-4 md:px-6 py-4 z-20">
-      <AudioControl />
+    <div className="w-screen flex items-start justify-between gap-6 lg:px-6 lg:py-4 z-10 ">
+      <AudioControl className="!hidden lg:!flex" />
       <Navigation />
-      <ConnectWalletButton />
+      <ConnectWalletButton className="!hidden lg:!flex" />
     </div>
   );
 };

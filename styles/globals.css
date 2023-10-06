@@ -145,7 +145,7 @@ html {
 }
 
 .navigation-container {
-  @apply w-[500px] xl:w-[600px] h-[54px];
+  @apply w-screen lg:w-[500px] xl:w-[600px] h-[50px] md:h-[54px];
 }
 
 .navigation-symbol {

@@ -1,11 +1,13 @@
-import { FC, useEffect, useRef, useState } from "react";
+import { FC, HTMLAttributes, useEffect, useRef, useState } from "react";
 import { AudioControlButton, AudioControlDropdown } from "@components";
 import { AnimatePresence } from "framer-motion";
 import { useOutsideAlerter } from "@hooks";
 import { Song } from "@types";
 import { songs } from "@constants";
 
-const AudioControl: FC = () => {
+interface Props extends HTMLAttributes<HTMLDivElement> {}
+const AudioControl: FC<Props> = (props: Props) => {
+  const { className, ...componentProps } = props;
   const [open, setOpen] = useState<boolean>(false);
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
   const [currentSong, setCurrentSong] = useState<Song>(songs[0]);
@@ -78,7 +80,7 @@ const AudioControl: FC = () => {
   }, [currentSong]);
 
   return (
-    <div className="relative" ref={ref}>
+    <div className={`relative ${className}`} {...componentProps} ref={ref}>
       <AudioControlButton isPlaying={isPlaying} open={open} setOpen={setOpen} />
       <audio ref={audioRef} src={`/songs/${currentSong.name}.mp3`} />
 

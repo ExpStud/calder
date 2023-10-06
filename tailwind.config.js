@@ -42,6 +42,7 @@ module.exports = {
         "audio-button-hover": "#363233",
       },
       screens: {
+        xs: "360px",
         "3xl": "2160px",
         "4xl": "3000px",
       },
