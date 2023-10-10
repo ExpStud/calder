@@ -66,7 +66,7 @@ const PageLayout: FC<Props> = (props: Props) => {
         {footer && <Footer />}
 
         {/* modals */}
-        {assets && <SplashScreen assets={assets} />}
+        {/* {assets && <SplashScreen assets={assets} />} */}
         <AnimatePresence mode="wait">
           {ImageModalId !== -1 && (
             <ImageModal

@@ -25,19 +25,15 @@ const ConnectWalletButton: FC<Props> = (props: Props) => {
       <div className="connect-icon">
         <ConnectWalletIcon />
       </div>
-      <AnimatePresence mode="wait">
-        {publicKey ? (
-          <motion.p key="wallet" {...fastExitAnimation}>
-            {publicKey.toBase58().slice(0, 4) +
-              ".." +
-              publicKey.toBase58().slice(-4)}
-          </motion.p>
-        ) : (
-          <motion.p key="connect" {...fastExitAnimation}>
-            Connect Wallet
-          </motion.p>
-        )}
-      </AnimatePresence>
+      {publicKey ? (
+        <p>
+          {publicKey.toBase58().slice(0, 4) +
+            ".." +
+            publicKey.toBase58().slice(-4)}
+        </p>
+      ) : (
+        <p>Connect Wallet</p>
+      )}
     </button>
   );
 };

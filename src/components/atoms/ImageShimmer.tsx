@@ -72,7 +72,6 @@ const ImageShimmer: FC<Props> = (props: Props) => {
             ? "transition-all duration-300 hover:scale-110 cursor-pointer"
             : ""
         }`}
-        // {...imageLoadAnimation(imageLoaded)}
       >
         {fill && (
           <Image
