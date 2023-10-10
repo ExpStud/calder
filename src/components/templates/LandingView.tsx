@@ -14,7 +14,7 @@ const LandingView: FC<Props> = (props: Props) => {
   const { showView } = useContext(ViewContext);
 
   return (
-    <div className="centered-page">
+    <div className="page-centered">
       <motion.div {...slideDown(showView)}>
         {/* <Image
           src="/images/logo.png"

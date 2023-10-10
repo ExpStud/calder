@@ -135,7 +135,7 @@ html {
   @apply flex items-center justify-between h-[40px] divide-x divide-audio-border border-t border-audio-border;
  }
  .audio-controller button{
-  @apply centered-row px-4 h-full transition-all duration-200 hover:bg-audio-button-hover active:bg-audio-dark-bg;
+  @apply row-centered px-4 h-full transition-all duration-200 hover:bg-audio-button-hover active:bg-audio-dark-bg;
  }
 
 /* Dropdown Navigation */
@@ -149,7 +149,7 @@ html {
 }
 
 .navigation-symbol {
-  @apply w-[75px] h-full centered-row border-r-[1px] border-light-red border-opacity-40 cursor-pointer;
+  @apply w-[75px] h-full row-centered border-r-[1px] border-light-red border-opacity-40 cursor-pointer;
   background-color: rgba(30, 4, 7, 0.5);
   box-shadow: 0px 0px 15px 0px rgba(235, 105, 118, 0.15) inset;
   color: #FBE1E3;
@@ -175,14 +175,22 @@ html {
   @apply transition-all duration-300 hover:bg-navigation-highlight;
 }
 .icon-transitions {
-  @apply transition-all duration-300  hover:bg-light-red hover:bg-opacity-10 p-2.5;
+  @apply transition-all duration-300 hover:bg-light-red hover:bg-opacity-10 p-2.5;
 }
 
-/* Miscelaneous */
-.divider-highlight {
-
-  fill: #F9D2D5;
-  filter: drop-shadow(0px 0px 0.36000001430511475px #EB6976) drop-shadow(0px 0px 0.7200000286102295px #EB6976) drop-shadow(0px 0px 2.5199999809265137px #EB6976) drop-shadow(0px 0px 5.039999961853027px #EB6976) drop-shadow(0px 0px 8.640000343322754px #EB6976) drop-shadow(0px 0px 15.119999885559082px #EB6976);
+/* About */
+.about-navigation {  
+  @apply relative flex flex-wrap items-center border-light-red border-opacity-20 
+  uppercase border  text-xl text-center font-teko leading-none tracking-wider
+  !bg-red-020 !bg-opacity-60 gap-1 !w-auto px-0 md:px-8  min-h-[50px] md:h-[54px];
+}
+.about-navigation-item {
+  @apply px-3 md:px-6 h-[40px] flex items-center justify-center pt-[3px] cursor-pointer text-light-red text-opacity-80 
+  text-sm md:text-xl font-teko-thin tracking-wider
+  transition-all duration-200  hover:text-custom-white hover:bg-[#321517];
+}
+.about-navigation-item-active {
+  @apply transition-all duration-200  text-custom-white bg-[#321517];
 }
 
 /* Wallet Adapter */
@@ -202,12 +210,15 @@ html {
 
 /*  Layout  */
 
-.centered-row {
+.row-centered {
   @apply flex items-center justify-center;
 }
-.centered-col {
+.col-centered {
   @apply flex flex-col items-center justify-center;
 }
-.centered-page {
+.col-start {
+  @apply flex flex-col items-start justify-start;
+}
+.page-centered {
   @apply w-full h-full flex flex-col items-center justify-center pt-20 px-4 md:px-[10%];
 }

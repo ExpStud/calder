@@ -57,7 +57,7 @@ const PageLayout: FC<Props> = (props: Props) => {
           {...enterAnimation}
         >
           {children}
-          <div className="absolute w-[900px] h-[900px] scale-75 xl:scale-90 4xl:scale-150 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-full bg-shine-rgba blur-[400px]" />
+          <div className="absolute w-[900px] h-[900px] scale-75 xl:scale-90 4xl:scale-150 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-full bg-shine-rgba blur-[400px] -z-10" />
         </motion.main>
 
         {footer && <Footer />}

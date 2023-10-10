@@ -21,7 +21,7 @@ const AudioControlDisplay: FC<Props> = (props: Props) => {
   return (
     <motion.div
       {...enterAnimation}
-      className="h-[120px] bg-audio-dark-bg centered-row relative overflow-hidden"
+      className="h-[120px] bg-audio-dark-bg row-centered relative overflow-hidden"
     >
       <div className="absolute top-4 left-5 flex flex-col uppercase overflow-hidden max-w-[165px]">
         <TextSlidingAnimation
