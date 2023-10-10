@@ -27,6 +27,7 @@ const ImageShimmer = dynamic(() => import("./atoms/ImageShimmer"));
 const Logo = dynamic(() => import("./atoms/Logo"));
 const ConnectWalletButton = dynamic(() => import("./atoms/ConnectWalletButton"));
 const AudioControlButton = dynamic(() => import("./atoms/AudioControlButton"));
+const Divider = dynamic(() => import("./atoms/Divider"));
 //molecules
 const PageHead = dynamic(() => import("./molecules/PageHead"));
 const Dropdown = dynamic(() => import("./molecules/Dropdown"));
@@ -101,5 +102,6 @@ export {
   AudioControlDropdown,
   AudioControlActions,
   AudioControlDisplay,
-  TextSlidingAnimation
+  TextSlidingAnimation,
+  Divider
 }

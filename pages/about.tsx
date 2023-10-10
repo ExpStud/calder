@@ -3,11 +3,11 @@ import { NextPage } from "next";
 import { useEffect, useState } from "react";
 
 const About: NextPage = () => {
-  const [assets, setAssets] = useState<boolean[]>([false, false]);
+  const [assets, setAssets] = useState<boolean[]>([]);
 
   return (
     <PageLayout headerType="absolute" assets={assets}>
-      <AboutView setAssets={setAssets} />
+      <AboutView />
     </PageLayout>
   );
 };

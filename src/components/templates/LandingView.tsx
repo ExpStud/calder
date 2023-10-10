@@ -14,7 +14,7 @@ const LandingView: FC<Props> = (props: Props) => {
   const { showView } = useContext(ViewContext);
 
   return (
-    <div className="w-full h-full flex flex-col items-center justify-center">
+    <div className="centered-page">
       <motion.div {...slideDown(showView)}>
         {/* <Image
           src="/images/logo.png"

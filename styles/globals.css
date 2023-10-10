@@ -29,13 +29,13 @@ a {
     @apply scroll-smooth bg-particles bg-cover bg-fixed bg-dark-red text-custom-white font-primary;
   }
   h1 {
-    @apply font-teko
+    @apply font-teko;
   }
   h2 {
-    @apply font-teko
+    @apply font-teko-thin uppercase text-5xl md:text-[64px];
   }
   h3 {
-    @apply font-teko-thin
+    @apply font-teko-thin;
   }
 }
 
@@ -178,6 +178,12 @@ html {
   @apply transition-all duration-300  hover:bg-light-red hover:bg-opacity-10 p-2.5;
 }
 
+/* Miscelaneous */
+.divider-highlight {
+
+  fill: #F9D2D5;
+  filter: drop-shadow(0px 0px 0.36000001430511475px #EB6976) drop-shadow(0px 0px 0.7200000286102295px #EB6976) drop-shadow(0px 0px 2.5199999809265137px #EB6976) drop-shadow(0px 0px 5.039999961853027px #EB6976) drop-shadow(0px 0px 8.640000343322754px #EB6976) drop-shadow(0px 0px 15.119999885559082px #EB6976);
+}
 
 /* Wallet Adapter */
 
@@ -201,4 +207,7 @@ html {
 }
 .centered-col {
   @apply flex flex-col items-center justify-center;
+}
+.centered-page {
+  @apply w-full h-full flex flex-col items-center justify-center pt-20 px-4 md:px-[10%];
 }

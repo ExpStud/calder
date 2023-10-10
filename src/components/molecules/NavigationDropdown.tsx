@@ -6,6 +6,7 @@ import { navigationVariants, navigationItemVariants } from "@constants";
 import { DiscordIcon, NavigationContent, TwitterIcon } from "@components";
 import { useOutsideAlerter } from "@hooks";
 import Image from "next/image";
+import React from "react";
 
 interface NavigationDropdownProps {
   items: Navigation[];
@@ -43,7 +44,7 @@ const NavigationDropdown: FC<NavigationDropdownProps> = (
             selectedItem.id === 0 &&
             selectedItem.id === index
           )
-            return <></>;
+            return <React.Fragment key="empty"></React.Fragment>;
           return (
             <motion.div
               key={index}

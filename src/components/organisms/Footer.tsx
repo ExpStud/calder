@@ -1,7 +1,7 @@
-import { FC, HTMLAttributes } from "react";
+import { FC } from "react";
 import { footer } from "@constants";
 import { Footer } from "@types";
-import { FooterLinks } from "@components";
+import { FooterLinks, Divider } from "@components";
 
 const Footer: FC = () => {
   const getCurrentYear = (): number => {
@@ -43,21 +43,6 @@ const Footer: FC = () => {
         </div>
       </div>
     </footer>
-  );
-};
-
-interface DividerProps extends HTMLAttributes<HTMLDivElement> {
-  showLeftTip?: boolean;
-  showRightTip?: boolean;
-}
-const Divider: FC<DividerProps> = (props: DividerProps) => {
-  const { showLeftTip = true, showRightTip = true, className } = props;
-  return (
-    <div className={`h-[1px] w-full flex gap-0 ${className}`}>
-      {showLeftTip && <div className="bg-light-red opacity-60 w-[48px]"></div>}
-      <div className="w-full bg-light-red opacity-30"></div>
-      {showRightTip && <div className="bg-light-red opacity-60 w-[24px]"></div>}
-    </div>
   );
 };
 
