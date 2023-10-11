@@ -35,7 +35,7 @@ a {
     @apply font-teko-thin uppercase text-5xl md:text-[64px];
   }
   h3 {
-    @apply font-teko-thin;
+    @apply font-teko-thin uppercase text-4xl md:text-[54px] leading-none;
   }
 }
 
@@ -142,6 +142,7 @@ html {
 
 .navigation {
   @apply relative navigation-container flex justify-between items-center pr-4 border-light-red border-opacity-20;
+  filter: drop-shadow(0px 0px 0px rgba(40, 11, 11, 0.60)) drop-shadow(0px 14px 30px rgba(40, 11, 11, 0.59));
 }
 
 .navigation-container {
@@ -180,14 +181,13 @@ html {
 
 /* About */
 .about-navigation {  
-  @apply relative flex flex-wrap items-center border-light-red border-opacity-20 
-  uppercase border  text-xl text-center font-teko leading-none tracking-wider
-  !bg-red-020 !bg-opacity-60 gap-1 !w-auto px-0 md:px-8  min-h-[50px] md:h-[54px];
+  @apply relative flex flex-wrap overflow-y-auto items-center border-light-red border-opacity-20 
+  uppercase border text-xl text-center font-teko leading-none tracking-wider
+  !bg-red-020 !bg-opacity-60 gap-1 !w-auto px-0 md:px-0 !min-h-[50px] md:h-[54px];
 }
 .about-navigation-item {
-  @apply px-3 md:px-6 h-[40px] flex items-center justify-center pt-[3px] cursor-pointer text-light-red text-opacity-80 
-  text-sm md:text-xl font-teko-thin tracking-wider
-  transition-all duration-200  hover:text-custom-white hover:bg-[#321517];
+  @apply px-2 sm:px-6 md:px-6 h-[50px] flex items-center justify-center pt-[3px] cursor-pointer text-light-red text-opacity-60 
+  text-sm md:text-lg transition-all duration-300 hover:text-opacity-100 ;
 }
 .about-navigation-item-active {
   @apply transition-all duration-200  text-custom-white bg-[#321517];
@@ -212,6 +212,9 @@ html {
 
 .row-centered {
   @apply flex items-center justify-center;
+}
+.row-between {
+  @apply flex items-center justify-between;
 }
 .col-centered {
   @apply flex flex-col items-center justify-center;

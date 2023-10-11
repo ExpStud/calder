@@ -43,6 +43,7 @@ const NavigationContent = dynamic(() => import("./molecules/NavigationContent"))
 const AudioControlDropdown = dynamic(() => import("./molecules/AudioControlDropdown"));
 const AudioControlDisplay = dynamic(() => import("./molecules/AudioControlDisplay"));
 const AudioControlActions = dynamic(() => import("./molecules/AudioControlActions"));
+const AboutNavigation = dynamic(() => import("./molecules/AboutNavigation"));
 //organisms
 const Header = dynamic(() => import("./organisms/Header"));
 const Footer = dynamic(() => import("./organisms/Footer"));
@@ -103,5 +104,6 @@ export {
   AudioControlActions,
   AudioControlDisplay,
   TextSlidingAnimation,
-  Divider
+  Divider,
+  AboutNavigation
 }

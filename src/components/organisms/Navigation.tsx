@@ -19,9 +19,12 @@ const Navigation: FC = () => {
 
   useEffect(() => {
     if (router.asPath === "/") setSelectedNavigation(navigation[0]);
-    else if (router.asPath === "/about") setSelectedNavigation(navigation[1]);
-    else if (router.asPath === "/gallery") setSelectedNavigation(navigation[2]);
-    else if (router.asPath === "/buy") setSelectedNavigation(navigation[4]);
+    else if (router.asPath.includes("/about"))
+      setSelectedNavigation(navigation[1]);
+    else if (router.asPath.includes("/gallery"))
+      setSelectedNavigation(navigation[2]);
+    else if (router.asPath.includes("/buy"))
+      setSelectedNavigation(navigation[4]);
   }, [router.asPath]);
 
   return (

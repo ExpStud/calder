@@ -5,19 +5,21 @@ interface DividerProps extends HTMLAttributes<HTMLDivElement> {
   showLeftTip?: boolean; //default true
   showRightTip?: boolean; //default true
   showLeftTipHighlight?: boolean; //default false
-  showRightTipHighlight?: boolean; //default false
+  leftTipWidth?: string;
 }
 const Divider: FC<DividerProps> = (props: DividerProps) => {
   const {
     showLeftTip = true,
     showRightTip = true,
     showLeftTipHighlight = false,
-    showRightTipHighlight = false,
+    leftTipWidth = "w-[48px]",
     className,
   } = props;
   return (
     <div className={`relative h-[1px] w-full flex gap-0 ${className} `}>
-      {showLeftTip && <div className={`bg-light-red opacity-60 w-[48px]`} />}
+      {showLeftTip && (
+        <div className={`bg-light-red opacity-60 ${leftTipWidth}`} />
+      )}
       {showLeftTipHighlight && (
         <Image
           src="/images/divider-highlight.svg"

@@ -38,7 +38,7 @@ const PageLayout: FC<Props> = (props: Props) => {
 
   return (
     <div
-      className={`flex flex-col min-h-[100svh] h-full justify-between overflow-none  ${
+      className={`flex flex-col min-h-[100svh] max-w-screen  justify-between  ${
         fixed ? "absolute inset-0" : ""
       }`}
     >
@@ -53,11 +53,11 @@ const PageLayout: FC<Props> = (props: Props) => {
 
         {/* body */}
         <motion.main
-          className={`relative flex flex-col h-full w-full overflow-x-clip`}
+          className={`relative flex flex-col h-full w-full overflow-x-clip  `}
           {...enterAnimation}
         >
           {children}
-          <div className="absolute w-[900px] h-[900px] scale-75 xl:scale-90 4xl:scale-150 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-full bg-shine-rgba blur-[400px] -z-10" />
+          <div className="main absolute w-[900px] h-[900px] scale-75 xl:scale-90 4xl:scale-150 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-full bg-shine-rgba blur-[400px] -z-10" />
         </motion.main>
 
         {footer && <Footer />}

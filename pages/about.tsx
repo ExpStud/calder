@@ -6,7 +6,7 @@ const About: NextPage = () => {
   const [assets, setAssets] = useState<boolean[]>([]);
 
   return (
-    <PageLayout headerType="absolute" assets={assets}>
+    <PageLayout headerType="scroll" assets={assets}>
       <AboutView />
     </PageLayout>
   );
