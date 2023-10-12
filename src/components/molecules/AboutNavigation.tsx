@@ -1,9 +1,15 @@
 import { Dispatch, SetStateAction } from "react";
 import Image from "next/image";
+import {
+  CornerBottomLeftIcon,
+  CornerBottomRightIcon,
+  CornerTopLeftIcon,
+  CornerTopRightIcon,
+} from "@components";
 
 interface Props {
   selectedItem: string;
-  setSelectedItem: Dispatch<SetStateAction<string>>;
+  setSelectedItem: Dispatch<SetStateAction<string | undefined>>;
   navItems: string[];
 }
 const AboutNavigation = (props: Props) => {
@@ -23,20 +29,10 @@ const AboutNavigation = (props: Props) => {
         </div>
       ))}
       {/* corner pieces */}
-      <Image
-        src="/images/buttons/top-left-corner.svg"
-        alt="Left Corner"
-        width={8}
-        height={8}
-        className="absolute top-0 left-0"
-      />
-      <Image
-        src="/images/buttons/top-right-corner.svg"
-        alt="Right Corner"
-        width={8}
-        height={8}
-        className="absolute top-0 right-0"
-      />
+      <CornerTopLeftIcon />
+      <CornerTopRightIcon />
+      <CornerBottomLeftIcon />
+      <CornerBottomRightIcon />
     </div>
   );
 };

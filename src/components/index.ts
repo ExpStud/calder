@@ -13,6 +13,10 @@ const CloseIcon = dynamic(() => import("./@icons/CloseIcon"));
 const DownloadIcon = dynamic(() => import("./@icons/DownloadIcon"));
 const ConnectWalletIcon = dynamic(() => import("./@icons/ConnectWalletIcon"));
 const AudioControlIcon = dynamic(() => import("./@icons/AudioControlIcon"));
+const CornerTopLeftIcon = dynamic(() => import("./@icons/CornerTopLeftIcon"));
+const CornerTopRightIcon = dynamic(() => import("./@icons/CornerTopRightIcon"));
+const CornerBottomLeftIcon = dynamic(() => import("./@icons/CornerBottomLeftIcon"));
+const CornerBottomRightIcon = dynamic(() => import("./@icons/CornerBottomRightIcon"));
 //atoms
 const DropdownButton = dynamic(() => import("./atoms/DropdownButton"));
 const DropdownItem = dynamic(() => import("./atoms/DropdownItem"));
@@ -105,5 +109,9 @@ export {
   AudioControlDisplay,
   TextSlidingAnimation,
   Divider,
-  AboutNavigation
+  AboutNavigation,
+  CornerTopLeftIcon,
+  CornerTopRightIcon,
+  CornerBottomLeftIcon,
+  CornerBottomRightIcon
 }

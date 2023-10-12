@@ -41,11 +41,13 @@ const AboutView: FC = () => {
       />
       <div className="flex flex-col lg:flex-row justify-between items-center w-full pt-4 pb-14 gap-3">
         <h2>About</h2>
-        <AboutNavigation
-          selectedItem={selectedItem}
-          setSelectedItem={setSelectedItem}
-          navItems={navItems}
-        />
+        {selectedItem && (
+          <AboutNavigation
+            selectedItem={selectedItem}
+            setSelectedItem={setSelectedItem}
+            navItems={navItems}
+          />
+        )}
       </div>
 
       <AnimatePresence mode="wait">

@@ -1,0 +1,26 @@
+import { FC, SVGProps } from "react";
+
+interface Props extends SVGProps<SVGSVGElement> {}
+
+const CornerTopRightIcon: FC<Props> = (props: Props) => {
+  const {} = props;
+  return (
+    <svg
+      width="8"
+      height="8"
+      viewBox="0 0 8 8"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className="absolute top-0 right-0"
+    >
+      <path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M8 8L8 2L8 0L6 -8.74228e-08L0 -3.49691e-07L-8.74228e-08 2L6 2L6 8L8 8Z"
+        fill="#C25661"
+      />
+    </svg>
+  );
+};
+
+export default CornerTopRightIcon;
