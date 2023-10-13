@@ -210,7 +210,6 @@ export const navigationItemVariants = {
   exit: { opacity: 0, x: 0, transition: {duration: 0.25}  }, 
 };
 
-
 export const audioDropdownAnimation = {
   initial: { opacity: 0, y: -40},
   animate: { opacity: 1, y: 0 },
@@ -220,4 +219,9 @@ export const audioDropdownAnimation = {
     y: { duration: 0.25 }, 
     ease: "easeIn",
   },
+};
+
+export const accordionWrapperVariant: Variants = {
+  initial: { opacity: 0,},
+  animate: { opacity: 0, transition: { duration: 0.6, ease: "easeOut", delay: 0.5 },},
 };

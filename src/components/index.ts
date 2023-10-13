@@ -48,7 +48,8 @@ const NavigationContent = dynamic(() => import("./molecules/NavigationContent"))
 const AudioControlDropdown = dynamic(() => import("./molecules/AudioControlDropdown"));
 const AudioControlDisplay = dynamic(() => import("./molecules/AudioControlDisplay"));
 const AudioControlActions = dynamic(() => import("./molecules/AudioControlActions"));
-const AboutNavigation = dynamic(() => import("./molecules/AboutNavigation"));
+const SubstanceGoal = dynamic(() => import("./molecules/SubstanceGoal"));
+const AccordionWrapper = dynamic(() => import("./molecules/AccordionWrapper"));
 //organisms
 const Header = dynamic(() => import("./organisms/Header"));
 const Footer = dynamic(() => import("./organisms/Footer"));
@@ -62,6 +63,7 @@ const AboutOverview = dynamic(() => import("./organisms/AboutOverview"));
 const AboutSearchers = dynamic(() => import("./organisms/AboutSearchers"));
 const AboutRoadmap = dynamic(() => import("./organisms/AboutRoadmap"));
 const AboutTeam = dynamic(() => import("./organisms/AboutTeam"));
+const AboutNavigation = dynamic(() => import("./organisms/AboutNavigation"));
 //templates
 const PageLayout = dynamic(() => import("./templates/PageLayout"));
 const LandingView = dynamic(() => import("./templates/LandingView"));
@@ -128,4 +130,6 @@ export {
   AboutSearchers,
   AboutRoadmap,
   AboutTeam,
+  SubstanceGoal,
+  AccordionWrapper
 }

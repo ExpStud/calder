@@ -8,7 +8,7 @@ const AboutSubstance: FC = () => {
   return (
     <motion.div
       key={navItems[1]}
-      className="flex flex-col lg:flex-row gap-6 w-full mb-3"
+      className="flex flex-col-reverse lg:flex-row gap-6 w-full mb-3"
       {...fastExitAnimation}
     >
       <div className="col-start lg:w-1/2">

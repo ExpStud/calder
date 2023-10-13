@@ -1,15 +1,16 @@
-import { FC, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
-import { StackIcon } from "@components";
+import { FC, HTMLAttributes, useState } from "react";
+import { motion } from "framer-motion";
+import { StackIcon, SubstanceGoal } from "@components";
 
-interface Props {
+interface Props extends HTMLAttributes<HTMLDivElement> {
   items: string[];
 }
 
 const Accordion: FC<Props> = (props: Props) => {
-  const { items } = props;
+  const { items, className } = props;
   const [openIndex, setOpenIndex] = useState<number | null>(null);
-  const [hoverIndex, setHoverIndex] = useState<number | null>(null); //TODO: implement hover state [1/2
+  const [hoverIndex, setHoverIndex] = useState<number | null>(null);
+
   const toggleAccordion = (index: number) => {
     if (openIndex === index) {
       setOpenIndex(null);
@@ -19,17 +20,19 @@ const Accordion: FC<Props> = (props: Props) => {
   };
 
   return (
-    <div className="relative w-full flex flex-col justify-center">
+    <div
+      className={`relative w-full flex flex-col justify-center ${className}`}
+    >
       {items.map((item, index) => (
         <div
           key={index}
-          className="flex flex-col cursor-pointer"
+          className={`flex flex-col cursor-pointer transition-300 border-b border-light-red border-opacity-20 hover:border-opacity-60`}
           onClick={() => toggleAccordion(index)}
           onMouseEnter={() => setHoverIndex(index)}
           onMouseLeave={() => setHoverIndex(null)}
         >
           <div
-            className={`flex items-center justify-between h-14 transition-all duration-300 font-teko-thin text-2xl opacity-70 hover:opacity-100 ${
+            className={`flex items-center justify-between h-14 transition-300 font-teko-thin text-2xl opacity-70 hover:opacity-100 ${
               openIndex === index ? "text-gold" : "text-light-red"
             }`}
           >
@@ -46,10 +49,19 @@ const Accordion: FC<Props> = (props: Props) => {
             />
           </div>
           <motion.div
-            animate={{ height: openIndex === index ? 200 : 0 }} //TODO: change 200 to "auto"
-            transition={{ duration: 0.6, ease: "easeOut" }}
+            initial={{ height: 0 }}
+            animate={{
+              height: openIndex === index ? "auto" : 0,
+            }}
+            transition={{
+              duration: 0.6,
+              ease: "easeOut",
+              delay: openIndex === index ? 0 : 0.2,
+            }}
             className=""
-          ></motion.div>
+          >
+            {index === 0 && <SubstanceGoal animate={openIndex === 0} />}
+          </motion.div>
         </div>
       ))}
     </div>

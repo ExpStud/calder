@@ -6,6 +6,7 @@ interface DividerProps extends HTMLAttributes<HTMLDivElement> {
   showRightTip?: boolean; //default true
   showLeftTipHighlight?: boolean; //default false
   leftTipWidth?: string;
+  opacity?: string;
 }
 const Divider: FC<DividerProps> = (props: DividerProps) => {
   const {
@@ -13,6 +14,7 @@ const Divider: FC<DividerProps> = (props: DividerProps) => {
     showRightTip = true,
     showLeftTipHighlight = false,
     leftTipWidth = "w-[48px]",
+    opacity = "opacity-30",
     className,
   } = props;
   return (
@@ -29,7 +31,7 @@ const Divider: FC<DividerProps> = (props: DividerProps) => {
           className="absolute -left-2.5 -top-2.5"
         />
       )}
-      <div className="w-full bg-light-red opacity-30"></div>
+      <div className={`w-full bg-light-red transition-300 ${opacity}`}></div>
       {showRightTip && <div className={`bg-light-red opacity-60 w-[24px] `} />}
     </div>
   );

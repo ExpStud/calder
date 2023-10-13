@@ -17,3 +17,21 @@ export const substanceItems: string[] = [
   "Rewards",
   "PFPs",
 ];
+
+// export enum AboutNav {
+//   Overview,
+//   Substance,
+//   Searchers,
+//   Roadmap,
+//   Team,
+// }
+
+// export enum SubstanceItems {
+//   "The Goal",
+//   "How it Works",
+//   "Whitelist",
+//   "AirDrops",
+//   "Collabs",
+//   "Rewards",
+//   "PFPs",
+// }
