@@ -1,8 +1,6 @@
 import { FC } from "react";
 import { AccordionWrapper } from "@components";
 import Image from "next/image";
-import { motion } from "framer-motion";
-import { accordionWrapperVariant } from "@constants";
 
 interface Props {
   animate: boolean;

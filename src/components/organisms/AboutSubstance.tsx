@@ -2,17 +2,17 @@ import { FC } from "react";
 import { Accordion } from "@components";
 import Divider from "../atoms/Divider";
 import { motion } from "framer-motion";
-import { fastExitAnimation, navItems, substanceItems } from "@constants";
+import { exitAnimation, navItems, substanceItems } from "@constants";
 
 const AboutSubstance: FC = () => {
   return (
     <motion.div
       key={navItems[1]}
       className="flex flex-col-reverse lg:flex-row gap-6 w-full mb-3"
-      {...fastExitAnimation}
+      {...exitAnimation}
     >
       <div className="col-start lg:w-1/2">
-        <Divider showRightTip={false} />
+        <Divider showRightTip={false} className="hidden lg:flex" />
         <div className="flex flex-col gap-6 text-sm lg:pr-[30%] py-10">
           <p>
             The main goal for Substance will be to create a physical version of

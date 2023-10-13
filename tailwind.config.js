@@ -6,6 +6,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
+        "white-gradient": `linear-gradient(360.58deg, #FFFFFF 43.76%, rgba(255, 255, 255, 0) 106.82%)`,
         particles: "url('/images/particles.png')",
         button: "url('/images/buttons/button-outline.svg')",
         "button-active": "url('/images/buttons/button-outline-active.svg')",
@@ -13,7 +14,7 @@ module.exports = {
         "about-nav-hover": "url('/images/buttons/about-nav-hover.svg')",
         "navigation-highlight":
           "url('/images/buttons/navigation-highlight.svg')",
-        "white-gradient": `linear-gradient(360.58deg, #FFFFFF 43.76%, rgba(255, 255, 255, 0) 106.82%)`,
+        "background-grid": "url('/images/about/background-grid.svg')",
       },
       fontFamily: {
         primary: ["Barlow"],
