@@ -17,6 +17,7 @@ const CornerTopLeftIcon = dynamic(() => import("./@icons/CornerTopLeftIcon"));
 const CornerTopRightIcon = dynamic(() => import("./@icons/CornerTopRightIcon"));
 const CornerBottomLeftIcon = dynamic(() => import("./@icons/CornerBottomLeftIcon"));
 const CornerBottomRightIcon = dynamic(() => import("./@icons/CornerBottomRightIcon"));
+const StackIcon = dynamic(() => import("./@icons/StackIcon"));
 //atoms
 const DropdownButton = dynamic(() => import("./atoms/DropdownButton"));
 const DropdownItem = dynamic(() => import("./atoms/DropdownItem"));
@@ -55,6 +56,12 @@ const ImageModal = dynamic(() => import("./organisms/ImageModal"));
 const Menu = dynamic(() => import("./organisms/Menu"));
 const Navigation = dynamic(() => import("./organisms/Navigation"));
 const AudioControl = dynamic(() => import("./organisms/AudioControl"));
+const Accordion = dynamic(() => import("./organisms/Accordion"));
+const AboutSubstance = dynamic(() => import("./organisms/AboutSubstance"));
+const AboutOverview = dynamic(() => import("./organisms/AboutOverview"));
+const AboutSearchers = dynamic(() => import("./organisms/AboutSearchers"));
+const AboutRoadmap = dynamic(() => import("./organisms/AboutRoadmap"));
+const AboutTeam = dynamic(() => import("./organisms/AboutTeam"));
 //templates
 const PageLayout = dynamic(() => import("./templates/PageLayout"));
 const LandingView = dynamic(() => import("./templates/LandingView"));
@@ -113,5 +120,12 @@ export {
   CornerTopLeftIcon,
   CornerTopRightIcon,
   CornerBottomLeftIcon,
-  CornerBottomRightIcon
+  CornerBottomRightIcon,
+  Accordion,
+  StackIcon,
+  AboutSubstance,
+  AboutOverview,
+  AboutSearchers,
+  AboutRoadmap,
+  AboutTeam,
 }

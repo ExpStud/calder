@@ -1,6 +1,8 @@
 import { FC, useEffect, useState } from "react";
 import {
   CloseIcon,
+  CornerTopLeftIcon,
+  CornerTopRightIcon,
   MenuIcon,
   NavigationContent,
   NavigationDropdown,
@@ -8,7 +10,6 @@ import {
 import { fastExitAnimation, navigation } from "@constants";
 import { AnimatePresence, motion } from "framer-motion";
 import { Navigation } from "@types";
-import Image from "next/image";
 import { useRouter } from "next/router";
 
 const Navigation: FC = () => {
@@ -30,21 +31,8 @@ const Navigation: FC = () => {
   return (
     <div className="relative">
       <div className="navigation button-template !bg-red-020 !bg-opacity-70">
-        {/* corner pieces */}
-        <Image
-          src="/images/buttons/top-left-corner.svg"
-          alt="Left Corner"
-          width={8}
-          height={8}
-          className="absolute top-0 left-0"
-        />
-        <Image
-          src="/images/buttons/top-right-corner.svg"
-          alt="Right Corner"
-          width={8}
-          height={8}
-          className="absolute top-0 right-0"
-        />
+        <CornerTopLeftIcon />
+        <CornerTopRightIcon />
         {/* center content */}
         {selectedNavigation && (
           <NavigationContent navigation={selectedNavigation} showSymbol />

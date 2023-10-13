@@ -192,6 +192,10 @@ html {
 .about-navigation-item-active {
   @apply transition-all duration-200  text-custom-white bg-[#321517];
 }
+.gold-filter {
+  filter: drop-shadow(0px 0px 1.7774707078933716px #FEFDBA) drop-shadow(0px 0px 6.221147537231445px #FEFDBA) drop-shadow(0px 0px 12.44229507446289px #FEFDBA) drop-shadow(0px 0px 21.329648971557617px #FEFDBA) drop-shadow(0px 0px 37.32688522338867px #FEFDBA);
+
+}
 
 /* Wallet Adapter */
 
