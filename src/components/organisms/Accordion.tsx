@@ -1,5 +1,5 @@
 import { FC, HTMLAttributes, useState } from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { StackIcon, SubstanceGoal } from "@components";
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
@@ -56,11 +56,33 @@ const Accordion: FC<Props> = (props: Props) => {
             transition={{
               duration: 0.6,
               ease: "easeOut",
-              delay: openIndex === index ? 0 : 0.2,
+              delay: openIndex === index ? 0.2 : 0.4,
             }}
             className=""
           >
-            {index === 0 && <SubstanceGoal animate={openIndex === 0} />}
+            <AnimatePresence mode="wait">
+              {index === 0 && openIndex === 0 && (
+                <SubstanceGoal animate={openIndex === 0} key={0} />
+              )}
+              {index === 1 && openIndex === 1 && (
+                <SubstanceGoal animate={openIndex === 1} key={1} />
+              )}
+              {index === 2 && openIndex === 2 && (
+                <SubstanceGoal animate={openIndex === 2} key={2} />
+              )}
+              {index === 3 && openIndex === 3 && (
+                <SubstanceGoal animate={openIndex === 3} key={3} />
+              )}
+              {index === 4 && openIndex === 4 && (
+                <SubstanceGoal animate={openIndex === 4} key={4} />
+              )}
+              {index === 5 && openIndex === 5 && (
+                <SubstanceGoal animate={openIndex === 5} key={5} />
+              )}
+              {index === 6 && openIndex === 6 && (
+                <SubstanceGoal animate={openIndex === 6} key={6} />
+              )}
+            </AnimatePresence>
           </motion.div>
         </div>
       ))}

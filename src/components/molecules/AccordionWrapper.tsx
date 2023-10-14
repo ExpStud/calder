@@ -16,10 +16,12 @@ const AccordionWrapper: FC<Props> = (props: Props) => {
   return (
     <motion.div
       className="relative p-4 bg-background-grid"
-      initial={{ opacity: 0 }}
+      initial={{ opacity: 0, z: -10 }}
       animate={{
         opacity: animate ? 1 : 0,
+        z: animate ? 1 : 0,
       }}
+      exit={{ opacity: 0, z: -10, transition: { duration: 0.3 } }}
       transition={{
         duration: animate ? 1 : 0.3,
         ease: "easeInOut",
