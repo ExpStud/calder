@@ -8,13 +8,13 @@ const AboutSubstance: FC = () => {
   return (
     <motion.div key={navItems[3]} {...fastExitAnimation} className="w-full">
       <Divider showRightTip={false} />
-      <div className="flex flex-col-reverse lg:flex-row items-center lg:items-start justify-between">
+      <div className="flex flex-col lg:flex-row items-center lg:items-start justify-between">
         <div className="col-start pt-8">
           <p className="text-light-red uppercase font-teko md:pb-3 text-lg">
             Search of Universe
           </p>
           <h3 className="">
-            The Path <br className="hidden lg:block" /> of Substance
+            The Path <br /> of Substance
           </h3>
           <Divider
             leftTipWidth="w-2"

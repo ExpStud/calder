@@ -31,6 +31,7 @@ const Header: FC<Props> = (props: Props) => {
     },
     hidden: {
       y: -height,
+      z: -10,
       transition: {
         delay: 0.25,
         duration: 0.4,
@@ -78,7 +79,7 @@ const Header: FC<Props> = (props: Props) => {
 
   return (
     <header
-      className={`top-0 z-10 transition-all duration-500 ${
+      className={`top-0 transition-all z-10 duration-500 flex items-center justify-center w-full ${
         type === "scroll" ? "fixed" : type
       } `}
     >
@@ -89,6 +90,7 @@ const Header: FC<Props> = (props: Props) => {
           variants={headerVariants}
           initial={showHeader ? "show" : "hidden"}
           animate={animateHeader ? "show" : "hidden"}
+          className="flex items-center justify-center w-full"
         >
           <HeaderContent />
         </motion.aside>

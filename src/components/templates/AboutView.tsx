@@ -8,8 +8,8 @@ import {
   AboutTeam,
 } from "@components";
 import Divider from "../atoms/Divider";
-import { AnimatePresence, motion } from "framer-motion";
-import { fastExitAnimation, navItems } from "@constants";
+import { AnimatePresence } from "framer-motion";
+import { navItems } from "@constants";
 import { useSearchParams } from "next/navigation";
 
 const AboutView: FC = () => {

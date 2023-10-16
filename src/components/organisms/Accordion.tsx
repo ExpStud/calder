@@ -58,7 +58,6 @@ const Accordion: FC<Props> = (props: Props) => {
               ease: "easeOut",
               delay: openIndex === index ? 0.2 : 0.4,
             }}
-            className=""
           >
             <AnimatePresence mode="wait">
               {index === 0 && openIndex === 0 && (

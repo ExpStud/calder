@@ -8,11 +8,11 @@ const AboutSubstance: FC = () => {
   return (
     <motion.div
       key={navItems[1]}
-      className="flex flex-col-reverse lg:flex-row gap-6 w-full mb-3"
+      className="flex flex-col lg:flex-row gap-6 w-full mb-3"
       {...exitAnimation}
     >
       <div className="col-start lg:w-1/2">
-        <Divider showRightTip={false} className="hidden lg:flex" />
+        <Divider showRightTip={false} />
         <div className="flex flex-col gap-6 text-sm lg:pr-[30%] py-10">
           <p>
             The main goal for Substance will be to create a physical version of
