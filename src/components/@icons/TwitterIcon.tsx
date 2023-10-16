@@ -5,9 +5,14 @@ interface Props extends SVGProps<SVGSVGElement> {
 }
 
 const TwitterIcon: FC<Props> = (props: Props) => {
-  const { url = "https://twitter.com/caldermoore_" } = props;
+  const { url = "https://twitter.com/caldermoore_", className } = props;
   return (
-    <a href={url} rel="noreferrer" target="_blank" className="icon-transitions">
+    <a
+      href={url}
+      rel="noreferrer"
+      target="_blank"
+      className={`icon-transitions ${className}`}
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="20"

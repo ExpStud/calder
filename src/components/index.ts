@@ -50,6 +50,8 @@ const AudioControlDisplay = dynamic(() => import("./molecules/AudioControlDispla
 const AudioControlActions = dynamic(() => import("./molecules/AudioControlActions"));
 const SubstanceGoal = dynamic(() => import("./molecules/SubstanceGoal"));
 const AccordionWrapper = dynamic(() => import("./molecules/AccordionWrapper"));
+const TeamSelect = dynamic(() => import("./molecules/TeamSelect"));
+const TeamDisplay = dynamic(() => import("./molecules/TeamDisplay"));
 //organisms
 const Header = dynamic(() => import("./organisms/Header"));
 const Footer = dynamic(() => import("./organisms/Footer"));
@@ -131,5 +133,7 @@ export {
   AboutRoadmap,
   AboutTeam,
   SubstanceGoal,
-  AccordionWrapper
+  AccordionWrapper,
+  TeamSelect,
+  TeamDisplay
 }
