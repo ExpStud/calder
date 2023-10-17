@@ -46,7 +46,8 @@ module.exports = {
         gold: "#FEFDBA",
       },
       screens: {
-        xs: "360px",
+        "2xs": "360px",
+        xs: "420px",
         "3xl": "2160px",
         "4xl": "3000px",
       },

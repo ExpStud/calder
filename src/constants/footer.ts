@@ -14,10 +14,10 @@ export const footer: Footer[] = [
   {
     category: "Gallery",
     links: [
-      { name: "Searchers", href: "/gallery/searchers" },
-      { name: "Comic", href: "/gallery/comic" },
-      { name: "Airdrops", href: "/gallery/airdrops" },
-      { name: "Collabs", href: "/gallery/collabs" },
+      { name: "Searchers", href: "/gallery/?id=searchers" },
+      { name: "Comic", href: "/gallery/?id=comic" },
+      { name: "Airdrops", href: "/gallery/?id=airdrops" },
+      { name: "Collabs", href: "/gallery/?id=collabs" },
     ],
   },
   {

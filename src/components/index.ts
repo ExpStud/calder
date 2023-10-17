@@ -70,6 +70,7 @@ const AboutNavigation = dynamic(() => import("./organisms/AboutNavigation"));
 const PageLayout = dynamic(() => import("./templates/PageLayout"));
 const LandingView = dynamic(() => import("./templates/LandingView"));
 const AboutView = dynamic(() => import("./templates/AboutView"));
+const GalleryView = dynamic(() => import("./templates/GalleryView"));
 
 export {
   PageHead,
@@ -135,5 +136,6 @@ export {
   SubstanceGoal,
   AccordionWrapper,
   TeamSelect,
-  TeamDisplay
+  TeamDisplay,
+  GalleryView,
 }

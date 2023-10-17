@@ -13,7 +13,7 @@ const DropdownButton: FC<Props> = (props: Props) => {
 
   return (
     <motion.button
-      className={`relative flex flex-col md:whitespace-nowrap text-6xl lg:text-7xl rounded-xl items-center transition-colors duration-500 opacity-60  ${
+      className={`relative flex flex-col md:whitespace-nowrap text-xl tems-center transition-300 opacity-60  ${
         isPlaying ? "text-white" : "text-white"
       }
       ${
@@ -21,7 +21,7 @@ const DropdownButton: FC<Props> = (props: Props) => {
           ? "cursor-not-allowed opacity-20"
           : "hover:bg-dark cursor-pointer "
       }`}
-      whileHover={{ scale: 1.02 }}
+      // whileHover={{ scale: 1.02 }}
       disabled={componentProps.disabled}
     >
       <p className="bg-clip-text bg-orange-gradient text-transparent uppercase">
