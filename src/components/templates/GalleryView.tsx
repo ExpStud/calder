@@ -1,7 +1,16 @@
 import { FC, useEffect, useState } from "react";
-import { AboutNavigation, Divider, Dropdown } from "@components";
-import { AnimatePresence } from "framer-motion";
-import { galleryNav } from "@constants";
+import {
+  AboutNavigation,
+  AboutOverview,
+  AboutRoadmap,
+  AboutSearchers,
+  AboutSubstance,
+  AboutTeam,
+  Divider,
+  Dropdown,
+} from "@components";
+import { AnimatePresence, motion } from "framer-motion";
+import { galleryNav, fastExitAnimation } from "@constants";
 import { useSearchParams } from "next/navigation";
 
 const GalleryView: FC = () => {
@@ -43,19 +52,46 @@ const GalleryView: FC = () => {
           />
         )}
       </div>
-      <Dropdown
-        items={galleryNav}
-        label={selectedItem ?? ""}
-        handleClick={handleDropdownSelect}
-      />
-
-      {/* <AnimatePresence mode="wait">
-        {selectedItem === galleryNav[0] && <AboutOverview />}
-        {selectedItem === galleryNav[1] && <AboutSubstance />}
-        {selectedItem === galleryNav[2] && <AboutSearchers />}
-        {selectedItem === galleryNav[3] && <AboutRoadmap />}
-        {selectedItem === galleryNav[4] && <AboutTeam />}
-      </AnimatePresence> */}
+      <div className="col-start w-full">
+        <AnimatePresence mode="wait">
+          {selectedItem === "Searchers" && (
+            <motion.div key={0} {...fastExitAnimation}>
+              <Dropdown
+                items={galleryNav}
+                label={"All Factions"}
+                handleClick={handleDropdownSelect}
+              />
+            </motion.div>
+          )}
+          {selectedItem === "Comic" && (
+            <motion.div
+              key={1}
+              {...fastExitAnimation}
+              className="row-start w-full gap-4"
+            >
+              <Dropdown
+                items={galleryNav}
+                label={"Covers"}
+                handleClick={handleDropdownSelect}
+              />
+              <Dropdown
+                items={galleryNav}
+                label={"Mythic"}
+                handleClick={handleDropdownSelect}
+              />
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+      <div className="-z-10">
+        {/* <AnimatePresence mode="wait">
+          {selectedItem === galleryNav[0] && <AboutOverview />}
+          {selectedItem === galleryNav[1] && <AboutSubstance />}
+          {selectedItem === galleryNav[2] && <AboutSearchers />}
+          {selectedItem === galleryNav[3] && <AboutRoadmap />}
+          {selectedItem === galleryNav[4] && <AboutTeam />}
+        </AnimatePresence> */}
+      </div>
     </div>
   );
 };

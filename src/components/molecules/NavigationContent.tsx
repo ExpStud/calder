@@ -35,7 +35,7 @@ const NavigationContent: FC<Props> = (props: Props) => {
         <span className="opacity-60">0{navigation.id + 1}</span>{" "}
         {navigation.name}
       </p>
-      <p className="uppercase font-teko-thin pt-1 text-xl md:text-2xl tracking-wider xs:pl-4 text-ellipsis whitespace-nowrap overflow-hidden max-w-[100px] 2xs:max-w-[190px] xs:max-w-[300px]">
+      <p className="uppercase font-teko-thin pt-1 text-xl md:text-2xl tracking-wider xl:pl-4 text-ellipsis whitespace-nowrap overflow-hidden max-w-[100px] 2xs:max-w-[190px] xs:max-w-[300px]">
         {navigation.label}
       </p>
     </div>

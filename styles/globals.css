@@ -225,6 +225,9 @@ html {
 .row-between {
   @apply flex items-center justify-between;
 }
+.row-start {
+  @apply flex items-start justify-start;
+}
 .col-centered {
   @apply flex flex-col items-center justify-center;
 }

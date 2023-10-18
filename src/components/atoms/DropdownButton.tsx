@@ -4,43 +4,28 @@ import { ButtonHTMLAttributes, FC } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
-  isPlaying: boolean;
+  open: boolean;
   label: string;
 }
 
 const DropdownButton: FC<Props> = (props: Props) => {
-  const { isPlaying, label, ...componentProps } = props;
+  const { open, label, ...componentProps } = props;
 
   return (
-    <motion.button
-      className={`relative flex flex-col md:whitespace-nowrap text-xl tems-center transition-300 opacity-60  ${
-        isPlaying ? "text-white" : "text-white"
+    <button
+      className={`transition-300 relative flex md:whitespace-nowrap items-center !justify-between !text-sm md:!text-base !w-[140px] md:!w-[200px] h-[38px] px-3 button-transitions button-template connect-button !bg-red-020 ${
+        open ? "" : ""
       }
       ${
         componentProps.disabled
           ? "cursor-not-allowed opacity-20"
           : "hover:bg-dark cursor-pointer "
       }`}
-      // whileHover={{ scale: 1.02 }}
       disabled={componentProps.disabled}
     >
-      <p className="bg-clip-text bg-orange-gradient text-transparent uppercase">
-        {label}
-      </p>
-      <motion.div
-        animate={isPlaying ? "end" : "start"}
-        variants={arrowVariants}
-        className="pt-3"
-      >
-        {/* <ArrowIcon color={"#d1d5db"} /> */}
-        <Image
-          src="/images/icons/arrow_down.png"
-          width={40}
-          height={40}
-          alt="Left Arrow"
-        />
-      </motion.div>
-    </motion.button>
+      <p className="pb-0.5">{label}</p>
+      <ArrowIcon className="scale-125 mt-" animate={open} fill={"#EB6976"} />
+    </button>
   );
 };
 

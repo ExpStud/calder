@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { motion, Variants } from "framer-motion";
+import { navigationItemVariants } from "@constants";
 
 interface Props {
   item: string;
@@ -12,13 +13,14 @@ const DropdownItem: FC<Props> = (props: Props) => {
   const { item, index, handleClick, variants } = props;
 
   return (
-    <motion.li
+    <motion.div
       key={index}
-      className={`text-center p-2 cursor-pointer flex items-center justify-center bg-transparent active:bg-custom-black text-2xl transition-all duration-300 bg-mid-gray hover:bg-custom-dark-gray`}
+      variants={navigationItemVariants}
+      className={`text-center p-2 cursor-pointer flex button-template connect-button !bg-red-010 !bg-opacity-100 hover:!bg-red-020  hover:!bg-opacity-80 !text-sm md:!text-base !w-[140px] md:!w-[200px] h-[38px]`}
       onClick={() => handleClick(item, index)}
     >
       <motion.span variants={variants}>{item}</motion.span>
-    </motion.li>
+    </motion.div>
   );
 };
 

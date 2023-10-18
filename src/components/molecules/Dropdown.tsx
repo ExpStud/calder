@@ -1,4 +1,8 @@
-import { dropdownAnimations, dropdownItemsAnimations } from "@constants";
+import {
+  dropdownAnimations,
+  navigationVariants,
+  dropdownItemsAnimations,
+} from "@constants";
 import { DropdownButton, DropdownItem } from "@components";
 import { FC, HTMLAttributes, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -35,20 +39,24 @@ const Dropdown: FC<Props> = (props: Props) => {
       onClick={() => {
         if (!disabled) setDidHover(!didHover);
       }}
-      className={`relative ${className}`}
+      className={`relative z-10 ${className}`}
       ref={ref}
     >
-      <DropdownButton isPlaying={didHover} label={label} disabled={disabled} />
+      <DropdownButton open={didHover} label={label} disabled={disabled} />
       <AnimatePresence mode="wait">
         {didHover && (
           <motion.div
-            className="absolute z-10 left-1/2 transform -translate-x-1/2 uppercase"
+            className="absolute z-0 left-0 uppercase"
             key="dropdown-list"
-            variants={dropdownAnimations}
+            // variants={dropdownAnimations}
+            // initial="hidden"
+            // animate="show"
+            variants={navigationVariants}
             initial="hidden"
-            animate="show"
+            animate="visible"
+            exit="exit"
           >
-            <motion.ul className="rounded-sm shadow max-h-[250px] w-screen md:w-96 overflow-y-auto z-10 font-secondary bg-mid-gray left-1/2 transform -translate-x-1/2">
+            <motion.div className="max-h-[300px] overflow-y-auto z-10">
               {items &&
                 items.map((item: string, index) => (
                   <DropdownItem
@@ -59,7 +67,7 @@ const Dropdown: FC<Props> = (props: Props) => {
                     variants={dropdownItemsAnimations}
                   />
                 ))}
-            </motion.ul>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>

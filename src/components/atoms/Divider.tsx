@@ -18,7 +18,7 @@ const Divider: FC<DividerProps> = (props: DividerProps) => {
     className,
   } = props;
   return (
-    <div className={`relative h-[1px] w-full flex gap-0 ${className} `}>
+    <div className={`relative -z-20 h-[1px] w-full flex gap-0 ${className} `}>
       {showLeftTip && (
         <div className={`bg-light-red opacity-60 ${leftTipWidth}`} />
       )}
