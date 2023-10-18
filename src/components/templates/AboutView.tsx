@@ -20,11 +20,12 @@ const AboutView: FC = () => {
   useEffect(() => {
     const id = queryParams.get("id");
     if (id) {
-      navItems.map((item, index) => {
-        if (item.toLowerCase() === id) {
-          setSelectedItem(navItems[index]);
-        }
-      });
+      const tab = navItems.find((item) => item.toLowerCase() === id);
+      if (tab) {
+        setSelectedItem(tab);
+      } else {
+        setSelectedItem(navItems[0]);
+      }
     } else {
       setSelectedItem(navItems[0]);
     }

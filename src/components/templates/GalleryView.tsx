@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from "react";
+import { FC, useCallback, useEffect, useState } from "react";
 import {
   AboutNavigation,
   AboutOverview,
@@ -10,30 +10,88 @@ import {
   Dropdown,
 } from "@components";
 import { AnimatePresence, motion } from "framer-motion";
-import { galleryNav, fastExitAnimation } from "@constants";
+import {
+  galleryNav,
+  fastExitAnimation,
+  GalleryNavigation,
+  searchers,
+} from "@constants";
 import { useSearchParams } from "next/navigation";
+import { findNftByMint } from "@utils";
+import { useConnection } from "@solana/wallet-adapter-react";
+import { PublicKey } from "@solana/web3.js";
+import { FindNftByMintOutput } from "@metaplex-foundation/js";
 
 const GalleryView: FC = () => {
   const [selectedItem, setSelectedItem] = useState<string>();
-  const queryParams = useSearchParams();
+  const [metadata, setMetadata] = useState<FindNftByMintOutput[]>();
 
-  //set selected item based on query params
-  useEffect(() => {
-    const id = queryParams.get("id");
-    if (id) {
-      galleryNav.map((item, index) => {
-        if (item.toLowerCase() === id) {
-          setSelectedItem(galleryNav[index]);
-        }
-      });
-    } else {
-      setSelectedItem(galleryNav[0]);
-    }
-  }, [queryParams]);
+  const queryParams = useSearchParams();
+  const { connection } = useConnection();
 
   const handleDropdownSelect = (item: string, index: number) => {
     setSelectedItem(galleryNav[index]);
   };
+
+  //fetch nft metadata for the needed gallery display
+  const fetchNftss = useCallback(async () => {
+    if (selectedItem === GalleryNavigation.Searchers) {
+      await Promise.all(
+        searchers.map(async (searcher) => {
+          let nfts: FindNftByMintOutput[] = [];
+          const nft: FindNftByMintOutput | null = await findNftByMint(
+            connection,
+            new PublicKey(searcher.mint)
+          );
+          if (nft) nfts.push(nft);
+          setMetadata(nfts);
+        })
+      );
+    }
+  }, [connection, selectedItem]);
+
+  //fetch nft metadata for the needed gallery display
+  const fetchNfts = useCallback(async () => {
+    if (selectedItem === GalleryNavigation.Searchers) {
+      //map the searchers array into an array of promises
+      const nftPromises = searchers.map(async (searcher) => {
+        const nft = await findNftByMint(
+          connection,
+          new PublicKey(searcher.mint)
+        );
+        return nft;
+      });
+      //await all the promises and collect the results
+      const nftResults = await Promise.all(nftPromises);
+      //filter out null values and set state
+      const filteredNfts = nftResults.filter(
+        (nft) => nft !== null
+      ) as FindNftByMintOutput[];
+      setMetadata(filteredNfts);
+    }
+  }, [connection, selectedItem]);
+
+  useEffect(() => {
+    fetchNfts();
+  }, [fetchNfts]);
+
+  //set selected nav item based on query params
+  useEffect(() => {
+    const id = queryParams.get("id");
+    if (id) {
+      const tab = Object.values(GalleryNavigation).find(
+        (item) => item.toLowerCase() === id
+      ); //galleryNav.find((item) => item.toLowerCase() === id);
+      console.log(id, galleryNav, tab);
+      if (tab) {
+        setSelectedItem(tab);
+      } else {
+        setSelectedItem(galleryNav[0]);
+      }
+    } else {
+      setSelectedItem(galleryNav[0]);
+    }
+  }, [queryParams]);
 
   return (
     <div className="page-centered">
@@ -48,13 +106,14 @@ const GalleryView: FC = () => {
           <AboutNavigation
             selectedItem={selectedItem}
             setSelectedItem={setSelectedItem}
-            navItems={galleryNav}
+            // navItems={galleryNav}
+            navItems={Object.values(GalleryNavigation) as string[]}
           />
         )}
       </div>
       <div className="col-start w-full">
         <AnimatePresence mode="wait">
-          {selectedItem === "Searchers" && (
+          {selectedItem === GalleryNavigation.Searchers && (
             <motion.div key={0} {...fastExitAnimation}>
               <Dropdown
                 items={galleryNav}
@@ -63,7 +122,7 @@ const GalleryView: FC = () => {
               />
             </motion.div>
           )}
-          {selectedItem === "Comic" && (
+          {selectedItem === GalleryNavigation.Comic && (
             <motion.div
               key={1}
               {...fastExitAnimation}

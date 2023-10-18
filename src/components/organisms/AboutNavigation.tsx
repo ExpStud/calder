@@ -6,6 +6,7 @@ import {
   CornerTopLeftIcon,
   CornerTopRightIcon,
 } from "@components";
+import { GalleryNavigation } from "@constants";
 
 interface Props {
   selectedItem: string;
@@ -17,6 +18,7 @@ const AboutNavigation = (props: Props) => {
 
   return (
     <div className="about-navigation">
+      {/* {Object.values(navItems).map((item, index) => ( */}
       {navItems.map((item, index) => (
         <div
           className={`about-navigation-item ${
