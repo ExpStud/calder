@@ -2,7 +2,8 @@ import { Team } from "@types";
 
 export const galleryNav: string[] = [
   "Searchers",
-  "Comic",
+  "Substance",
+  "Chronicles",
   "Airdrop",
   "Collabs",
 ];

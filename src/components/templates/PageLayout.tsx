@@ -44,7 +44,7 @@ const PageLayout: FC<Props> = (props: Props) => {
     >
       <PageHead
         title="Calder"
-        description="Calder Moore bombaclat ya"
+        description="Calder Moore [meta tag images, description needed]"
         url="https://addurl.xyz/"
         twitter="CalderMoore_"
       />
