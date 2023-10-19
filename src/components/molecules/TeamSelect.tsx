@@ -25,7 +25,7 @@ const TeamSelect: FC<Props> = (props: Props) => {
           <div
             key={index}
             className={`relative font-teko-thin text-xl w-[80px] sm:w-[140px] lg:w-[200px] h-[60px] sm:h-[50px] flex items-center justify-center lg:justify-start lg:pl-6 text-light-red transition-300 uppercase cursor-pointer
-            bg-light-red bg-opacity-10  hover:text-opacity-100 text-opacity-80 border-light-red border-opacity-20 border lg:border-l lg:border-r lg:border-b leading-none text-center pt-1 ${
+            bg-light-red bg-opacity-10  hover:text-opacity-100 text-opacity-80 border-color border lg:border-l lg:border-r lg:border-b leading-none text-center pt-1 ${
               index === 0 ? "border-t" : ""
             } ${
               isOpen
@@ -48,7 +48,7 @@ const TeamSelect: FC<Props> = (props: Props) => {
           </div>
         );
       })}
-      <div className="hidden lg:flex h-full w-[200px] lg:min-h-[325px] border-b border-l border-r bg-dark-red bg-opacity-50 border-light-red border-opacity-20 "></div>
+      <div className="hidden lg:flex h-full w-[200px] lg:min-h-[325px] border-b border-l border-r bg-dark-red bg-opacity-50 border-color "></div>
     </div>
   );
 };

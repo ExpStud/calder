@@ -19,8 +19,8 @@ const CornerTopLeftIcon: FC<Props> = (props: Props) => {
         >
           <g filter="url(#filter0_dddddd_565_6893)">
             <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
+              fillRule="evenodd"
+              clipRule="evenodd"
               d="M27 19H21H19V21V27H21L21 21H27V19Z"
               fill="#FEFDBA"
             />
@@ -157,8 +157,8 @@ const CornerTopLeftIcon: FC<Props> = (props: Props) => {
           className="absolute top-0 left-0"
         >
           <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
             d="M8 0H2H0V2V8H2L2 2H8V0Z"
             fill="#C25661"
           />

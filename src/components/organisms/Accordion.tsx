@@ -26,7 +26,7 @@ const Accordion: FC<Props> = (props: Props) => {
       {items.map((item, index) => (
         <div
           key={index}
-          className={`flex flex-col cursor-pointer transition-300 border-b border-light-red border-opacity-20 hover:border-opacity-60`}
+          className={`flex flex-col cursor-pointer transition-300 border-b border-color hover:border-opacity-60`}
           onClick={() => toggleAccordion(index)}
           onMouseEnter={() => setHoverIndex(index)}
           onMouseLeave={() => setHoverIndex(null)}

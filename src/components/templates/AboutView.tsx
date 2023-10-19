@@ -1,6 +1,6 @@
 import { FC, useEffect, useState } from "react";
 import {
-  AboutNavigation,
+  TabNavigation,
   AboutOverview,
   AboutRoadmap,
   AboutSearchers,
@@ -23,12 +23,10 @@ const AboutView: FC = () => {
       const tab = navItems.find((item) => item.toLowerCase() === id);
       if (tab) {
         setSelectedItem(tab);
-      } else {
-        setSelectedItem(navItems[0]);
+        return;
       }
-    } else {
-      setSelectedItem(navItems[0]);
     }
+    setSelectedItem(navItems[0]);
   }, [queryParams]);
 
   return (
@@ -41,7 +39,7 @@ const AboutView: FC = () => {
       <div className="flex flex-col lg:flex-row justify-between items-center w-full pt-4 pb-14 gap-3">
         <h2>About</h2>
         {selectedItem && (
-          <AboutNavigation
+          <TabNavigation
             selectedItem={selectedItem}
             setSelectedItem={setSelectedItem}
             navItems={navItems}

@@ -27,7 +27,7 @@ const TeamDisplay: FC<Props> = (props: Props) => {
             <h3>{team.name}</h3>
             <TwitterIcon
               url={team.twitter}
-              className="w-14 row-centered bg-light-red bg-opacity-10 border border-light-red border-opacity-20 hover:bg-opacity-20 transition-300"
+              className="w-14 row-centered bg-light-red bg-opacity-10 border border-color hover:bg-opacity-20 transition-300"
             />
           </div>
           {/* text */}

@@ -6,23 +6,22 @@ import {
   CornerTopLeftIcon,
   CornerTopRightIcon,
 } from "@components";
-import { GalleryNavigation } from "@constants";
 
 interface Props {
   selectedItem: string;
   setSelectedItem: Dispatch<SetStateAction<string | undefined>>;
   navItems: string[];
 }
-const AboutNavigation = (props: Props) => {
+const TabNavigation = (props: Props) => {
   const { selectedItem, setSelectedItem, navItems } = props;
 
   return (
-    <div className="about-navigation">
+    <div className="tab-navigation">
       {/* {Object.values(navItems).map((item, index) => ( */}
       {navItems.map((item, index) => (
         <div
-          className={`about-navigation-item ${
-            selectedItem === item ? "about-navigation-item-active" : ""
+          className={`tab-navigation-item ${
+            selectedItem === item ? "tab-navigation-item-active" : ""
           }`}
           key={index}
           onClick={() => setSelectedItem(item)}
@@ -39,4 +38,4 @@ const AboutNavigation = (props: Props) => {
   );
 };
 
-export default AboutNavigation;
+export default TabNavigation;

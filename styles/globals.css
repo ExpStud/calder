@@ -72,7 +72,7 @@ html {
 }
 
 .connect-button {
-  @apply button-template border-light-red border-opacity-20 button-transitions bg-light-red bg-opacity-20 text-light-red ;
+  @apply button-template border-color button-transitions bg-light-red bg-opacity-20 text-light-red ;
 }
 
 .connect-button p {
@@ -80,7 +80,7 @@ html {
 }
 
 .connect-icon {
- @apply relative flex items-center justify-center border-r-[1px] h-full px-3 border-light-red border-opacity-20 mr-2; 
+ @apply relative flex items-center justify-center border-r-[1px] h-full px-3 border-color mr-2; 
 }
 .connect-icon:after {
   content: '';
@@ -93,6 +93,10 @@ html {
   top: 0;
   margin: 4px;
   position: absolute;
+}
+
+.border-color {
+  @apply border-light-red border-opacity-20;
 }
 
 /* Audio Control */
@@ -144,7 +148,7 @@ html {
 /* Dropdown Navigation */
 
 .navigation {
-  @apply relative navigation-container flex justify-between items-center pr-4 border-light-red border-opacity-20;
+  @apply relative navigation-container flex justify-between items-center pr-4 border-color;
   filter: drop-shadow(0px 0px 0px rgba(40, 11, 11, 0.60)) drop-shadow(0px 14px 30px rgba(40, 11, 11, 0.59));
 }
 
@@ -173,7 +177,7 @@ html {
   backdrop-filter: blur(5px);
 }
 .navigation-dropdown-item {
-  @apply navigation-container cursor-pointer uppercase border-l border-r border-light-red border-opacity-20 bg-red-020 flex items-center gap-6 h-full;
+  @apply navigation-container cursor-pointer uppercase border-l border-r border-color bg-red-020 flex items-center gap-6 h-full;
 }
 .navigation-dropdown-item-transition {
   @apply transition-all duration-300 hover:bg-navigation-highlight;
@@ -183,17 +187,17 @@ html {
 }
 
 /* About */
-.about-navigation {  
-  @apply relative flex flex-wrap overflow-y-auto items-center border-light-red border-opacity-20 
+.tab-navigation {  
+  @apply relative flex flex-wrap overflow-y-auto items-center border-color 
   uppercase border text-xl text-center font-teko leading-none tracking-wider
   !bg-red-020 !bg-opacity-60 gap-1 !w-auto px-0 md:px-0 !min-h-[50px] md:h-[54px];
 }
-.about-navigation-item {
+.tab-navigation-item {
   @apply px-2 sm:px-6 md:px-6 h-[50px] flex items-center justify-center pt-[3px] cursor-pointer text-light-red text-opacity-60 
   text-sm md:text-lg transition-all duration-300 hover:text-opacity-100 ;
 }
-.about-navigation-item-active {
-  @apply transition-all duration-200  text-custom-white bg-[#321517];
+.tab-navigation-item-active {
+  @apply transition-all duration-200  text-custom-white bg-dark-red-2;
 }
 .gold-filter {
   filter: drop-shadow(0px 0px 1.7774707078933716px #FEFDBA) drop-shadow(0px 0px 6.221147537231445px #FEFDBA) drop-shadow(0px 0px 12.44229507446289px #FEFDBA) drop-shadow(0px 0px 21.329648971557617px #FEFDBA) drop-shadow(0px 0px 37.32688522338867px #FEFDBA);
@@ -239,6 +243,9 @@ html {
 }
 
 /* Animations */
+.transition-1000{
+  @apply transition-all duration-1000;
+}
 .transition-500{
   @apply transition-all duration-500;
 }

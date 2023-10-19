@@ -62,7 +62,7 @@ const NavigationDropdown: FC<NavigationDropdownProps> = (
         })}
       </div>
       <motion.div
-        className={`navigation-container px-4 bg-red-010 flex items-center justify-between h-full overflow-hidden border border-light-red border-opacity-20`}
+        className={`navigation-container px-4 bg-red-010 flex items-center justify-between h-full overflow-hidden border border-color`}
         variants={navigationItemVariants}
         key="bottom"
       >

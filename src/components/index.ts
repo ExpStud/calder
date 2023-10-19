@@ -52,6 +52,8 @@ const SubstanceGoal = dynamic(() => import("./molecules/SubstanceGoal"));
 const AccordionWrapper = dynamic(() => import("./molecules/AccordionWrapper"));
 const TeamSelect = dynamic(() => import("./molecules/TeamSelect"));
 const TeamDisplay = dynamic(() => import("./molecules/TeamDisplay"));
+const GallerySorting = dynamic(() => import("./molecules/GallerySorting"));
+const GalleryImageItem = dynamic(() => import("./molecules/GalleryImageItem"));
 //organisms
 const Header = dynamic(() => import("./organisms/Header"));
 const Footer = dynamic(() => import("./organisms/Footer"));
@@ -65,7 +67,9 @@ const AboutOverview = dynamic(() => import("./organisms/AboutOverview"));
 const AboutSearchers = dynamic(() => import("./organisms/AboutSearchers"));
 const AboutRoadmap = dynamic(() => import("./organisms/AboutRoadmap"));
 const AboutTeam = dynamic(() => import("./organisms/AboutTeam"));
-const AboutNavigation = dynamic(() => import("./organisms/AboutNavigation"));
+const TabNavigation = dynamic(() => import("./organisms/TabNavigation"));
+const GalleryImages = dynamic(() => import("./organisms/GalleryImages"));
+//organisms
 //templates
 const PageLayout = dynamic(() => import("./templates/PageLayout"));
 const LandingView = dynamic(() => import("./templates/LandingView"));
@@ -121,7 +125,7 @@ export {
   AudioControlDisplay,
   TextSlidingAnimation,
   Divider,
-  AboutNavigation,
+  TabNavigation,
   CornerTopLeftIcon,
   CornerTopRightIcon,
   CornerBottomLeftIcon,
@@ -138,4 +142,7 @@ export {
   TeamSelect,
   TeamDisplay,
   GalleryView,
+  GallerySorting,
+  GalleryImages,
+  GalleryImageItem
 }
