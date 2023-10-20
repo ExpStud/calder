@@ -1,4 +1,4 @@
-import { FC, useCallback, useEffect, useState } from "react";
+import { FC, use, useCallback, useEffect, useState } from "react";
 import {
   TabNavigation,
   Divider,
@@ -11,25 +11,47 @@ import {
   fastExitAnimation,
   GalleryNavigation,
   searchers,
+  Factions,
 } from "@constants";
 import { useSearchParams } from "next/navigation";
 import { findNftByMint } from "@utils";
 import { useConnection } from "@solana/wallet-adapter-react";
 import { PublicKey } from "@solana/web3.js";
 import { FindNftByMintOutput } from "@metaplex-foundation/js";
-import Image from "next/image";
 
 const GalleryView: FC = () => {
-  const [selectedNavItem, setSelectedNavItem] = useState<string>();
-  const [metadata, setMetadata] = useState<FindNftByMintOutput[]>();
+  const [selectedNavItem, setSelectedNavItem] = useState<string>(); //tab navigation for page
+  const [metadata, setMetadata] = useState<FindNftByMintOutput[]>(); //nft metadata for gallery
+  const [filteredMetadata, setFilteredMetadata] = useState<
+    FindNftByMintOutput[] | null
+  >(null);
   const [selectedGalleryItem, setSelectedGalleryItem] =
-    useState<FindNftByMintOutput>();
+    useState<FindNftByMintOutput>(); //selected nft metadata
+  const [selectedFaction, setSelectedFaction] = useState<Factions | undefined>(
+    undefined
+  ); //selected faction for searchers
 
   const queryParams = useSearchParams();
   const { connection } = useConnection();
 
-  const handleDropdownSelect = (item: string, index: number) => {
-    setSelectedNavItem(galleryNav[index]);
+  const handleDropdown = (item: string) => {
+    //reset selected faction if "All Factions" or selectedFaction is selected
+    if (
+      item === "All Factions" ||
+      item.toLocaleLowerCase() === selectedFaction?.toLocaleLowerCase()
+    ) {
+      setSelectedFaction(undefined);
+      return;
+    }
+
+    // Find the corresponding enum value for the selected item
+    const selectedFactionEnum = Object.values(Factions).find((faction) => {
+      return faction.toLowerCase() === item.toLocaleLowerCase();
+    });
+
+    if (selectedFactionEnum) {
+      setSelectedFaction(selectedFactionEnum);
+    }
   };
 
   //fetch nft metadata for the needed gallery display
@@ -78,7 +100,34 @@ const GalleryView: FC = () => {
     if (metadata) {
       setSelectedGalleryItem(metadata[0]);
     }
-  }, [metadata]);
+  }, [metadata, selectedFaction]);
+
+  //filter metadata based on selected faction
+  const filterMetadata = useCallback(() => {
+    if (metadata && selectedFaction) {
+      const filteredNfts = metadata.filter((nft) => {
+        if (nft?.json && nft?.json?.attributes) {
+          return nft?.json?.attributes.some(
+            (attr) => attr.trait_type === selectedFaction
+          );
+        }
+      });
+      console.log("filteredNfts", filteredNfts);
+      setFilteredMetadata(filteredNfts);
+    } else {
+      setFilteredMetadata(null);
+    }
+  }, [metadata, selectedFaction]);
+
+  useEffect(() => {
+    filterMetadata();
+  }, [filterMetadata]);
+
+  useEffect(() => {
+    if (filteredMetadata) {
+      setSelectedGalleryItem(filteredMetadata[0]);
+    }
+  }, [filteredMetadata]);
 
   return (
     <div className="page-centered">
@@ -93,18 +142,20 @@ const GalleryView: FC = () => {
           <TabNavigation
             selectedItem={selectedNavItem}
             setSelectedItem={setSelectedNavItem}
-            // navItems={galleryNav}
-            navItems={Object.values(GalleryNavigation) as string[]}
+            navItems={Object.values(GalleryNavigation)}
           />
         )}
       </div>
-      <GallerySorting
-        selectedNavItem={selectedNavItem}
-        handleDropdownSelect={handleDropdownSelect}
-      />
+      <div className="z-50 row-start w-full">
+        <GallerySorting
+          selectedNavItem={selectedNavItem}
+          handleDropdown={handleDropdown}
+          selectedFaction={selectedFaction}
+        />
+      </div>
       {/* images */}
       <GalleryImages
-        metadata={metadata}
+        metadata={filteredMetadata ?? metadata}
         setSelectedGalleryItem={setSelectedGalleryItem}
         selectedGalleryItem={selectedGalleryItem}
       />

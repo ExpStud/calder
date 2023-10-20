@@ -1,14 +1,20 @@
 import { FC } from "react";
 import { Dropdown } from "@components";
 import { AnimatePresence, motion } from "framer-motion";
-import { galleryNav, fastExitAnimation, GalleryNavigation } from "@constants";
+import {
+  galleryNav,
+  fastExitAnimation,
+  GalleryNavigation,
+  Factions,
+} from "@constants";
 
 interface Props {
   selectedNavItem: string | undefined;
-  handleDropdownSelect: (item: string, index: number) => void;
+  handleDropdown: (item: string, index: number) => void;
+  selectedFaction: Factions | undefined;
 }
 const GallerySorting: FC<Props> = (props: Props) => {
-  const { selectedNavItem, handleDropdownSelect } = props;
+  const { selectedNavItem, selectedFaction, handleDropdown } = props;
 
   return (
     <div className="col-start w-full">
@@ -16,9 +22,13 @@ const GallerySorting: FC<Props> = (props: Props) => {
         {selectedNavItem === GalleryNavigation.Searchers && (
           <motion.div key={0} {...fastExitAnimation}>
             <Dropdown
-              items={galleryNav}
-              label={"All Factions"}
-              handleClick={handleDropdownSelect}
+              items={
+                selectedFaction
+                  ? ["All Factions", ...Object.values(Factions)]
+                  : Object.values(Factions)
+              }
+              label={selectedFaction ?? "All Factions"}
+              handleClick={handleDropdown}
             />
           </motion.div>
         )}
@@ -31,12 +41,12 @@ const GallerySorting: FC<Props> = (props: Props) => {
             <Dropdown
               items={galleryNav}
               label={"Covers"}
-              handleClick={handleDropdownSelect}
+              handleClick={handleDropdown}
             />
             <Dropdown
               items={galleryNav}
               label={"Mythic"}
-              handleClick={handleDropdownSelect}
+              handleClick={handleDropdown}
             />
           </motion.div>
         )}

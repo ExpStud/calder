@@ -16,7 +16,7 @@ const DropdownItem: FC<Props> = (props: Props) => {
     <motion.div
       key={index}
       variants={navigationItemVariants}
-      className={`text-center p-2 cursor-pointer flex button-template connect-button !bg-red-010 !bg-opacity-100 hover:!bg-red-020  hover:!bg-opacity-80 !text-sm md:!text-base !w-[140px] md:!w-[200px] h-[38px]`}
+      className={`text-center p-2 cursor-pointer flex button-template connect-button !bg-red-010 !bg-opacity-100 hover:!bg-red-020  hover:!bg-opacity-100 !text-sm md:!text-base !w-[140px] md:!w-[200px] h-[38px]`}
       onClick={() => handleClick(item, index)}
     >
       <motion.span variants={variants}>{item}</motion.span>

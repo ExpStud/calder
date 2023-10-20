@@ -195,9 +195,9 @@ export const navigationVariants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { staggerChildren: 0.15, ease: "easeInOut" },
+    transition: { staggerChildren: 0.07, ease: "easeInOut" },
   },
-  exit: { opacity: 0, y: 0, transition: {duration: 0.25}, z:-10 },
+  exit: { opacity: 0, y: 0, transition: {duration: 0.3}, z:-10 },
 };
 
 export const navigationItemVariants = {
@@ -205,9 +205,9 @@ export const navigationItemVariants = {
   visible: {
     opacity: 1,
     x: 0,
-    transition: { duration: 0.5, ease: "easeInOut" },
+    transition: { duration: 0.2, ease: "easeInOut" },
   },
-  exit: { opacity: 0, x: 0, transition: {duration: 0.25}  }, 
+  exit: { opacity: 0, x: 0, transition: {duration: 0.1}  }, 
 };
 
 export const audioDropdownAnimation = {

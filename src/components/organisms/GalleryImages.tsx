@@ -13,7 +13,7 @@ const GalleryImages: FC<Props> = (props: Props) => {
   const { metadata, selectedGalleryItem, setSelectedGalleryItem } = props;
 
   return (
-    <div className="flex gap-0 w-screen overflow-x-scroll pt-6 cursor-pointer ml-4 md:ml-[12%] pr-10 lg:pr-32">
+    <div className="flex self-start gap-0 w-[90vw] overflow-x-auto pt-6 cursor-pointer pr-10">
       {metadata?.map((item, index) => (
         <GalleryImageItem
           key={index}

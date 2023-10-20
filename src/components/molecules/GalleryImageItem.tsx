@@ -1,4 +1,4 @@
-import { Dispatch, FC, SetStateAction, useState } from "react";
+import { FC } from "react";
 import Image from "next/image";
 import { FindNftByMintOutput } from "@metaplex-foundation/js";
 import {
@@ -7,6 +7,8 @@ import {
   CornerTopLeftIcon,
   CornerTopRightIcon,
 } from "@components";
+import { motion } from "framer-motion";
+import { fastEnterAnimation } from "@constants";
 
 interface Props {
   item: FindNftByMintOutput;
@@ -39,12 +41,12 @@ const GalleryImageItem: FC<Props> = (props: Props) => {
         </div>
       )}
       {isSelected && (
-        <>
+        <motion.div {...fastEnterAnimation}>
           <CornerBottomLeftIcon gold />
           <CornerBottomRightIcon gold />
           <CornerTopLeftIcon gold />
           <CornerTopRightIcon gold />
-        </>
+        </motion.div>
       )}
     </div>
   );

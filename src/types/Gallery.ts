@@ -5,6 +5,3 @@ export interface Searchers {
   // image: string;
   // exchange: string;
 }
-export enum Faction {
-
-}

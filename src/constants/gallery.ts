@@ -1,5 +1,21 @@
 import { Searchers } from "@types";
 
+export enum GalleryNavigation {
+  Searchers = "Searchers",
+  Comic = "Comic",
+  Airdrops = "Airdrops",
+  Collabs = "Collabs",
+}
+
+export enum Factions {
+  The_Coalition = "The Coalition",
+  The_Voidborn = "The Voidborn",
+  Lightbringers = "Lightbringers",
+  Citizens_Of_Vulture = "Citizens Of Vulture",
+  Marauders = "Marauders",
+  Merchant_Guild = "Merchant Guild",
+}
+
 export const galleryNav: string[] = [
   "Searchers",
   "Substance",
@@ -7,13 +23,6 @@ export const galleryNav: string[] = [
   "Airdrop",
   "Collabs",
 ];
-
-export enum GalleryNavigation {
-  Searchers = "Searchers",
-  Comic = "Comic",
-  Airdrops = "Airdrops",
-  Collabs = "Collabs",
-}
 
 export const searchers: Searchers[] = [
   {
