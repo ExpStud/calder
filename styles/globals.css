@@ -255,3 +255,29 @@ html {
 .transition-200{
   @apply transition-all duration-300;
 }
+
+/* WebKit-based browsers (Chrome, Safari) */
+/* Change background color of the track */
+::-webkit-scrollbar {
+  width: 12px; /* Set a width for the scrollbar */
+  background-color: #371618; /* Background color of the track */
+}
+
+/* Change color of the scrollbar thumb (the draggable part) */
+::-webkit-scrollbar-thumb {
+  background-color: #6C2E34; /* Color of the scrollbar thumb */
+}
+
+/* Firefox */
+/* Set the width and color of the scrollbar */
+/* Note: Firefox uses scrollbar-width and scrollbar-color properties */
+/* scrollbar-width: thin is used for a thinner scrollbar */
+/* scrollbar-color: thumb color, track color */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #6C2E34 #371618;
+}
+
+
+
+

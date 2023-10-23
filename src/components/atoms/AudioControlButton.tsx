@@ -24,7 +24,7 @@ const AudioControlButton: FC<Props> = (props: Props) => {
         </div>
         <p className="font-teko pt-1">Audio Control</p>
       </div>
-      <div className="px-4">
+      <div className="p-4 bg-red-900">
         <ArrowIcon className="scale-125" animate={open} />
       </div>
     </button>

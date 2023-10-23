@@ -11,7 +11,7 @@ export enum Factions {
   The_Coalition = "The Coalition",
   The_Voidborn = "The Voidborn",
   Lightbringers = "Lightbringers",
-  Citizens_Of_Vulture = "Citizens Of Vulture",
+  Citizens_Of_Vulture = "Citizens of Vulture",
   Marauders = "Marauders",
   Merchant_Guild = "Merchant Guild",
 }
@@ -42,5 +42,8 @@ export const searchers: Searchers[] = [
   },
   {
     mint: "4MQeQeFCqKZie1jXLvwMD3WCNGPB4MmgJKa2gKivz4Za",
+  },
+  {
+    mint: "2LBtxFduPT9PpFAdfqow4D6oPGhL6cmmnJwwYZghzDxp",
   },
 ];

@@ -1,7 +1,6 @@
 export * from "./framer.config"
 export * from "./contexts"
 export * from "./footer"
-export * from "./collection"
 export * from "./navigation"
 export * from "./audio"
 export * from "./about"

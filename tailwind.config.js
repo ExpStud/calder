@@ -16,6 +16,7 @@ module.exports = {
           "url('/images/buttons/navigation-highlight.svg')",
         "background-grid": "url('/images/about/background-grid.svg')",
         "dotted-backsplash": "url('/images/about/dotted-backsplash.svg')",
+        "lore-bg": "url('/images/gallery/lore-bg.svg')",
       },
       fontFamily: {
         primary: ["Barlow"],

@@ -9,6 +9,7 @@ import {
 } from "@components";
 import { motion } from "framer-motion";
 import { fastEnterAnimation } from "@constants";
+import { log } from "console";
 
 interface Props {
   item: FindNftByMintOutput;
@@ -19,7 +20,7 @@ interface Props {
 
 const GalleryImageItem: FC<Props> = (props: Props) => {
   const { item, index, isSelected, setSelectedGalleryItem } = props;
-
+  console.log("item ", item);
   return (
     <div
       onClick={() => setSelectedGalleryItem(item)}

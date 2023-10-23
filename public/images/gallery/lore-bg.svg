@@ -1,0 +1,20 @@
+<svg width="680" height="404" viewBox="0 0 680 404" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="path-1-inside-1_471_3123" fill="white">
+<path d="M0 0H680V404H0V0Z"/>
+</mask>
+<path d="M679 0V404H681V0H679ZM1 404V0H-1V404H1Z" fill="#EB6976" fill-opacity="0.3" mask="url(#path-1-inside-1_471_3123)"/>
+<rect x="0.998535" width="6.98971" height="1" fill="#EB6976" fill-opacity="0.3"/>
+<rect x="672.01" width="6.98971" height="1" fill="#EB6976" fill-opacity="0.3"/>
+<rect x="0.998535" width="677.003" height="1" fill="#EB6976" fill-opacity="0.12"/>
+<rect x="1" y="45" width="678" height="1" fill="#EB6976" fill-opacity="0.12"/>
+<rect x="1" y="90" width="678" height="1" fill="#EB6976" fill-opacity="0.12"/>
+<rect x="1" y="135" width="678" height="1" fill="#EB6976" fill-opacity="0.12"/>
+<rect x="1" y="179" width="678" height="1" fill="#EB6976" fill-opacity="0.12"/>
+<rect y="224" width="679" height="1" fill="#EB6976" fill-opacity="0.12"/>
+<rect y="269" width="679" height="1" fill="#EB6976" fill-opacity="0.12"/>
+<rect y="314" width="679" height="1" fill="#EB6976" fill-opacity="0.12"/>
+<rect y="359" width="679" height="1" fill="#EB6976" fill-opacity="0.12"/>
+<rect y="403" width="679" height="1" fill="#EB6976" fill-opacity="0.12"/>
+<rect x="0.998535" y="403" width="6.98971" height="1" fill="#EB6976" fill-opacity="0.3"/>
+<rect x="672.01" y="403" width="6.98971" height="1" fill="#EB6976" fill-opacity="0.3"/>
+</svg>

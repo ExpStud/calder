@@ -108,11 +108,12 @@ const GalleryView: FC = () => {
       const filteredNfts = metadata.filter((nft) => {
         if (nft?.json && nft?.json?.attributes) {
           return nft?.json?.attributes.some(
-            (attr) => attr.trait_type === selectedFaction
+            (attr) =>
+              attr.trait_type === selectedFaction ||
+              attr.traitType === selectedFaction
           );
         }
       });
-      console.log("filteredNfts", filteredNfts);
       setFilteredMetadata(filteredNfts);
     } else {
       setFilteredMetadata(null);
@@ -167,15 +168,23 @@ const GalleryView: FC = () => {
               <motion.div
                 key={GalleryNavigation.Searchers}
                 {...fastExitAnimation}
-                className="col-start md:w-[400px] gap-4 border-t border-b border-color p-4 !bg-[#230D0E] !bg-opacity-100"
+                className="col-start gap-4 !bg-opacity-100 w-full md:w-[680px]"
               >
-                <div className="col-start">
+                <div className="col-start border-t border-b border-color p-5 !bg-[#230D0E] w-full ">
                   <h4 className="leading-none">{selectedGalleryItem.name}</h4>
                   <p className="uppercase text-light-red font-teko-thin text-xl">
                     Faction:
                     <span className="text-custom-white pl-1">
-                      {selectedGalleryItem.json?.attributes?.[1].trait_type}
+                      {selectedGalleryItem.json?.attributes?.[1].trait_type ??
+                        (selectedGalleryItem.json?.attributes?.[1]
+                          .traitType as string)}
                     </span>
+                  </p>
+                </div>
+                <div className="col-start bg-lore-bg bg-cover bg-no-repeat px-5 py-2 h-[400px]">
+                  <h4 className="text-light-red pt-2 md:pt-0">LORE</h4>
+                  <p className="text-custom-white text-base py-3 md:py-1 md:pr-32 lg:pr-36">
+                    {selectedGalleryItem.json?.description}
                   </p>
                 </div>
               </motion.div>
