@@ -32,7 +32,7 @@ const GallerySorting: FC<Props> = (props: Props) => {
             />
           </motion.div>
         )}
-        {selectedNavItem === GalleryNavigation.Comic && (
+        {selectedNavItem === GalleryNavigation.Substance && (
           <motion.div
             key={1}
             {...fastExitAnimation}

@@ -25,16 +25,16 @@ const TeamDisplay: FC<Props> = (props: Props) => {
           {/* header row */}
           <div className="flex w-full items-center justify-between">
             <h3>{team.name}</h3>
-            <TwitterIcon
-              url={team.twitter}
-              className="w-14 row-centered bg-light-red bg-opacity-10 border border-color hover:bg-opacity-20 transition-300"
-            />
+            <TwitterIcon url={team.twitter} className="icon" />
           </div>
           {/* text */}
-          <p className="text-light-red uppercase font-teko pb-3 lg:pb-0 text-lg">
+          <p className="text-light-red uppercase font-teko pb-3 text-lg">
             {team.title}
           </p>
-          <Divider showLeftTip={false} className="w-16 my-4 lg:my-0 xl:my-4 " />
+          <Divider
+            showLeftTip={false}
+            className="w-16 my-4 lg:mb-2 lg:-mt-2 xl:my-4 "
+          />
           <div className="col-start gap-4 pb-10">
             {team.bio.map((item: string, index: number) => (
               <p key={index} className="text-sm">

@@ -185,6 +185,9 @@ html {
 .icon-transitions {
   @apply transition-all duration-300 hover:bg-light-red hover:bg-opacity-10 p-2.5;
 }
+.icon {
+  @apply w-14 row-centered bg-light-red bg-opacity-10 border border-color hover:bg-opacity-20 transition-300 cursor-pointer;
+}
 
 /* About */
 .tab-navigation {  
@@ -220,6 +223,11 @@ html {
 .wallet-adapter-modal-button-close{
   @apply !bg-transparent;
 }
+
+/* Gallery */
+.download-icon {
+  @apply relative flex items-center justify-center border-r-[1px] h-full px-3 border-color mr-2; 
+ }
 
 /*  Layout  */
 

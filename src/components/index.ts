@@ -7,7 +7,7 @@ const ArrowIcon = dynamic(() => import("./@icons/ArrowIcon"));
 const TwitterIcon = dynamic(() => import("./@icons/TwitterIcon"));
 const DiscordIcon = dynamic(() => import("./@icons/DiscordIcon"));
 const ExpIcon = dynamic(() => import("./@icons/ExpIcon"));
-const ExchangeIcon = dynamic(() => import("./@icons/ExchangeIcon"));
+const ExchangeArtIcon = dynamic(() => import("./@icons/ExchangeArtIcon"));
 const MenuIcon = dynamic(() => import("./@icons/MenuIcon"));
 const CloseIcon = dynamic(() => import("./@icons/CloseIcon"));
 const DownloadIcon = dynamic(() => import("./@icons/DownloadIcon"));
@@ -18,6 +18,7 @@ const CornerTopRightIcon = dynamic(() => import("./@icons/CornerTopRightIcon"));
 const CornerBottomLeftIcon = dynamic(() => import("./@icons/CornerBottomLeftIcon"));
 const CornerBottomRightIcon = dynamic(() => import("./@icons/CornerBottomRightIcon"));
 const StackIcon = dynamic(() => import("./@icons/StackIcon"));
+const SearchIcon = dynamic(() => import("./@icons/SearchIcon"));
 //atoms
 const DropdownButton = dynamic(() => import("./atoms/DropdownButton"));
 const DropdownItem = dynamic(() => import("./atoms/DropdownItem"));
@@ -54,6 +55,8 @@ const TeamSelect = dynamic(() => import("./molecules/TeamSelect"));
 const TeamDisplay = dynamic(() => import("./molecules/TeamDisplay"));
 const GallerySorting = dynamic(() => import("./molecules/GallerySorting"));
 const GalleryImageItem = dynamic(() => import("./molecules/GalleryImageItem"));
+const GalleryItemLore = dynamic(() => import("./molecules/GalleryItemLore"));
+const GalleryItemBar = dynamic(() => import("./molecules/GalleryItemBar"));
 //organisms
 const Header = dynamic(() => import("./organisms/Header"));
 const Footer = dynamic(() => import("./organisms/Footer"));
@@ -99,7 +102,7 @@ export {
   NavItem,
   TabBarItem,
   TabBar,
-  ExchangeIcon,
+  ExchangeArtIcon,
   CloseIcon,
   Modal,
   Menu,
@@ -144,5 +147,8 @@ export {
   GalleryView,
   GallerySorting,
   GalleryImages,
-  GalleryImageItem
+  GalleryImageItem,
+  SearchIcon,
+  GalleryItemLore,
+  GalleryItemBar
 }

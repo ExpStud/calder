@@ -48,9 +48,6 @@ const Dropdown: FC<Props> = (props: Props) => {
           <motion.div
             className="absolute z-0 left-0 uppercase"
             key="dropdown-list"
-            // variants={dropdownAnimations}
-            // initial="hidden"
-            // animate="show"
             variants={navigationVariants}
             initial="hidden"
             animate="visible"

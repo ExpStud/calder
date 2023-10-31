@@ -1,9 +1,11 @@
-import { FC, use, useCallback, useEffect, useState } from "react";
+import { FC, useCallback, useEffect, useState } from "react";
 import {
   TabNavigation,
   Divider,
   GallerySorting,
   GalleryImages,
+  GalleryItemLore,
+  GalleryItemBar,
 } from "@components";
 import { AnimatePresence, motion } from "framer-motion";
 import {
@@ -54,11 +56,13 @@ const GalleryView: FC = () => {
     }
   };
 
-  //fetch nft metadata for the needed gallery display
+  const mintAddresses = searchers;
+
+  //fetch nft metadata for the specified gallery display
   const fetchNfts = useCallback(async () => {
     if (selectedNavItem === GalleryNavigation.Searchers) {
-      //map the searchers array into an array of promises
-      const nftPromises = searchers.map(async (searcher) => {
+      //map the mintAddresses array into an array of promises
+      const nftPromises = mintAddresses.map(async (searcher) => {
         const nft = await findNftByMint(
           connection,
           new PublicKey(searcher.mint)
@@ -73,7 +77,7 @@ const GalleryView: FC = () => {
       ) as FindNftByMintOutput[];
       setMetadata(filteredNfts);
     }
-  }, [connection, selectedNavItem]);
+  }, [connection, mintAddresses, selectedNavItem]);
 
   useEffect(() => {
     fetchNfts();
@@ -131,7 +135,7 @@ const GalleryView: FC = () => {
   }, [filteredMetadata]);
 
   return (
-    <div className="page-centered">
+    <div className="w-full h-full flex flex-col items-center justify-center pt-20 px-4 md:px-[10%] z-0">
       <Divider
         showLeftTipHighlight
         showLeftTip={false}
@@ -170,23 +174,17 @@ const GalleryView: FC = () => {
                 {...fastExitAnimation}
                 className="col-start gap-4 !bg-opacity-100 w-full md:w-[680px]"
               >
-                <div className="col-start border-t border-b border-color p-5 !bg-[#230D0E] w-full ">
-                  <h4 className="leading-none">{selectedGalleryItem.name}</h4>
-                  <p className="uppercase text-light-red font-teko-thin text-xl">
-                    Faction:
-                    <span className="text-custom-white pl-1">
-                      {selectedGalleryItem.json?.attributes?.[1].trait_type ??
-                        (selectedGalleryItem.json?.attributes?.[1]
-                          .traitType as string)}
-                    </span>
-                  </p>
-                </div>
-                <div className="col-start bg-lore-bg bg-cover bg-no-repeat px-5 py-2 h-[400px]">
-                  <h4 className="text-light-red pt-2 md:pt-0">LORE</h4>
-                  <p className="text-custom-white text-base py-3 md:py-1 md:pr-32 lg:pr-36">
-                    {selectedGalleryItem.json?.description}
-                  </p>
-                </div>
+                <GalleryItemBar
+                  name={selectedGalleryItem.name}
+                  faction={
+                    selectedGalleryItem.json?.attributes?.[1].trait_type ??
+                    (selectedGalleryItem.json?.attributes?.[1]
+                      .traitType as string)
+                  }
+                />
+                <GalleryItemLore
+                  description={selectedGalleryItem.json?.description}
+                />
               </motion.div>
             )}
         </AnimatePresence>

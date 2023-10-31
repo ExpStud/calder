@@ -2,7 +2,7 @@ import { Searchers } from "@types";
 
 export enum GalleryNavigation {
   Searchers = "Searchers",
-  Comic = "Comic",
+  Substance = "Substance",
   Airdrops = "Airdrops",
   Collabs = "Collabs",
 }

@@ -24,7 +24,7 @@ const DropdownButton: FC<Props> = (props: Props) => {
       disabled={componentProps.disabled}
     >
       <p className="pb-0.5">{label}</p>
-      <ArrowIcon className="scale-125 mt-" animate={open} fill={"#EB6976"} />
+      <ArrowIcon className="scale-125" animate={open} fill={"#EB6976"} />
     </button>
   );
 };

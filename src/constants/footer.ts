@@ -15,7 +15,7 @@ export const footer: Footer[] = [
     category: "Gallery",
     links: [
       { name: "Searchers", href: "/gallery/?id=searchers" },
-      { name: "Comic", href: "/gallery/?id=comic" },
+      { name: "Substance", href: "/gallery/?id=substance" },
       { name: "Airdrops", href: "/gallery/?id=airdrops" },
       { name: "Collabs", href: "/gallery/?id=collabs" },
     ],
