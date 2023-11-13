@@ -6,32 +6,35 @@ import {
   CornerBottomRightIcon,
   CornerTopLeftIcon,
   CornerTopRightIcon,
+  ImageShimmer,
 } from "@components";
 import { motion } from "framer-motion";
 import { fastEnterAnimation } from "@constants";
-import { log } from "console";
+// import { ImageShimmer } from "@components";
 
 interface Props {
-  item: FindNftByMintOutput;
+  item: FindNftByMintOutput | undefined;
   index: number;
   isSelected: boolean;
-  setSelectedGalleryItem: (item: FindNftByMintOutput) => void;
+  setSelectedGalleryItem?: (item: FindNftByMintOutput) => void;
 }
 
 const GalleryImageItem: FC<Props> = (props: Props) => {
   const { item, index, isSelected, setSelectedGalleryItem } = props;
-  console.log("item ", item);
+
   return (
     <div
-      onClick={() => setSelectedGalleryItem(item)}
+      onClick={() =>
+        setSelectedGalleryItem && item && setSelectedGalleryItem(item)
+      }
       className={`relative flex-shrink-0 p-4 border border-color mb-4 overflow-hidden transition-300 ${
         isSelected
           ? "!border-gold !border-opacity-80 bg-gold bg-opacity-10"
           : ""
       }`}
     >
-      {item.json?.image && (
-        <div className="overflow-hidden">
+      <div className="overflow-hidden cursor-pointer ">
+        {item?.json?.image ? (
           <Image
             src={item.json?.image}
             width={326}
@@ -39,8 +42,16 @@ const GalleryImageItem: FC<Props> = (props: Props) => {
             alt={`0${index}`}
             className="w-[300px] h-[300px] md:w-[326px] md:h-[326px] transition-all duration-[850ms] hover:scale-125 !ease-out overflow-hidden"
           />
-        </div>
-      )}
+        ) : (
+          <ImageShimmer
+            src="/images/placeholder.png"
+            width={326}
+            height={326}
+            alt={`0${index}`}
+            className="w-[300px] h-[300px] md:w-[326px] md:h-[326px] transition-all duration-[850ms] hover:scale-125 !ease-out overflow-hidden"
+          />
+        )}
+      </div>
       {isSelected && (
         <motion.div {...fastEnterAnimation}>
           <CornerBottomLeftIcon gold />

@@ -3142,6 +3142,11 @@ cipher-base@^1.0.0, cipher-base@^1.0.1, cipher-base@^1.0.3:
     inherits "^2.0.1"
     safe-buffer "^5.0.1"
 
+classnames@^2.3.1:
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.3.2.tgz#351d813bf0137fcc6a76a16b88208d2560a0d924"
+  integrity sha512-CSbhY4cFEJRe6/GQzIk5qXZ4Jeg5pcsP7b5peFSDpffpe1cqjASH/n9UTjBwOp6XpMSTwQ8Za2K5V02ueA7Tmw==
+
 cli-cursor@^3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/cli-cursor/-/cli-cursor-3.1.0.tgz#264305a7ae490d1d03bf0c9ba7c925d1753af307"
@@ -5846,6 +5851,13 @@ react-qr-reader@^2.2.1:
     jsqr "^1.2.0"
     prop-types "^15.7.2"
     webrtc-adapter "^7.2.1"
+
+react-shimmer-effects@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/react-shimmer-effects/-/react-shimmer-effects-1.0.3.tgz#74513c92e5ec470ddab2c943a607efdaa1e6db28"
+  integrity sha512-UQw+dujUTUtpIsorHPrYlKQ1YdKUwHIOd4vReW0VOPauQ+nuRdyuwFM7Q6qL75WML3HvA8DB7rpdJGuxB9cZ5A==
+  dependencies:
+    classnames "^2.3.1"
 
 react@16.13.1:
   version "16.13.1"
