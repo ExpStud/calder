@@ -67,7 +67,7 @@ const AudioControl: FC<Props> = (props: Props) => {
     };
   }, []);
 
-  //
+  // play song when current song changes
   useEffect(() => {
     if (audioRef.current && isPlaying) {
       audioRef.current.src = `/songs/${currentSong.name}.mp3`;

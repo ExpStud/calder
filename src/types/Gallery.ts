@@ -1,7 +1,11 @@
-export interface Searchers {
+export interface NFT {
   mint: string;
-  // faction: Faction;
-  // lore: string[];
-  // image: string;
-  // exchange: string;
+}
+export interface Searchers extends NFT {
+}
+export interface Substance extends NFT {
+}
+export interface Airdrops extends NFT {
+}
+export interface Collabs extends NFT {
 }

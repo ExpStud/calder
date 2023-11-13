@@ -45,7 +45,7 @@ const PageLayout: FC<Props> = (props: Props) => {
       <PageHead
         title="Calder"
         description="Calder Moore [meta tag images, description needed]"
-        url="https://addurl.xyz/"
+        url="https://addurl.xyz" //no backslash at the end
         twitter="CalderMoore_"
       />
       <ViewContext.Provider value={value}>
