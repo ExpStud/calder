@@ -167,26 +167,29 @@ const GalleryView: FC = () => {
       {/* page content */}
       <div className="-z-10 w-full py-6">
         <AnimatePresence mode="wait">
-          {selectedNavItem === GalleryNavigation.Searchers &&
-            selectedGalleryItem && (
-              <motion.div
-                key={GalleryNavigation.Searchers}
-                {...fastExitAnimation}
-                className="col-start gap-4 !bg-opacity-100 w-full md:w-[680px]"
-              >
-                <GalleryItemBar
-                  name={selectedGalleryItem.name}
-                  faction={
-                    selectedGalleryItem.json?.attributes?.[1].trait_type ??
-                    (selectedGalleryItem.json?.attributes?.[1]
-                      .traitType as string)
-                  }
-                />
-                <GalleryItemLore
-                  description={selectedGalleryItem.json?.description}
-                />
-              </motion.div>
-            )}
+          {selectedNavItem === GalleryNavigation.Searchers && (
+            <motion.div
+              key={GalleryNavigation.Searchers}
+              {...fastExitAnimation}
+              className="col-start gap-4 !bg-opacity-100 w-full md:w-[680px]"
+            >
+              <GalleryItemBar
+                name={selectedGalleryItem?.name ?? "#001 - THE ARTIFICER"}
+                faction={
+                  selectedGalleryItem?.json?.attributes?.[1].trait_type ??
+                  (selectedGalleryItem?.json?.attributes?.[1]
+                    .traitType as string) ??
+                  "THE COALITION"
+                }
+              />
+              <GalleryItemLore
+                description={
+                  selectedGalleryItem?.json?.description ??
+                  "The Artificer, a mysterious figure residing in the depths of the Undercity within the protective walls of the Shrike, a fortress built by the Coalition. A master of cybernetic augmentation, upgrading those who want that little bit extra that isn't legally done. He was indirectly one of the founding members of the Coalition, formed to fight back against the authorities trying to decimate the Undercities population. Never showing up to any of the councils, spending most of the time upgrading those who would fight back against the topside foes. The Artificer is a mysterious man, not really seen by many, and no one knows his true name. He is always lurking in the back of his shop with IGOR managing the front. His identity is an enigma to all but his most trusted confidants. Whispers of his unparalleled craftsmanship echo through the underbelly of Vulture, drawing those in need of his services, while his reputation as a man who wields the power to reshape lives hangs heavy in the air."
+                }
+              />
+            </motion.div>
+          )}
         </AnimatePresence>
       </div>
     </div>

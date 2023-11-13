@@ -14,7 +14,7 @@ const GalleryItemBar: FC<Props> = (props: Props) => {
       <h4 className="leading-none">{name}</h4>
       <p className="uppercase text-light-red font-teko-thin text-xl">
         Faction:
-        <span className="text-custom-white pl-1">{faction}</span>
+        <span className="text-custom-white pl-1">{faction ?? ""}</span>
       </p>
       <div className="flex flex-wrap gap-3 cursor-pointer pt-8">
         {/* asset download dropdown button */}

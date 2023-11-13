@@ -21,7 +21,7 @@ const GalleryImages: FC<Props> = (props: Props) => {
           index={index}
           isSelected={
             metadata
-              ? selectedGalleryItem?.address === metadata?.[index].address
+              ? selectedGalleryItem?.address === metadata?.[index]?.address
               : index === 0
           }
           setSelectedGalleryItem={setSelectedGalleryItem}

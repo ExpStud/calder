@@ -33,22 +33,26 @@ const GalleryImageItem: FC<Props> = (props: Props) => {
           : ""
       }`}
     >
-      <div className="overflow-hidden cursor-pointer ">
+      <div className="overflow-hidden">
         {item?.json?.image ? (
           <Image
             src={item.json?.image}
             width={326}
             height={326}
             alt={`0${index}`}
-            className="w-[300px] h-[300px] md:w-[326px] md:h-[326px] transition-all duration-[850ms] hover:scale-125 !ease-out overflow-hidden"
+            className="w-[300px] h-[300px] md:w-[326px] md:h-[326px] transition-all duration-[850ms] hover:scale-125 !ease-out overflow-hidden cursor-pointer"
           />
         ) : (
+          <></>
+        )}
+
+        {!item?.json?.image && (
           <ImageShimmer
             src="/images/placeholder.png"
             width={326}
             height={326}
             alt={`0${index}`}
-            className="w-[300px] h-[300px] md:w-[326px] md:h-[326px] transition-all duration-[850ms] hover:scale-125 !ease-out overflow-hidden"
+            className="w-[300px] h-[300px] md:w-[326px] md:h-[326px] "
           />
         )}
       </div>
