@@ -81,7 +81,7 @@ const ImageShimmer: FC<Props> = (props: Props) => {
             //@ts-ignore
             style={{ objectFit: objectFit }}
             alt={alt}
-            className={`rounded ${imageClass}`}
+            className={` ${imageClass}`}
             onLoadingComplete={() => setImageLoaded(true)}
           />
         )}
@@ -91,7 +91,7 @@ const ImageShimmer: FC<Props> = (props: Props) => {
             width={width}
             height={height}
             alt={alt}
-            className={`rounded ${imageClass}`}
+            className={` ${imageClass}`}
             onLoadingComplete={() => setImageLoaded(true)}
           />
         )}

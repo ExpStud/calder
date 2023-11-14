@@ -56,10 +56,9 @@ const GalleryView: FC = () => {
     }
   };
 
-  const mintAddresses = searchers;
-
   //fetch nft metadata for the specified gallery display
   const fetchNfts = useCallback(async () => {
+    const mintAddresses = searchers;
     if (selectedNavItem === GalleryNavigation.Searchers) {
       //map the mintAddresses array into an array of promises
       const nftPromises = mintAddresses.map(async (searcher) => {
@@ -77,7 +76,7 @@ const GalleryView: FC = () => {
       ) as FindNftByMintOutput[];
       setMetadata(filteredNfts);
     }
-  }, [connection, mintAddresses, selectedNavItem]);
+  }, [connection, selectedNavItem]);
 
   useEffect(() => {
     fetchNfts();
@@ -181,6 +180,7 @@ const GalleryView: FC = () => {
                     .traitType as string) ??
                   "THE COALITION"
                 }
+                mint={selectedGalleryItem?.mint.address.toBase58()}
               />
               <GalleryItemLore
                 description={

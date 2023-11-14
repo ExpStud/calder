@@ -11,7 +11,7 @@ export const findNftByMint = async (
   let nft: FindNftByMintOutput | null;
   try {
     nft = await metaplex.nfts().findByMint({ mintAddress: mintAddress });    
-    console.log("nft ", nft);
+    // console.log("nft ", nft);
   } catch (e) {
     console.error("findNftByMint ", e);
     return null;
