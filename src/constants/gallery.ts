@@ -28,71 +28,71 @@ export const searchers: Searchers[] = [
   {
     mint: "66hDA1TXxsQW5QMboR8i7scWTyF67L9PwobAAeCQ8Lax",
     assets : {
-      main: "Artificer (main vid)",
-      socials: "Artificer_socials",
-      pfp: "artificer_pfp",
-      thumbnail: "artificer_thumbnail",
-      bts: "artificer BTS"
+      main: "Artificer_.mp4",
+      socials: "Artificer_Socials.mp4",
+      pfp: "artificer_PFP",
+      thumbnail: "ArtificerThumbnail.jpg",
+      bts: "Artificer_BTS.mp4"
     }
   },
   {
     mint: "8UHM42FtJhif9qkcZ3QbPgmrrEPBdrUWn7PWMsyjapES",
     assets : {
-      main: "",
-      socials: "",
-      pfp: "",
-      thumbnail: "",
-      bts: ""
+      main: "IGOR_Master.mp4",
+      socials: "IGOR_Master_socials.mp4",
+      pfp: "IGOR_PFP.jpg",
+      thumbnail: "IGORThumbnail.jpg",
+      bts: "Clans_Team_PFP_02_Igor_BTS.mp4"
     }
   },
   {
     mint: "EoNnbS3Vbe1SbMUabMrnfaAQCNTweriNr4yMa8B66GJx",
     assets : {
-      main: "",
-      socials: "",
-      pfp: "",
-      thumbnail: "",
-      bts: ""
+      main: "Scout.mp4",
+      socials: "Scout_Socials.mp4",
+      pfp: "Scout_PFP.jpg",
+      thumbnail: "Scout_thumbnail.jpg",
+      bts: "Clans_Monsters_PFP_01_Scout_BTS.mp4"
     }
   },
   {
     mint: "9jKuCEgbjQ1wbjU329UA4cNdetFL5NF5N27KKwFeNSiu",
     assets : {
-      main: "",
-      socials: "",
-      pfp: "",
-      thumbnail: "",
-      bts: ""
+      main: "max2.mp4",
+      socials: "max2_Socials.mp4",
+      pfp: "Max_PFP.jpg",
+      thumbnail: "Max_thumbnail.jpg",
+      bts: "Clans_Lightbringers_PFP_01_Max_BTS.mp4"
     }
   },
   {
     mint: "2wN3CYVCTTv1d85K7SsTK5RsuozSZjBhJ4Ke1XCbovXj",
     assets : {
-      main: "",
-      socials: "",
-      pfp: "",
-      thumbnail: "",
-      bts: ""
+      main: "Sweettooth.mp4",
+      socials: "Sweettooth_socials.mp4",
+      pfp: "SweetTooth_PFP.jpg",
+      thumbnail: "Sweettooth_thumbnail.jpg",
+      bts: "Clans_CrazyClan_PFP_01_Thug_BTS.mp4"
     }
   },
   {
     mint: "4MQeQeFCqKZie1jXLvwMD3WCNGPB4MmgJKa2gKivz4Za",
     assets : {
-      main: "",
-      socials: "",
-      pfp: "",
-      thumbnail: "",
-      bts: ""
+      main: "Sophie.mp4",
+      socials: "Sophie_Socials.mp4",
+      pfp: "Sophie_pfp_01.jpg",
+      thumbnail: "Sophie_Thumbnail.jpg",
+      bts: "Clans_Citizens_PFP_01_Sophie_BTS.mp4"
     }
   },
   {
     mint: "2LBtxFduPT9PpFAdfqow4D6oPGhL6cmmnJwwYZghzDxp",
     assets : {
-      main: "",
-      socials: "",
-      pfp: "",
-      thumbnail: "",
-      bts: ""
+      main: "Raven.mp4",
+      socials: "Raven_Socials.mp4",
+      pfp: "Raven_pfp.jpg",
+      thumbnail: "Raven_thumbnail.jpg",
+      bts: "Clans_Citizens_PFP_01_Merchant_BTS.mp4"
     }
   },
 ];

@@ -31,6 +31,10 @@ const GalleryItemBar: FC<Props> = (props: Props) => {
 
   const onSelect = (item: string, index: number) => {
     // handleClick(item, index);
+    window.open(
+      `/images/gallery/${name.replace(/[ .#]/g, "")}/${item}`,
+      "_blank"
+    );
     setOpen(false);
   };
 
@@ -82,7 +86,7 @@ const GalleryItemBar: FC<Props> = (props: Props) => {
                 animate="visible"
                 exit="exit"
               >
-                <motion.div className="max-h-[300px] overflow-y-auto z-10">
+                <motion.div className="max-h-[300px] overflow-y-auto z-10 overflow-x-hidden">
                   {searcher &&
                     Object.values(searcher.assets).map(
                       (item: string, index) => (
