@@ -1,4 +1,11 @@
-import { FC, useCallback, useEffect, useState } from "react";
+import {
+  Dispatch,
+  FC,
+  SetStateAction,
+  useCallback,
+  useEffect,
+  useState,
+} from "react";
 import {
   TabNavigation,
   Divider,
@@ -14,18 +21,20 @@ import {
   GalleryNavigation,
   searchers,
   Factions,
-  substance as _substance,
+  substance,
 } from "@constants";
 import { useSearchParams } from "next/navigation";
-import { findNftByMint } from "@utils";
-import { useConnection } from "@solana/wallet-adapter-react";
 import { PublicKey } from "@solana/web3.js";
 import { FindNftByMintOutput } from "@metaplex-foundation/js";
-import { Substance } from "@types";
+import { Searchers, Substance } from "@types";
 
 const GalleryView: FC = () => {
   const [selectedNavItem, setSelectedNavItem] = useState<string>(); //tab navigation for page
   const [metadata, setMetadata] = useState<FindNftByMintOutput[]>(); //nft metadata for gallery
+  const [searcherseMetadata, setSearchersMetadata] =
+    useState<FindNftByMintOutput[]>();
+  const [substanceMetadata, setSubstanceMetadata] =
+    useState<FindNftByMintOutput[]>();
   const [filteredMetadata, setFilteredMetadata] = useState<
     FindNftByMintOutput[] | null
   >(null);
@@ -35,12 +44,7 @@ const GalleryView: FC = () => {
     undefined
   ); //selected faction for searchers
 
-  const [substance, setSubstance] = useState<Substance | undefined>(
-    _substance[0]
-  );
-
   const queryParams = useSearchParams();
-  const { connection } = useConnection();
 
   const handleDropdown = (item: string) => {
     //reset selected faction if "All Factions" or selectedFaction is selected
@@ -65,49 +69,59 @@ const GalleryView: FC = () => {
   //fetch nft metadata for the specified gallery display
   const fetchData = useCallback(async () => {
     try {
-      const mintAddresses = searchers.map((searcher) => searcher.mint);
-      // console.log(mintAddresses);
+      let mintAddresses: string[] = [];
+      let metadataState: Dispatch<SetStateAction<any>> | null = null;
+
+      switch (selectedNavItem) {
+        case GalleryNavigation.Searchers:
+          mintAddresses = searchers.map((searcher) => searcher.mint);
+          metadataState = setSearchersMetadata;
+          break;
+        case GalleryNavigation.Substance:
+          mintAddresses = substance.map((searcher) => searcher.mint);
+          metadataState = setSubstanceMetadata;
+          break;
+      }
+
+      // Check if metadataState has a value and if it already has data
+      if (metadataState && metadataState.length > 0) {
+        return;
+      }
+
       const response = await fetch(
-        `/api/fetchNfts?searchers=${encodeURIComponent(
+        `/api/fetchNfts?mintArray=${encodeURIComponent(
           JSON.stringify(mintAddresses)
         )}`
       );
 
-      console.log("response ", response);
       if (!response.ok) {
         throw new Error("1. Failed to fetch data");
       }
       const data = await response.json();
-      setMetadata(data);
+
+      if (metadataState) {
+        metadataState(data);
+      }
+      // setMetadata(data);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
-    // const mintAddresses = searchers;
-    // if (selectedNavItem === GalleryNavigation.Searchers) {
-    //   console.log("--- run ");
-    //   //map the mintAddresses array into an array of promises
-    //   const nftPromises = mintAddresses.map(async (searcher) => {
-    //     console.log(searcher.mint);
-    //     const nft = await findNftByMint(
-    //       connection,
-    //       new PublicKey(searcher.mint)
-    //     );
-    //     return nft;
-    //   });
-    //   //await all the promises and collect the results
-    //   const nftResults = await Promise.all(nftPromises);
-    //   //filter out null values and set state
-    //   const filteredNfts = nftResults.filter(
-    //     (nft) => nft !== null
-    //   ) as FindNftByMintOutput[];
-    //   setMetadata(filteredNfts);
-    // }
-    // }, [connection]);
-  }, []);
+  }, [selectedNavItem]);
 
   useEffect(() => {
     fetchData();
   }, [fetchData]);
+
+  useEffect(() => {
+    switch (selectedNavItem) {
+      case GalleryNavigation.Searchers:
+        setMetadata(searcherseMetadata);
+        break;
+      case GalleryNavigation.Substance:
+        setMetadata(substanceMetadata);
+        break;
+    }
+  }, [searcherseMetadata, selectedNavItem, substanceMetadata]);
 
   //set selected nav item based on query params
   useEffect(() => {
@@ -126,12 +140,6 @@ const GalleryView: FC = () => {
     setSelectedNavItem(galleryNav[0]);
   }, [queryParams]);
 
-  useEffect(() => {
-    if (metadata) {
-      setSelectedGalleryItem(metadata[0]);
-    }
-  }, [metadata, selectedFaction]);
-
   //filter metadata based on selected faction
   const filterMetadata = useCallback(() => {
     if (metadata && selectedFaction) {
@@ -139,8 +147,8 @@ const GalleryView: FC = () => {
         if (nft?.json && nft?.json?.attributes) {
           return nft?.json?.attributes.some(
             (attr) =>
-              attr.trait_type === selectedFaction ||
-              attr.traitType === selectedFaction
+              attr?.trait_type === selectedFaction ||
+              attr?.traitType === selectedFaction
           );
         }
       });
@@ -154,11 +162,19 @@ const GalleryView: FC = () => {
     filterMetadata();
   }, [filterMetadata]);
 
+  //set selected gallery item to first item in filtered metadata
   useEffect(() => {
     if (filteredMetadata) {
       setSelectedGalleryItem(filteredMetadata[0]);
     }
   }, [filteredMetadata]);
+
+  //reset highlighted gallery item when nav item changes
+  useEffect(() => {
+    if (metadata) {
+      setSelectedGalleryItem(metadata[0]);
+    }
+  }, [metadata, selectedFaction]);
 
   return (
     <div className="w-full h-full flex flex-col items-center justify-center pt-20 px-4 md:px-[10%] z-0">
@@ -202,9 +218,9 @@ const GalleryView: FC = () => {
               <GalleryItemBar
                 name={selectedGalleryItem?.name ?? "#001 - THE ARTIFICER"}
                 faction={
-                  selectedGalleryItem?.json?.attributes?.[1].trait_type ??
+                  selectedGalleryItem?.json?.attributes?.[1]?.trait_type ??
                   (selectedGalleryItem?.json?.attributes?.[1]
-                    .traitType as string) ??
+                    ?.traitType as string) ??
                   "THE COALITION"
                 }
                 mint={
