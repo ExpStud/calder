@@ -12,7 +12,7 @@ import {
   searchers,
   dropdownItemsAnimations,
 } from "@constants";
-import { Searchers } from "@types";
+import { Searchers, Substance } from "@types";
 import { useOutsideAlerter } from "@hooks";
 interface Props {
   name: string;
@@ -22,7 +22,6 @@ interface Props {
 const GalleryItemBar: FC<Props> = (props: Props) => {
   const { name, faction, mint } = props;
 
-  const [openAssetDownload, setOpenAssetDownload] = useState<boolean>(false); //open asset download dropdown
   const [open, setOpen] = useState<boolean>(false);
   const [searcher, setSearcher] = useState<Searchers | undefined>(searchers[0]);
 
@@ -72,7 +71,7 @@ const GalleryItemBar: FC<Props> = (props: Props) => {
           <p className="px-2">select asset to download</p>
           <ArrowIcon
             className="scale-125 mt-1.5 ml-2"
-            animate={openAssetDownload}
+            animate={open}
             fill={"#EB6976"}
           />
           {/* dropdown */}

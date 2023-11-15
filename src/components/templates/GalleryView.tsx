@@ -14,12 +14,14 @@ import {
   GalleryNavigation,
   searchers,
   Factions,
+  substance as _substance,
 } from "@constants";
 import { useSearchParams } from "next/navigation";
 import { findNftByMint } from "@utils";
 import { useConnection } from "@solana/wallet-adapter-react";
 import { PublicKey } from "@solana/web3.js";
 import { FindNftByMintOutput } from "@metaplex-foundation/js";
+import { Substance } from "@types";
 
 const GalleryView: FC = () => {
   const [selectedNavItem, setSelectedNavItem] = useState<string>(); //tab navigation for page
@@ -32,6 +34,10 @@ const GalleryView: FC = () => {
   const [selectedFaction, setSelectedFaction] = useState<Factions | undefined>(
     undefined
   ); //selected faction for searchers
+
+  const [substance, setSubstance] = useState<Substance | undefined>(
+    _substance[0]
+  );
 
   const queryParams = useSearchParams();
   const { connection } = useConnection();
@@ -57,30 +63,51 @@ const GalleryView: FC = () => {
   };
 
   //fetch nft metadata for the specified gallery display
-  const fetchNfts = useCallback(async () => {
-    const mintAddresses = searchers;
-    if (selectedNavItem === GalleryNavigation.Searchers) {
-      //map the mintAddresses array into an array of promises
-      const nftPromises = mintAddresses.map(async (searcher) => {
-        const nft = await findNftByMint(
-          connection,
-          new PublicKey(searcher.mint)
-        );
-        return nft;
-      });
-      //await all the promises and collect the results
-      const nftResults = await Promise.all(nftPromises);
-      //filter out null values and set state
-      const filteredNfts = nftResults.filter(
-        (nft) => nft !== null
-      ) as FindNftByMintOutput[];
-      setMetadata(filteredNfts);
+  const fetchData = useCallback(async () => {
+    try {
+      const mintAddresses = searchers.map((searcher) => searcher.mint);
+      // console.log(mintAddresses);
+      const response = await fetch(
+        `/api/fetchNfts?searchers=${encodeURIComponent(
+          JSON.stringify(mintAddresses)
+        )}`
+      );
+
+      console.log("response ", response);
+      if (!response.ok) {
+        throw new Error("1. Failed to fetch data");
+      }
+      const data = await response.json();
+      setMetadata(data);
+    } catch (error) {
+      console.error("Error fetching data:", error);
     }
-  }, [connection, selectedNavItem]);
+    // const mintAddresses = searchers;
+    // if (selectedNavItem === GalleryNavigation.Searchers) {
+    //   console.log("--- run ");
+    //   //map the mintAddresses array into an array of promises
+    //   const nftPromises = mintAddresses.map(async (searcher) => {
+    //     console.log(searcher.mint);
+    //     const nft = await findNftByMint(
+    //       connection,
+    //       new PublicKey(searcher.mint)
+    //     );
+    //     return nft;
+    //   });
+    //   //await all the promises and collect the results
+    //   const nftResults = await Promise.all(nftPromises);
+    //   //filter out null values and set state
+    //   const filteredNfts = nftResults.filter(
+    //     (nft) => nft !== null
+    //   ) as FindNftByMintOutput[];
+    //   setMetadata(filteredNfts);
+    // }
+    // }, [connection]);
+  }, []);
 
   useEffect(() => {
-    fetchNfts();
-  }, [fetchNfts]);
+    fetchData();
+  }, [fetchData]);
 
   //set selected nav item based on query params
   useEffect(() => {
@@ -180,7 +207,11 @@ const GalleryView: FC = () => {
                     .traitType as string) ??
                   "THE COALITION"
                 }
-                mint={selectedGalleryItem?.mint.address.toBase58()}
+                mint={
+                  selectedGalleryItem?.mint.address instanceof PublicKey
+                    ? selectedGalleryItem?.mint?.address.toBase58()
+                    : ""
+                }
               />
               <GalleryItemLore
                 description={
