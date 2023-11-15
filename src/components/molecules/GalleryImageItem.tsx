@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, use, useEffect, useState } from "react";
 import Image from "next/image";
 import { FindNftByMintOutput } from "@metaplex-foundation/js";
 import {
@@ -9,18 +9,31 @@ import {
   ImageShimmer,
 } from "@components";
 import { motion } from "framer-motion";
-import { fastEnterAnimation } from "@constants";
-// import { ImageShimmer } from "@components";
+import { GalleryNavigation, fastEnterAnimation } from "@constants";
 
 interface Props {
   item: FindNftByMintOutput | undefined;
   index: number;
   isSelected: boolean;
   setSelectedGalleryItem?: (item: FindNftByMintOutput) => void;
+  selectedNavItem: GalleryNavigation | undefined;
 }
 
 const GalleryImageItem: FC<Props> = (props: Props) => {
-  const { item, index, isSelected, setSelectedGalleryItem } = props;
+  const { item, index, isSelected, setSelectedGalleryItem, selectedNavItem } =
+    props;
+
+  const [dimensions, setDimensions] = useState<string>(
+    "w-[300px] h-[300px] md:w-[326px] md:h-[326px]"
+  );
+
+  useEffect(() => {
+    if (selectedNavItem === GalleryNavigation.Searchers) {
+      setDimensions("w-[300px] h-[300px] md:w-[326px] md:h-[326px]");
+    } else if (selectedNavItem === GalleryNavigation.Substance) {
+      setDimensions("w-[300px] h-[391px] md:w-[326px] md:h-[425px]");
+    }
+  }, [selectedNavItem]);
 
   return (
     <div
@@ -40,19 +53,20 @@ const GalleryImageItem: FC<Props> = (props: Props) => {
             width={326}
             height={326}
             alt={`0${index}`}
-            className="w-[300px] h-[300px] md:w-[326px] md:h-[326px] transition-all duration-[850ms] hover:scale-125 !ease-out overflow-hidden cursor-pointer"
+            className={`${dimensions} transition-all duration-[650ms] hover:scale-[1.15] overflow-hidden cursor-pointer object-contain`}
           />
         ) : (
           <></>
         )}
 
         {!item?.json?.image && (
-          <ImageShimmer
+          <Image
             src="/images/placeholder.png"
             width={326}
-            height={326}
+            height={selectedNavItem === GalleryNavigation.Substance ? 425 : 326}
             alt={`0${index}`}
-            className="w-[300px] h-[300px] md:w-[326px] md:h-[326px] "
+            className={`${dimensions}`}
+            objectFit={"cover"}
           />
         )}
       </div>

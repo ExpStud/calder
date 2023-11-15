@@ -11,19 +11,22 @@ import {
   navigationVariants,
   searchers,
   dropdownItemsAnimations,
+  GalleryNavigation,
 } from "@constants";
 import { Searchers, Substance } from "@types";
 import { useOutsideAlerter } from "@hooks";
 interface Props {
   name: string;
-  faction: string;
+  subHeader: string;
   mint: string | undefined;
+  selectedNavItem: GalleryNavigation | undefined;
 }
 const GalleryItemBar: FC<Props> = (props: Props) => {
-  const { name, faction, mint } = props;
+  const { name, subHeader, mint, selectedNavItem } = props;
 
   const [open, setOpen] = useState<boolean>(false);
   const [searcher, setSearcher] = useState<Searchers | undefined>(searchers[0]);
+  const [subHeaderLabel, setSubHeaderLabel] = useState<string>("");
 
   const ref = useRef(null);
   useOutsideAlerter(ref, () => setOpen(false));
@@ -44,12 +47,23 @@ const GalleryItemBar: FC<Props> = (props: Props) => {
     }
   }, [mint]);
 
+  useEffect(() => {
+    switch (selectedNavItem) {
+      case GalleryNavigation.Searchers:
+        setSubHeaderLabel("Faction");
+        break;
+      case GalleryNavigation.Substance:
+        setSubHeaderLabel("Cover");
+        break;
+    }
+  }, [selectedNavItem]);
+
   return (
     <div className="col-start border-t border-b border-color p-5 !bg-[#230D0E] w-full ">
       <h4 className="leading-none">{name}</h4>
       <p className="uppercase text-light-red font-teko-thin text-xl">
-        Faction:
-        <span className="text-custom-white pl-1">{faction ?? ""}</span>
+        {subHeaderLabel}:
+        <span className="text-custom-white pl-1">{subHeader ?? ""}</span>
       </p>
       <div className=" flex flex-wrap gap-3 cursor-pointer pt-8">
         {/* asset download dropdown button */}

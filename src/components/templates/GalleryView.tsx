@@ -84,7 +84,7 @@ const GalleryView: FC = () => {
       }
 
       // Check if metadataState has a value and if it already has data
-      if (metadataState && metadataState.length > 0) {
+      if (metadataState && Object.keys(metadataState).length > 0) {
         return;
       }
 
@@ -112,6 +112,7 @@ const GalleryView: FC = () => {
     fetchData();
   }, [fetchData]);
 
+  //update visible metadata based on selected nav item
   useEffect(() => {
     switch (selectedNavItem) {
       case GalleryNavigation.Searchers:
@@ -142,7 +143,11 @@ const GalleryView: FC = () => {
 
   //filter metadata based on selected faction
   const filterMetadata = useCallback(() => {
-    if (metadata && selectedFaction) {
+    if (
+      metadata &&
+      selectedFaction &&
+      selectedNavItem === GalleryNavigation.Searchers
+    ) {
       const filteredNfts = metadata.filter((nft) => {
         if (nft?.json && nft?.json?.attributes) {
           return nft?.json?.attributes.some(
@@ -156,7 +161,7 @@ const GalleryView: FC = () => {
     } else {
       setFilteredMetadata(null);
     }
-  }, [metadata, selectedFaction]);
+  }, [metadata, selectedFaction, selectedNavItem]);
 
   useEffect(() => {
     filterMetadata();
@@ -183,7 +188,7 @@ const GalleryView: FC = () => {
         showLeftTip={false}
         className="mt-14 mb-3"
       />
-      <div className="flex flex-col lg:flex-row justify-between items-center w-full pt-4 pb-14 gap-3">
+      <div className="flex flex-col lg:flex-row justify-between items-center w-full pt-4 pb-10 gap-3">
         <h2>Gallery</h2>
         {selectedNavItem && (
           <TabNavigation
@@ -193,7 +198,7 @@ const GalleryView: FC = () => {
           />
         )}
       </div>
-      <div className="z-50 row-start w-full">
+      <div className="z-50 row-start w-full min-h-[60px]">
         <GallerySorting
           selectedNavItem={selectedNavItem}
           handleDropdown={handleDropdown}
@@ -205,38 +210,41 @@ const GalleryView: FC = () => {
         metadata={filteredMetadata ?? metadata}
         setSelectedGalleryItem={setSelectedGalleryItem}
         selectedGalleryItem={selectedGalleryItem}
+        selectedNavItem={selectedNavItem as GalleryNavigation}
       />
       {/* page content */}
       <div className="-z-10 w-full py-6">
         <AnimatePresence mode="wait">
-          {selectedNavItem === GalleryNavigation.Searchers && (
-            <motion.div
-              key={GalleryNavigation.Searchers}
-              {...fastExitAnimation}
-              className="col-start gap-4 !bg-opacity-100 w-full md:w-[680px]"
-            >
-              <GalleryItemBar
-                name={selectedGalleryItem?.name ?? "#001 - THE ARTIFICER"}
-                faction={
-                  selectedGalleryItem?.json?.attributes?.[1]?.trait_type ??
-                  (selectedGalleryItem?.json?.attributes?.[1]
-                    ?.traitType as string) ??
-                  "THE COALITION"
-                }
-                mint={
-                  selectedGalleryItem?.mint.address instanceof PublicKey
-                    ? selectedGalleryItem?.mint?.address.toBase58()
-                    : ""
-                }
-              />
-              <GalleryItemLore
-                description={
-                  selectedGalleryItem?.json?.description ??
-                  "The Artificer, a mysterious figure residing in the depths of the Undercity within the protective walls of the Shrike, a fortress built by the Coalition. A master of cybernetic augmentation, upgrading those who want that little bit extra that isn't legally done. He was indirectly one of the founding members of the Coalition, formed to fight back against the authorities trying to decimate the Undercities population. Never showing up to any of the councils, spending most of the time upgrading those who would fight back against the topside foes. The Artificer is a mysterious man, not really seen by many, and no one knows his true name. He is always lurking in the back of his shop with IGOR managing the front. His identity is an enigma to all but his most trusted confidants. Whispers of his unparalleled craftsmanship echo through the underbelly of Vulture, drawing those in need of his services, while his reputation as a man who wields the power to reshape lives hangs heavy in the air."
-                }
-              />
-            </motion.div>
-          )}
+          {/* {selectedNavItem === GalleryNavigation.Substance ||
+            (selectedNavItem === GalleryNavigation.Searchers && ( */}
+          <motion.div
+            key={GalleryNavigation.Searchers}
+            {...fastExitAnimation}
+            className="col-start gap-4 !bg-opacity-100 w-full md:w-[680px]"
+          >
+            <GalleryItemBar
+              name={selectedGalleryItem?.name ?? "#001 - THE ARTIFICER"}
+              subHeader={
+                selectedGalleryItem?.json?.attributes?.[1]?.trait_type ??
+                (selectedGalleryItem?.json?.attributes?.[1]
+                  ?.traitType as string) ??
+                "THE COALITION"
+              }
+              mint={
+                selectedGalleryItem?.mint.address instanceof PublicKey
+                  ? selectedGalleryItem?.mint?.address.toBase58()
+                  : ""
+              }
+              selectedNavItem={selectedNavItem as GalleryNavigation}
+            />
+            <GalleryItemLore
+              description={
+                selectedGalleryItem?.json?.description ??
+                "The Artificer, a mysterious figure residing in the depths of the Undercity within the protective walls of the Shrike, a fortress built by the Coalition. A master of cybernetic augmentation, upgrading those who want that little bit extra that isn't legally done. He was indirectly one of the founding members of the Coalition, formed to fight back against the authorities trying to decimate the Undercities population. Never showing up to any of the councils, spending most of the time upgrading those who would fight back against the topside foes. The Artificer is a mysterious man, not really seen by many, and no one knows his true name. He is always lurking in the back of his shop with IGOR managing the front. His identity is an enigma to all but his most trusted confidants. Whispers of his unparalleled craftsmanship echo through the underbelly of Vulture, drawing those in need of his services, while his reputation as a man who wields the power to reshape lives hangs heavy in the air."
+              }
+            />
+          </motion.div>
+          {/* ))} */}
         </AnimatePresence>
       </div>
     </div>

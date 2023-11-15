@@ -18,39 +18,31 @@ const GallerySorting: FC<Props> = (props: Props) => {
 
   return (
     <div className="col-start w-full">
-      <AnimatePresence mode="wait">
-        {selectedNavItem === GalleryNavigation.Searchers && (
-          <motion.div key={0} {...fastExitAnimation}>
-            <Dropdown
-              items={
-                selectedFaction
-                  ? ["All Factions", ...Object.values(Factions)]
-                  : Object.values(Factions)
-              }
-              label={selectedFaction ?? "All Factions"}
-              handleClick={handleDropdown}
-            />
-          </motion.div>
-        )}
-        {selectedNavItem === GalleryNavigation.Substance && (
-          <motion.div
-            key={1}
-            {...fastExitAnimation}
-            className="row-start w-full gap-4"
-          >
-            <Dropdown
-              items={galleryNav}
-              label={"Covers"}
-              handleClick={handleDropdown}
-            />
-            <Dropdown
-              items={galleryNav}
-              label={"Mythic"}
-              handleClick={handleDropdown}
-            />
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {selectedNavItem === GalleryNavigation.Searchers && (
+        <Dropdown
+          items={
+            selectedFaction
+              ? ["All Factions", ...Object.values(Factions)]
+              : Object.values(Factions)
+          }
+          label={selectedFaction ?? "All Factions"}
+          handleClick={handleDropdown}
+        />
+      )}
+      {selectedNavItem === GalleryNavigation.Substance && (
+        <div className="row-start w-full gap-4">
+          <Dropdown
+            items={galleryNav}
+            label={"Covers"}
+            handleClick={handleDropdown}
+          />
+          <Dropdown
+            items={galleryNav}
+            label={"Mythic"}
+            handleClick={handleDropdown}
+          />
+        </div>
+      )}
     </div>
   );
 };

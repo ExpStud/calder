@@ -24,8 +24,6 @@ export default async function handler(
       "confirmed"
     );
 
-    console.log("mintArray ", mintArray);
-
     // map the mintAddresses array into an array of promises
     if (!Array.isArray(mintArray)) {
       console.log("Internal Server Error");
@@ -33,7 +31,7 @@ export default async function handler(
     }
     const nftPromises = mintArray.map(async (searcher) => {
       const nft = await findNftByMint(connection, new PublicKey(searcher));
-      // console.log("nft ", nft);
+
       return nft;
     });
 
