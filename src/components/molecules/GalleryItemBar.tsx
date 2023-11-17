@@ -12,21 +12,25 @@ import {
   searchers,
   dropdownItemsAnimations,
   GalleryNavigation,
+  substance,
+  findIndexByMint,
 } from "@constants";
 import { Searchers, Substance } from "@types";
 import { useOutsideAlerter } from "@hooks";
+import { FindNftByMintOutput, PublicKey } from "@metaplex-foundation/js";
 interface Props {
-  name: string;
-  subHeader: string;
-  mint: string | undefined;
+  metadata: FindNftByMintOutput | undefined;
+  mint: string | PublicKey;
   selectedNavItem: GalleryNavigation | undefined;
 }
 const GalleryItemBar: FC<Props> = (props: Props) => {
-  const { name, subHeader, mint, selectedNavItem } = props;
+  const { metadata, mint, selectedNavItem } = props;
 
   const [open, setOpen] = useState<boolean>(false);
   const [searcher, setSearcher] = useState<Searchers | undefined>(searchers[0]);
   const [subHeaderLabel, setSubHeaderLabel] = useState<string>("");
+  const [subHeader, setSubHeader] = useState<string>("");
+  // const [mint, setMint] = useState<string>("");
 
   const ref = useRef(null);
   useOutsideAlerter(ref, () => setOpen(false));
@@ -34,7 +38,7 @@ const GalleryItemBar: FC<Props> = (props: Props) => {
   const onSelect = (item: string, index: number) => {
     // handleClick(item, index);
     window.open(
-      `/images/gallery/${name.replace(/[ .#]/g, "")}/${item}`,
+      `/images/gallery/${metadata?.name.replace(/[ .#]/g, "")}/${item}`,
       "_blank"
     );
     setOpen(false);
@@ -47,23 +51,40 @@ const GalleryItemBar: FC<Props> = (props: Props) => {
     }
   }, [mint]);
 
+  console.log("metadata ", metadata);
+  // set content based on gallery type
   useEffect(() => {
     switch (selectedNavItem) {
       case GalleryNavigation.Searchers:
         setSubHeaderLabel("Faction");
+        setSubHeader(
+          metadata?.json?.attributes?.[1]?.trait_type ??
+            (metadata?.json?.attributes?.[1]?.traitType as string) ??
+            "THE COALITION"
+        );
         break;
       case GalleryNavigation.Substance:
         setSubHeaderLabel("Cover");
+        if (substance && metadata?.mint.address) {
+          setSubHeader(`#${findIndexByMint(mint as string, substance) + 1}`);
+        }
         break;
     }
-  }, [selectedNavItem]);
+  }, [
+    metadata?.json?.attributes,
+    metadata?.mint.address,
+    mint,
+    selectedNavItem,
+  ]);
 
   return (
     <div className="col-start border-t border-b border-color p-5 !bg-[#230D0E] w-full ">
-      <h4 className="leading-none">{name}</h4>
+      <h4 className="leading-none">
+        {metadata?.name ?? "#001 - THE ARTIFICER"}
+      </h4>
       <p className="uppercase text-light-red font-teko-thin text-xl">
         {subHeaderLabel}:
-        <span className="text-custom-white pl-1">{subHeader ?? ""}</span>
+        <span className="text-custom-white pl-1">{subHeader}</span>
       </p>
       <div className=" flex flex-wrap gap-3 cursor-pointer pt-8">
         {/* asset download dropdown button */}

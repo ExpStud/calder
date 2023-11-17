@@ -35,6 +35,13 @@ const GalleryImageItem: FC<Props> = (props: Props) => {
     }
   }, [selectedNavItem]);
 
+  //handles single case of video
+  const isVideo = (): boolean => {
+    const searchString = "nftstorage.link";
+    const url = item?.json?.image as string;
+    return url.includes(searchString);
+  };
+
   return (
     <div
       onClick={() =>
@@ -47,7 +54,7 @@ const GalleryImageItem: FC<Props> = (props: Props) => {
       }`}
     >
       <div className="overflow-hidden">
-        {item?.json?.image ? (
+        {item?.json?.image && !isVideo() && (
           <Image
             src={item.json?.image}
             width={326}
@@ -55,10 +62,31 @@ const GalleryImageItem: FC<Props> = (props: Props) => {
             alt={`0${index}`}
             className={`${dimensions} transition-all duration-[650ms] hover:scale-[1.15] overflow-hidden cursor-pointer object-contain`}
           />
-        ) : (
-          <></>
         )}
-
+        {item?.json?.image && isVideo() && (
+          <video
+            src={item.json?.image}
+            width={326}
+            height={326}
+            autoPlay
+            muted
+            playsInline
+            loop
+            className={`${dimensions} transition-all duration-[650ms] hover:scale-[1.15] overflow-hidden cursor-pointer object-contain`}
+          />
+        )}
+        {/* {item?.json?.animation_url && (
+          <video
+            src={item.json?.animation_url}
+            width={326}
+            height={326}
+            autoPlay
+            muted
+            playsInline
+            loop
+            className={`${dimensions} transition-all duration-[650ms] hover:scale-[1.15] overflow-hidden cursor-pointer object-contain`}
+          />
+        )} */}
         {!item?.json?.image && (
           <Image
             src="/images/placeholder.png"

@@ -24,6 +24,13 @@ export const galleryNav: string[] = [
   "Collabs",
 ];
 
+export const findIndexByMint = (mintToFind: string, array: Substance[] | Searchers[]): number => {
+  const index = array.findIndex((item) => item.mint === mintToFind);
+  console.log("index ", mintToFind);
+  return index;
+};
+
+
 export const searchers: Searchers[] = [
   {
     mint: "66hDA1TXxsQW5QMboR8i7scWTyF67L9PwobAAeCQ8Lax",

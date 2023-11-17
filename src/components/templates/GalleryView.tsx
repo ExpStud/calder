@@ -223,18 +223,12 @@ const GalleryView: FC = () => {
             className="col-start gap-4 !bg-opacity-100 w-full md:w-[680px]"
           >
             <GalleryItemBar
-              name={selectedGalleryItem?.name ?? "#001 - THE ARTIFICER"}
-              subHeader={
-                selectedGalleryItem?.json?.attributes?.[1]?.trait_type ??
-                (selectedGalleryItem?.json?.attributes?.[1]
-                  ?.traitType as string) ??
-                "THE COALITION"
-              }
               mint={
-                selectedGalleryItem?.mint.address instanceof PublicKey
-                  ? selectedGalleryItem?.mint?.address.toBase58()
+                selectedGalleryItem?.mint.address
+                  ? selectedGalleryItem?.mint?.address
                   : ""
               }
+              metadata={selectedGalleryItem}
               selectedNavItem={selectedNavItem as GalleryNavigation}
             />
             <GalleryItemLore
