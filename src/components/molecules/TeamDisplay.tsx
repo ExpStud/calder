@@ -17,15 +17,19 @@ const TeamDisplay: FC<Props> = (props: Props) => {
       <Divider showRightTip={false} />
       <div className="flex flex-col lg:flex-row h-full w-full">
         {/* col 1*/}
-        <div className="self-end">
-          <Image src={team.image} alt={team.name} height={800} width={800} />
-        </div>
+        {team?.image && (
+          <div className="self-end">
+            <Image src={team.image} alt={team.name} height={800} width={800} />
+          </div>
+        )}
         {/* col 2*/}
         <div className="col-start w-full pt-6 xl:pt-10">
           {/* header row */}
           <div className="flex w-full items-center justify-between">
             <h3>{team.name}</h3>
-            <TwitterIcon url={team.twitter} className="icon" />
+            {team.twitter && (
+              <TwitterIcon url={team.twitter} className="icon" />
+            )}
           </div>
           {/* text */}
           <p className="text-light-red uppercase font-teko pb-3 text-lg">

@@ -3,11 +3,12 @@ import { AnimatePresence, motion } from "framer-motion";
 import { StackIcon, SubstanceGoal } from "@components";
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
-  items: string[];
+  titles: string[];
+  descriptions: string[];
 }
 
 const Accordion: FC<Props> = (props: Props) => {
-  const { items, className } = props;
+  const { titles, className, descriptions } = props;
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const [hoverIndex, setHoverIndex] = useState<number | null>(null);
 
@@ -23,7 +24,7 @@ const Accordion: FC<Props> = (props: Props) => {
     <div
       className={`relative w-full flex flex-col justify-center ${className}`}
     >
-      {items.map((item, index) => (
+      {titles.map((item, index) => (
         <div
           key={index}
           className={`flex flex-col cursor-pointer transition-300 border-b border-color hover:border-opacity-60`}
@@ -61,25 +62,85 @@ const Accordion: FC<Props> = (props: Props) => {
           >
             <AnimatePresence mode="wait">
               {index === 0 && openIndex === 0 && (
-                <SubstanceGoal animate={openIndex === 0} key={0} />
+                <SubstanceGoal
+                  animate={openIndex === 0}
+                  key={0}
+                  title={titles[index]}
+                  description={descriptions[index]}
+                  image={
+                    titles[index].replaceAll(" ", "-").toLocaleLowerCase() +
+                    ".png"
+                  }
+                />
               )}
               {index === 1 && openIndex === 1 && (
-                <SubstanceGoal animate={openIndex === 1} key={1} />
+                <SubstanceGoal
+                  animate={openIndex === 1}
+                  key={1}
+                  title={titles[index]}
+                  description={descriptions[index]}
+                  image={
+                    titles[index].replaceAll(" ", "-").toLocaleLowerCase() +
+                    ".png"
+                  }
+                />
               )}
               {index === 2 && openIndex === 2 && (
-                <SubstanceGoal animate={openIndex === 2} key={2} />
+                <SubstanceGoal
+                  animate={openIndex === 2}
+                  key={2}
+                  title={titles[index]}
+                  description={descriptions[index]}
+                  image={
+                    titles[index].replaceAll(" ", "-").toLocaleLowerCase() +
+                    ".png"
+                  }
+                />
               )}
               {index === 3 && openIndex === 3 && (
-                <SubstanceGoal animate={openIndex === 3} key={3} />
+                <SubstanceGoal
+                  animate={openIndex === 3}
+                  key={3}
+                  title={titles[index]}
+                  description={descriptions[index]}
+                  image={
+                    titles[index].replaceAll(" ", "-").toLocaleLowerCase() +
+                    ".png"
+                  }
+                />
               )}
               {index === 4 && openIndex === 4 && (
-                <SubstanceGoal animate={openIndex === 4} key={4} />
+                <SubstanceGoal
+                  animate={openIndex === 4}
+                  key={4}
+                  title={titles[index]}
+                  description={descriptions[index]}
+                  image={
+                    titles[index].replaceAll(" ", "-").toLocaleLowerCase() +
+                    ".png"
+                  }
+                />
               )}
               {index === 5 && openIndex === 5 && (
-                <SubstanceGoal animate={openIndex === 5} key={5} />
+                <SubstanceGoal
+                  animate={openIndex === 5}
+                  key={5}
+                  title={titles[index]}
+                  description={descriptions[index]}
+                  image={
+                    titles[index].replaceAll(" ", "-").toLocaleLowerCase() +
+                    ".png"
+                  }
+                />
               )}
               {index === 6 && openIndex === 6 && (
-                <SubstanceGoal animate={openIndex === 6} key={6} />
+                <SubstanceGoal
+                  animate={openIndex === 6}
+                  key={6}
+                  title={titles[index]}
+                  description={descriptions[index]}
+                  image={titles[index].replaceAll(" ", "-").toLocaleLowerCase()}
+                />
               )}
             </AnimatePresence>
           </motion.div>

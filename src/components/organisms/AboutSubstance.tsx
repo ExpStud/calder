@@ -50,7 +50,10 @@ const AboutSubstance: FC = () => {
       </div>
       <div className="col-start lg:w-1/2">
         <Divider showLeftTip={false} showRightTip={false} />
-        <Accordion items={substanceItems} />
+        <Accordion
+          titles={substanceItems.map((item) => item.title)}
+          descriptions={substanceItems.map((item) => item.description)}
+        />
       </div>
     </motion.div>
   );

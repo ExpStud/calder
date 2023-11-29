@@ -74,11 +74,11 @@ const GalleryView: FC = () => {
 
       switch (selectedNavItem) {
         case GalleryNavigation.Searchers:
-          mintAddresses = searchers.map((searcher) => searcher.mint);
+          mintAddresses = searchers.map((item: Searchers) => item.mint);
           metadataState = setSearchersMetadata;
           break;
         case GalleryNavigation.Substance:
-          mintAddresses = substance.map((searcher) => searcher.mint);
+          mintAddresses = substance.map((item: Substance) => item.mint);
           metadataState = setSubstanceMetadata;
           break;
       }
