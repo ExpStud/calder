@@ -1,9 +1,9 @@
 export interface GalleryItemAssets {
   main: string;
   socials: string;
-  pfp: string;
   thumbnail: string;
-  bts: string
+  pfp?: string;
+  bts?: string
 }
 
 export interface NFT {
@@ -13,6 +13,7 @@ export interface Searchers extends NFT {
   assets: GalleryItemAssets;
 }
 export interface Substance extends NFT {
+  assets:
 }
 export interface Airdrops extends NFT {
 }

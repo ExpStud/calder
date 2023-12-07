@@ -27,7 +27,7 @@ const GalleryItemBar: FC<Props> = (props: Props) => {
   const { metadata, mint, selectedNavItem } = props;
 
   const [open, setOpen] = useState<boolean>(false);
-  const [searcher, setSearcher] = useState<Searchers | undefined>(searchers[0]);
+  const [assets, setAssets] = useState<Searchers | undefined>(searchers[0]);
   const [subHeaderLabel, setSubHeaderLabel] = useState<string>("");
   const [subHeader, setSubHeader] = useState<string>("");
   // const [mint, setMint] = useState<string>("");
@@ -36,20 +36,32 @@ const GalleryItemBar: FC<Props> = (props: Props) => {
   useOutsideAlerter(ref, () => setOpen(false));
 
   const onSelect = (item: string, index: number) => {
-    // handleClick(item, index);
     window.open(
-      `/images/gallery/${metadata?.name.replace(/[ .#]/g, "")}/${item}`,
+      `/images/gallery/${selectedNavItem?.toLocaleLowerCase()}/${metadata?.name.replace(
+        /[ .#]/g,
+        ""
+      )}/${item}`,
       "_blank"
     );
     setOpen(false);
   };
 
+  //set dropdown content based on gallery type
   useEffect(() => {
     if (mint) {
-      const _searcher = searchers.find((searcher) => searcher.mint === mint);
-      setSearcher(_searcher);
+      let _assets: Searchers | Substance | undefined;
+      switch (selectedNavItem) {
+        case GalleryNavigation.Searchers:
+          _assets = searchers.find((item) => item.mint === mint);
+          break;
+        case GalleryNavigation.Substance:
+          _assets = substance.find((item) => item.mint === mint);
+          break;
+      }
+
+      if (_assets) setAssets(_assets);
     }
-  }, [mint]);
+  }, [mint, selectedNavItem]);
 
   console.log("metadata ", metadata);
   // set content based on gallery type
@@ -91,7 +103,7 @@ const GalleryItemBar: FC<Props> = (props: Props) => {
         <div
           className={`relative flex button-transitions button-template connect-button !font-teko-thin !text-lg !w-[261px] !bg-light-red !bg-opacity-10 hover:!bg-opacity-20`}
           onClick={() => {
-            if (searcher) setOpen(!open);
+            if (assets) setOpen(!open);
           }}
           ref={ref}
         >
@@ -121,19 +133,17 @@ const GalleryItemBar: FC<Props> = (props: Props) => {
                 exit="exit"
               >
                 <motion.div className="max-h-[300px] overflow-y-auto z-10 overflow-x-hidden">
-                  {searcher &&
-                    Object.values(searcher.assets).map(
-                      (item: string, index) => (
-                        <DropdownItem
-                          item={item}
-                          index={index}
-                          handleClick={onSelect}
-                          key={index}
-                          variants={dropdownItemsAnimations}
-                          className="!w-[261px] md:!w-[261px]"
-                        />
-                      )
-                    )}
+                  {assets &&
+                    Object.values(assets.assets).map((item: string, index) => (
+                      <DropdownItem
+                        item={item}
+                        index={index}
+                        handleClick={onSelect}
+                        key={index}
+                        variants={dropdownItemsAnimations}
+                        className="!w-[261px] md:!w-[261px]"
+                      />
+                    ))}
                 </motion.div>
               </motion.div>
             )}

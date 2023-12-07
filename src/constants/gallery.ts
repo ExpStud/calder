@@ -106,42 +106,107 @@ export const searchers: Searchers[] = [
 
 export const substance: Substance[] = [
   {
-    mint: "5AmQ2ZN9iAFWiBG1ffZu3mnM8kY4e9NSdXo9mnSgvhuj"
+    mint: "5AmQ2ZN9iAFWiBG1ffZu3mnM8kY4e9NSdXo9mnSgvhuj",
+    assets : {
+      main: "",
+      socials: "",
+      thumbnail: "",
+    }
   },
   {
-    mint: "3ufyXceWwjWJDpneAHzbtiyW4t39twi7oHrSYeEH5jVm"
+    mint: "3ufyXceWwjWJDpneAHzbtiyW4t39twi7oHrSYeEH5jVm",
+    assets : {
+      main: "",
+      socials: "",
+      thumbnail: "",
+    }
   },
   {
-    mint: "42WCXCGpvREAWaQhvuo2SDFNiWUW5nGFaGgaP8j8xiq6"
+    mint: "42WCXCGpvREAWaQhvuo2SDFNiWUW5nGFaGgaP8j8xiq6",
+    assets : {
+      main: "",
+      socials: "",
+      thumbnail: "",
+    }
   },
   {
-    mint: "51L9uf4BtKyPv3cPQWuQwrChJAnSA3oVMuoxJnmm3k8g"
+    mint: "51L9uf4BtKyPv3cPQWuQwrChJAnSA3oVMuoxJnmm3k8g",
+    assets : {
+      main: "",
+      socials: "",
+      thumbnail: "",
+    }
   },
   {
-    mint: "2h2EqhSx6WvcJjCgGAZmTiTsfkgqje1MhoqXGAMjJWHu"
+    mint: "2h2EqhSx6WvcJjCgGAZmTiTsfkgqje1MhoqXGAMjJWHu",
+    assets : {
+      main: "",
+      socials: "",
+      thumbnail: "",
+    }
   },
   {
-    mint: "EwD8eUBZZT6wr8q24Q9uGYV8V8pgdg2gpWtUta7nCocv"
+    mint: "EwD8eUBZZT6wr8q24Q9uGYV8V8pgdg2gpWtUta7nCocv",
+    assets : {
+      main: "",
+      socials: "",
+      thumbnail: "",
+    }
   },
   {
-    mint: "CtzGTnpQ8Jtvj8srHCYZbdoY6xESzcdDdAo7tonzhqza"
+    mint: "CtzGTnpQ8Jtvj8srHCYZbdoY6xESzcdDdAo7tonzhqza",
+    assets : {
+      main: "",
+      socials: "",
+      thumbnail: "",
+    }
   },
   {
-    mint: "HpQGFHAg8AKKvgdPdwFnro4MjPb5WYbCGuQhnpqXW9pv"
+    mint: "HpQGFHAg8AKKvgdPdwFnro4MjPb5WYbCGuQhnpqXW9pv",
+    assets : {
+      main: "",
+      socials: "",
+      thumbnail: "",
+    }
   },
   {
-    mint: "Cv5Dv9bwuf9p3FWi5VmJkR5oeNwfGwujDcCzd8DKvjGB"
+    mint: "Cv5Dv9bwuf9p3FWi5VmJkR5oeNwfGwujDcCzd8DKvjGB",
+    assets : {
+      main: "",
+      socials: "",
+      thumbnail: "",
+    }
   },
   {
-    mint: "EDvR6Ba97ez5TqhGRHbKp5wvfrPcTkTpnTQ4MesFDuxR"
+    mint: "EDvR6Ba97ez5TqhGRHbKp5wvfrPcTkTpnTQ4MesFDuxR",
+    assets : {
+      main: "",
+      socials: "",
+      thumbnail: "",
+    }
   },
   {
-    mint: "GGDxZvaFxuM3DvYzrWfhzSXMEGnPjUrgpmGxPpRubYrm"
+    mint: "GGDxZvaFxuM3DvYzrWfhzSXMEGnPjUrgpmGxPpRubYrm",
+    assets : {
+      main: "",
+      socials: "",
+      thumbnail: "",
+    }
   },
   {
-    mint: "CenUyjSSBG7wr8dKuszM1Bd4aELoP53Tnie8EBwcHyFc"
+    mint: "CenUyjSSBG7wr8dKuszM1Bd4aELoP53Tnie8EBwcHyFc",
+    assets : {
+      main: "",
+      socials: "",
+      thumbnail: "",
+    }
   },
   {
-    mint: "A6dECeFWru57udc89FwHwzJcP9PgX8hY2hYfmZzF3MgQ"
+    mint: "A6dECeFWru57udc89FwHwzJcP9PgX8hY2hYfmZzF3MgQ",
+    assets : {
+      main: "",
+      socials: "",
+      thumbnail: "",
+    }
   },
 ]
