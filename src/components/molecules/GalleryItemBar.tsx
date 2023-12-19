@@ -36,9 +36,24 @@ const GalleryItemBar: FC<Props> = (props: Props) => {
   useOutsideAlerter(ref, () => setOpen(false));
 
   const onSelect = (item: string, index: number) => {
+    if (!metadata?.name) return;
+
+    let name = metadata?.name;
+
+    if (name?.includes("Crawlin")) {
+      // Encode the special characters in the string
+      const encodedName = encodeURIComponent(name);
+
+      // Remove the special character from the encoded string
+      const nameWithoutSpecialChar = encodedName.replace(/%E2%80%99/g, "");
+
+      // Revert back to the original unencoded form
+      name = decodeURIComponent(nameWithoutSpecialChar);
+    }
+
     window.open(
-      `/images/gallery/${selectedNavItem?.toLocaleLowerCase()}/${metadata?.name.replace(
-        /[ .#]/g,
+      `/images/gallery/${selectedNavItem?.toLocaleLowerCase()}/${name.replace(
+        /[ .`'#]/g,
         ""
       )}/${item}`,
       "_blank"
@@ -135,14 +150,18 @@ const GalleryItemBar: FC<Props> = (props: Props) => {
                 <motion.div className="max-h-[300px] overflow-y-auto z-10 overflow-x-hidden">
                   {assets &&
                     Object.values(assets.assets).map((item: string, index) => (
-                      <DropdownItem
-                        item={item}
-                        index={index}
-                        handleClick={onSelect}
-                        key={index}
-                        variants={dropdownItemsAnimations}
-                        className="!w-[261px] md:!w-[261px]"
-                      />
+                      <>
+                        {item !== "" && (
+                          <DropdownItem
+                            item={item}
+                            index={index}
+                            handleClick={onSelect}
+                            key={index}
+                            variants={dropdownItemsAnimations}
+                            className="!w-[261px] md:!w-[261px]"
+                          />
+                        )}
+                      </>
                     ))}
                 </motion.div>
               </motion.div>

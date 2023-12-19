@@ -108,105 +108,118 @@ export const substance: Substance[] = [
   {
     mint: "5AmQ2ZN9iAFWiBG1ffZu3mnM8kY4e9NSdXo9mnSgvhuj",
     assets : {
-      main: "",
-      socials: "",
-      thumbnail: "",
+      main: "01-DesertCruisin.mp4",
+      socials: "01-DesertCruisin_Socials.mp4",
+      thumbnail: "01-DesertCruisin_thumbanil.jpg",
+      bts: ""
     }
   },
   {
     mint: "3ufyXceWwjWJDpneAHzbtiyW4t39twi7oHrSYeEH5jVm",
     assets : {
-      main: "",
-      socials: "",
-      thumbnail: "",
+      main: "02-TheGreatOffering.mp4",
+      socials: "02-TheGreatOffering_Socials.mp4",
+      thumbnail: "02-TheGreatOffering_thumbnail.jpg",
+      bts: "CalderMoore_ISO_BTS_BookCover_Sphere_V2.mp4"
     }
   },
   {
     mint: "42WCXCGpvREAWaQhvuo2SDFNiWUW5nGFaGgaP8j8xiq6",
     assets : {
-      main: "",
-      socials: "",
-      thumbnail: "",
+      main: "03-TheShatteredGift.mp4",
+      socials: "03-TheShatteredGift_Socials.mp4",
+      thumbnail: "03-TheShatteredGift_Thumbnail.jpg",
+      bts: "CalderMoore_ISO_BTS_Malachite.mp4"
     }
   },
   {
     mint: "51L9uf4BtKyPv3cPQWuQwrChJAnSA3oVMuoxJnmm3k8g",
     assets : {
-      main: "",
-      socials: "",
-      thumbnail: "",
+      main: "04-TheEye.mp4",
+      socials: "04-TheEye_Socials.mp4",
+      thumbnail: "04-TheEye_Thumbnail.jpg",
+      bts: "CalderMoore_ISO_BTS_BookCovers_TheEye.mp4"
     }
   },
   {
     mint: "2h2EqhSx6WvcJjCgGAZmTiTsfkgqje1MhoqXGAMjJWHu",
     assets : {
-      main: "",
-      socials: "",
-      thumbnail: "",
+      main: "05-Lorne.mp4",
+      socials: "005-Lorne_Socials.mp4",
+      thumbnail: "05-Lorne_thumbnail.jpg",
+      bts: ""
     }
   },
   {
     mint: "EwD8eUBZZT6wr8q24Q9uGYV8V8pgdg2gpWtUta7nCocv",
     assets : {
-      main: "",
-      socials: "",
-      thumbnail: "",
+      main: "06-TheShadyTransaction.mp4",
+      socials: "06-TheShadyTransaction_Socials.mp4",
+      thumbnail: "06-TheShadyTransaction_thumbnail.jpg",
+      bts: ""
     }
   },
   {
     mint: "CtzGTnpQ8Jtvj8srHCYZbdoY6xESzcdDdAo7tonzhqza",
     assets : {
-      main: "",
-      socials: "",
-      thumbnail: "",
+      main: "07-TheNight.mp4",
+      socials: "07-TheNight_Socials.mp4",
+      thumbnail: "07-TheNight_thumbnail.jpg",
+      bts: ""
     }
   },
   {
     mint: "HpQGFHAg8AKKvgdPdwFnro4MjPb5WYbCGuQhnpqXW9pv",
     assets : {
-      main: "",
-      socials: "",
-      thumbnail: "",
+      main: "08-InstrumentPanel.mp4",
+      socials: "08-InstrumentPanel_socials.mp4",
+      thumbnail: "08-InstrumentPanel_Thumbnail.jpg",
+      bts: "CalderMoore_ISO_BTS_Console_V2.mp4"
     }
   },
   {
     mint: "Cv5Dv9bwuf9p3FWi5VmJkR5oeNwfGwujDcCzd8DKvjGB",
     assets : {
-      main: "",
-      socials: "",
-      thumbnail: "",
+      main: "09-Substance.mp4",
+      socials: "09-Substance_Socials.mp4",
+      thumbnail: "09-Substance_Thumbnail.jpg",
+      bts: ""
     }
   },
   {
     mint: "EDvR6Ba97ez5TqhGRHbKp5wvfrPcTkTpnTQ4MesFDuxR",
     assets : {
-      main: "",
-      socials: "",
-      thumbnail: "",
+      main: "10-DungeonCrawlin.mp4",
+      socials: "10-DungeonCrawlin_Socials.mp4",
+      thumbnail: "10-DungeonCrawlin_thumbnail.jpg",
+      bts: ""
     }
   },
   {
     mint: "GGDxZvaFxuM3DvYzrWfhzSXMEGnPjUrgpmGxPpRubYrm",
     assets : {
-      main: "",
-      socials: "",
-      thumbnail: "",
+      main: "011_AncientTemple.mp4",
+      socials: "011_AncientTemple_Socials.mp4",
+      thumbnail: "11-TheAncientTemple_thumbnail.jpg",
+      bts: ""
     }
   },
   {
     mint: "CenUyjSSBG7wr8dKuszM1Bd4aELoP53Tnie8EBwcHyFc",
     assets : {
-      main: "",
-      socials: "",
-      thumbnail: "",
+      main: "12-TheShop.mp4",
+      socials: "12-TheShop_Socials.mp4",
+      thumbnail: "12-TheShop_thumbnail.jpg",
+      bts: ""
     }
   },
   {
     mint: "A6dECeFWru57udc89FwHwzJcP9PgX8hY2hYfmZzF3MgQ",
     assets : {
-      main: "",
-      socials: "",
-      thumbnail: "",
+      main: "13-AMessLeftBehind.mp4",
+      socials: "13-AMessLeftBehind_Socials.mp4",
+      thumbnail: "13-AMessLeftBehind_thumbnail.jpg",
+      bts: ""
     }
   },
 ]

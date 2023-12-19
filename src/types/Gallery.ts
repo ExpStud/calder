@@ -13,7 +13,7 @@ export interface Searchers extends NFT {
   assets: GalleryItemAssets;
 }
 export interface Substance extends NFT {
-  assets:
+  assets: GalleryItemAssets;
 }
 export interface Airdrops extends NFT {
 }
