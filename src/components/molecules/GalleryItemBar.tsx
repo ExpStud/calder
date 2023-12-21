@@ -40,6 +40,7 @@ const GalleryItemBar: FC<Props> = (props: Props) => {
 
     let name = metadata?.name;
 
+    //special character typo case
     if (name?.includes("Crawlin")) {
       // Encode the special characters in the string
       const encodedName = encodeURIComponent(name);
@@ -78,7 +79,7 @@ const GalleryItemBar: FC<Props> = (props: Props) => {
     }
   }, [mint, selectedNavItem]);
 
-  console.log("metadata ", metadata);
+  // console.log("metadata ", metadata);
   // set content based on gallery type
   useEffect(() => {
     switch (selectedNavItem) {

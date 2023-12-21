@@ -20,6 +20,7 @@ const GalleryImages: FC<Props> = (props: Props) => {
   } = props;
 
   const [data, setData] = useState<Searchers[] | Substance[]>();
+  const [isMuted, setIsMuted] = useState<boolean>(false);
 
   useEffect(() => {
     switch (selectedNavItem) {
@@ -32,13 +33,16 @@ const GalleryImages: FC<Props> = (props: Props) => {
     }
   }, [selectedNavItem]);
 
+  console.log("selectedNavItem", selectedNavItem);
+
   return (
     <div className="flex self-start gap-0 w-[90vw] overflow-x-auto pt-6 pr-10">
       {data &&
         Array.from({ length: data.length }, (_, index) => (
           <GalleryImageItem
             key={index}
-            item={metadata?.[index]}
+            item={data[index]}
+            metadata={metadata?.[index]}
             index={index}
             isSelected={
               metadata
@@ -47,6 +51,8 @@ const GalleryImages: FC<Props> = (props: Props) => {
             }
             setSelectedGalleryItem={setSelectedGalleryItem}
             selectedNavItem={selectedNavItem}
+            isMuted={isMuted}
+            setIsMuted={setIsMuted}
           />
         ))}
     </div>

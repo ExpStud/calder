@@ -215,8 +215,6 @@ const GalleryView: FC = () => {
       {/* page content */}
       <div className="-z-10 w-full py-6">
         <AnimatePresence mode="wait">
-          {/* {selectedNavItem === GalleryNavigation.Substance ||
-            (selectedNavItem === GalleryNavigation.Searchers && ( */}
           <motion.div
             key={GalleryNavigation.Searchers}
             {...fastExitAnimation}
